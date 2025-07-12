@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Person - schema.org Type</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background: #f4f4f4;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        header {
+            background: #fff;
+            border-bottom: 1px solid #ddd;
+            padding: 20px 0;
+        }
+        header h1 {
+            margin: 0;
+            color: #3366cc;
+        }
+        .breadcrumb {
+            padding: 10px 0;
+            color: #666;
+        }
+        .main-content {
+            background: #fff;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .type-info {
+            background: #f9f9f9;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            margin-bottom: 30px;
+        }
+        .type-hierarchy {
+            margin: 20px 0;
+        }
+        .hierarchy-item {
+            display: inline-block;
+            margin: 0 5px;
+        }
+        .properties-section {
+            margin: 30px 0;
+        }
+        .property-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        .property-table th {
+            background: #f0f0f0;
+            text-align: left;
+            padding: 10px;
+            border: 1px solid #ddd;
+        }
+        .property-table td {
+            padding: 10px;
+            border: 1px solid #ddd;
+        }
+        .property-name {
+            font-family: monospace;
+            color: #3366cc;
+        }
+        .expected-type {
+            color: #666;
+            font-style: italic;
+        }
+        .examples-section {
+            margin: 30px 0;
+        }
+        .example-tabs {
+            border-bottom: 2px solid #ddd;
+            margin-bottom: 20px;
+        }
+        .example-tab {
+            display: inline-block;
+            padding: 10px 20px;
+            background: #f0f0f0;
+            border: 1px solid #ddd;
+            border-bottom: none;
+            cursor: pointer;
+            margin-right: 5px;
+        }
+        .example-tab.active {
+            background: #fff;
+            border-bottom: 2px solid #fff;
+            margin-bottom: -2px;
+        }
+        .example-content {
+            background: #f9f9f9;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        pre {
+            background: #f4f4f4;
+            padding: 15px;
+            overflow-x: auto;
+            border-radius: 3px;
+        }
+        code {
+            font-family: Consolas, Monaco, monospace;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>schema.org</h1>
+        </div>
+    </header>
+    
+    <div class="container">
+        <div class="breadcrumb">
+            <a href="/">Home</a> &gt; <a href="/Thing">Thing</a> &gt; Person
+        </div>
+        
+        <div class="main-content">
+            <h1>Person</h1>
+            
+            <div class="type-info">
+                <p><strong>A person (alive, dead, undead, or fictional).</strong></p>
+                
+                <div class="type-hierarchy">
+                    <strong>Subclass of:</strong>
+                    <span class="hierarchy-item"><a href="/Thing">Thing</a></span>
+                </div>
+                
+                <div class="type-hierarchy">
+                    <strong>More specific types:</strong>
+                    <span class="hierarchy-item"><a href="/Patient">Patient</a></span>
+                </div>
+            </div>
+            
+            <div class="properties-section">
+                <h2>Properties from Person</h2>
+                <table class="property-table">
+                    <thead>
+                        <tr>
+                            <th>Property</th>
+                            <th>Expected Type</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><span class="property-name">additionalName</span></td>
+                            <td><span class="expected-type">Text</span></td>
+                            <td>An additional name for a Person, can be used for a middle name.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="property-name">address</span></td>
+                            <td><span class="expected-type">PostalAddress or Text</span></td>
+                            <td>Physical address of the item.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="property-name">affiliation</span></td>
+                            <td><span class="expected-type">Organization</span></td>
+                            <td>An organization that this person is affiliated with. For example, a school/university, a club, or a team.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="property-name">alumniOf</span></td>
+                            <td><span class="expected-type">EducationalOrganization or Organization</span></td>
+                            <td>An organization that the person is an alumni of.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="property-name">award</span></td>
+                            <td><span class="expected-type">Text</span></td>
+                            <td>An award won by or for this item.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="property-name">birthDate</span></td>
+                            <td><span class="expected-type">Date</span></td>
+                            <td>Date of birth.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="property-name">birthPlace</span></td>
+                            <td><span class="expected-type">Place</span></td>
+                            <td>The place where the person was born.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="property-name">children</span></td>
+                            <td><span class="expected-type">Person</span></td>
+                            <td>A child of the person.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="property-name">colleague</span></td>
+                            <td><span class="expected-type">Person or URL</span></td>
+                            <td>A colleague of the person.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="property-name">deathDate</span></td>
+                            <td><span class="expected-type">Date</span></td>
+                            <td>Date of death.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="property-name">deathPlace</span></td>
+                            <td><span class="expected-type">Place</span></td>
+                            <td>The place where the person died.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="property-name">email</span></td>
+                            <td><span class="expected-type">Text</span></td>
+                            <td>Email address.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="property-name">familyName</span></td>
+                            <td><span class="expected-type">Text</span></td>
+                            <td>Family name. In the U.S., the last name of a Person.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="property-name">gender</span></td>
+                            <td><span class="expected-type">GenderType or Text</span></td>
+                            <td>Gender of the person.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="property-name">givenName</span></td>
+                            <td><span class="expected-type">Text</span></td>
+                            <td>Given name. In the U.S., the first name of a Person.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="property-name">hasOccupation</span></td>
+                            <td><span class="expected-type">Occupation</span></td>
+                            <td>The Person's occupation. For past professions, use Role for expressing dates.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="property-name">height</span></td>
+                            <td><span class="expected-type">Distance or QuantitativeValue</span></td>
+                            <td>The height of the item.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="property-name">homeLocation</span></td>
+                            <td><span class="expected-type">ContactPoint or Place</span></td>
+                            <td>A contact location for a person's residence.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="property-name">honorificPrefix</span></td>
+                            <td><span class="expected-type">Text</span></td>
+                            <td>An honorific prefix preceding a Person's name such as Dr/Mrs/Mr.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="property-name">honorificSuffix</span></td>
+                            <td><span class="expected-type">Text</span></td>
+                            <td>An honorific suffix following a Person's name such as M.D./PhD/MSCSW.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="property-name">jobTitle</span></td>
+                            <td><span class="expected-type">DefinedTerm or Text</span></td>
+                            <td>The job title of the person (for example, Financial Manager).</td>
+                        </tr>
+                        <tr>
+                            <td><span class="property-name">knowsLanguage</span></td>
+                            <td><span class="expected-type">Language or Text</span></td>
+                            <td>Of a Person, and less typically of an Organization, to indicate a known language.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="property-name">nationality</span></td>
+                            <td><span class="expected-type">Country</span></td>
+                            <td>Nationality of the person.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="property-name">parent</span></td>
+                            <td><span class="expected-type">Person</span></td>
+                            <td>A parent of this person.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="property-name">pronouns</span></td>
+                            <td><span class="expected-type">Text or URL</span></td>
+                            <td>Indicates pronouns for a Person.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="property-name">siblings</span></td>
+                            <td><span class="expected-type">Person</span></td>
+                            <td>A sibling of the person.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="property-name">spouse</span></td>
+                            <td><span class="expected-type">Person</span></td>
+                            <td>The person's spouse.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="property-name">telephone</span></td>
+                            <td><span class="expected-type">Text</span></td>
+                            <td>The telephone number.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="property-name">weight</span></td>
+                            <td><span class="expected-type">QuantitativeValue</span></td>
+                            <td>The weight of the product or person.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="property-name">workLocation</span></td>
+                            <td><span class="expected-type">ContactPoint or Place</span></td>
+                            <td>A contact location for a person's place of work.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="property-name">worksFor</span></td>
+                            <td><span class="expected-type">Organization</span></td>
+                            <td>Organizations that the person works for.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            
+            <div class="properties-section">
+                <h2>Properties from Thing</h2>
+                <table class="property-table">
+                    <thead>
+                        <tr>
+                            <th>Property</th>
+                            <th>Expected Type</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><span class="property-name">alternateName</span></td>
+                            <td><span class="expected-type">Text</span></td>
+                            <td>An alias for the item.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="property-name">description</span></td>
+                            <td><span class="expected-type">Text</span></td>
+                            <td>A description of the item.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="property-name">disambiguatingDescription</span></td>
+                            <td><span class="expected-type">Text</span></td>
+                            <td>A sub property of description. A short description of the item used to disambiguate from other, similar items.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="property-name">identifier</span></td>
+                            <td><span class="expected-type">PropertyValue or Text or URL</span></td>
+                            <td>The identifier property represents any kind of identifier for any kind of Thing.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="property-name">image</span></td>
+                            <td><span class="expected-type">ImageObject or URL</span></td>
+                            <td>An image of the item.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="property-name">mainEntityOfPage</span></td>
+                            <td><span class="expected-type">CreativeWork or URL</span></td>
+                            <td>Indicates a page (or other CreativeWork) for which this thing is the main entity being described.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="property-name">name</span></td>
+                            <td><span class="expected-type">Text</span></td>
+                            <td>The name of the item.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="property-name">potentialAction</span></td>
+                            <td><span class="expected-type">Action</span></td>
+                            <td>Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="property-name">sameAs</span></td>
+                            <td><span class="expected-type">URL</span></td>
+                            <td>URL of a reference Web page that unambiguously indicates the item's identity.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="property-name">subjectOf</span></td>
+                            <td><span class="expected-type">CreativeWork or Event</span></td>
+                            <td>A CreativeWork or Event about this Thing.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="property-name">url</span></td>
+                            <td><span class="expected-type">URL</span></td>
+                            <td>URL of the item.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            
+            <div class="examples-section">
+                <h2>Examples</h2>
+                <div class="example-tabs">
+                    <div class="example-tab active" onclick="showExample('jsonld')">JSON-LD</div>
+                    <div class="example-tab" onclick="showExample('microdata')">Microdata</div>
+                    <div class="example-tab" onclick="showExample('rdfa')">RDFa</div>
+                </div>
+                
+                <div id="jsonld-example" class="example-content">
+                    <h3>JSON-LD</h3>
+                    <pre><code>{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Jane Doe",
+  "image": "janedoe.jpg",
+  "jobTitle": "Professor",
+  "telephone": "(425) 123-4567",
+  "email": "jane-doe@example.com",
+  "url": "http://www.janedoe.com",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Seattle",
+    "addressRegion": "WA",
+    "postalCode": "98052",
+    "streetAddress": "20341 Whitworth Institute 405 N. Whitworth"
+  },
+  "colleague": [
+    "http://www.example.com/colleagues/john-doe",
+    "http://www.example.com/colleagues/jane-smith"
+  ]
+}</code></pre>
+                </div>
+                
+                <div id="microdata-example" class="example-content" style="display:none;">
+                    <h3>Microdata</h3>
+                    <pre><code>&lt;div itemscope itemtype="https://schema.org/Person"&gt;
+  &lt;img src="janedoe.jpg" itemprop="image" alt="Photo of Jane Doe"/&gt;
+  &lt;h1 itemprop="name"&gt;Jane Doe&lt;/h1&gt;
+  &lt;span itemprop="jobTitle"&gt;Professor&lt;/span&gt;
+  &lt;div itemprop="address" itemscope itemtype="https://schema.org/PostalAddress"&gt;
+    &lt;span itemprop="streetAddress"&gt;20341 Whitworth Institute 405 N. Whitworth&lt;/span&gt;
+    &lt;span itemprop="addressLocality"&gt;Seattle&lt;/span&gt;,
+    &lt;span itemprop="addressRegion"&gt;WA&lt;/span&gt;
+    &lt;span itemprop="postalCode"&gt;98052&lt;/span&gt;
+  &lt;/div&gt;
+  &lt;span itemprop="telephone"&gt;(425) 123-4567&lt;/span&gt;
+  &lt;a href="mailto:jane-doe@example.com" itemprop="email"&gt;jane-doe@example.com&lt;/a&gt;
+  &lt;a href="http://www.janedoe.com" itemprop="url"&gt;janedoe.com&lt;/a&gt;
+  Colleagues:
+  &lt;a href="http://www.example.com/colleagues/john-doe" itemprop="colleague"&gt;John Doe&lt;/a&gt;
+  &lt;a href="http://www.example.com/colleagues/jane-smith" itemprop="colleague"&gt;Jane Smith&lt;/a&gt;
+&lt;/div&gt;</code></pre>
+                </div>
+                
+                <div id="rdfa-example" class="example-content" style="display:none;">
+                    <h3>RDFa</h3>
+                    <pre><code>&lt;div vocab="https://schema.org/" typeof="Person"&gt;
+  &lt;img src="janedoe.jpg" property="image" alt="Photo of Jane Doe"/&gt;
+  &lt;h1 property="name"&gt;Jane Doe&lt;/h1&gt;
+  &lt;span property="jobTitle"&gt;Professor&lt;/span&gt;
+  &lt;div property="address" typeof="PostalAddress"&gt;
+    &lt;span property="streetAddress"&gt;20341 Whitworth Institute 405 N. Whitworth&lt;/span&gt;
+    &lt;span property="addressLocality"&gt;Seattle&lt;/span&gt;,
+    &lt;span property="addressRegion"&gt;WA&lt;/span&gt;
+    &lt;span property="postalCode"&gt;98052&lt;/span&gt;
+  &lt;/div&gt;
+  &lt;span property="telephone"&gt;(425) 123-4567&lt;/span&gt;
+  &lt;a href="mailto:jane-doe@example.com" property="email"&gt;jane-doe@example.com&lt;/a&gt;
+  &lt;a href="http://www.janedoe.com" property="url"&gt;janedoe.com&lt;/a&gt;
+  Colleagues:
+  &lt;a href="http://www.example.com/colleagues/john-doe" property="colleague"&gt;John Doe&lt;/a&gt;
+  &lt;a href="http://www.example.com/colleagues/jane-smith" property="colleague"&gt;Jane Smith&lt;/a&gt;
+&lt;/div&gt;</code></pre>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        function showExample(format) {
+            // Hide all examples
+            document.getElementById('jsonld-example').style.display = 'none';
+            document.getElementById('microdata-example').style.display = 'none';
+            document.getElementById('rdfa-example').style.display = 'none';
+            
+            // Remove active class from all tabs
+            var tabs = document.querySelectorAll('.example-tab');
+            tabs.forEach(function(tab) {
+                tab.classList.remove('active');
+            });
+            
+            // Show selected example and activate tab
+            document.getElementById(format + '-example').style.display = 'block';
+            event.target.classList.add('active');
+        }
+    </script>
+</body>
+</html>

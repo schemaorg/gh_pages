@@ -1,0 +1,32 @@
+title: Schema.org
+description: Schema.org provides schemas for structured data on the Internet
+baseurl: "/schemaorg"
+url: "https://nlweb-ai.github.io"
+
+# GitHub Pages settings
+theme: null
+plugins:
+  - jekyll-sitemap
+  - jekyll-seo-tag
+
+# Collections for schema types
+collections:
+  types:
+    output: true
+    permalink: /:name
+  properties:
+    output: true
+    permalink: /property/:name
+
+# Default layout
+defaults:
+  - scope:
+      path: ""
+      type: "types"
+    values:
+      layout: "type"
+  - scope:
+      path: ""
+      type: "properties"
+    values:
+      layout: "property"
