@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NewsArticle - schema.org Type</title>
+    <link rel="stylesheet" href="schema-org.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>schema.org</h1>
+        </div>
+    </header>
+    
+    <div class="container">
+        <div class="breadcrumb">
+            <a href="index.html">Home</a> &gt; NewsArticle</div>
+        <div class="main-content">
+            <h1>NewsArticle</h1>
+            
+            <div class="type-info">
+                <p><strong></strong></p></div>
+            <div class="properties-section">
+                <h2>Properties from NewsArticle</h2>
+                <table class="property-table">
+                    <thead>
+                        <tr>
+                            <th>Property</th>
+                            <th>Expected Type</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><span class="property-name"><a href="printColumn.html">printColumn</a></span></td>
+                            <td><span class="expected-type">Text</span></td>
+                            <td>The number of the column in which the NewsArticle appears in the print edition.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="property-name"><a href="printEdition.html">printEdition</a></span></td>
+                            <td><span class="expected-type">Text</span></td>
+                            <td>The edition of the print product in which the NewsArticle appears.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="property-name"><a href="printPage.html">printPage</a></span></td>
+                            <td><span class="expected-type">Text</span></td>
+                            <td>If this NewsArticle appears in print, this field indicates the name of the page on which the article is found. Please note that this field is intended for the exact page name (e.g. A5, B18).</td>
+                        </tr>
+                        <tr>
+                            <td><span class="property-name"><a href="printSection.html">printSection</a></span></td>
+                            <td><span class="expected-type">Text</span></td>
+                            <td>If this NewsArticle appears in print, this field indicates the print section in which the article appeared.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="properties-section">
+                <h2>Instances of NewsArticle may appear as a value for the following properties</h2>
+                <table class="property-table">
+                    <thead>
+                        <tr>
+                            <th>Property</th>
+                            <th>On Types</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><span class="property-name"><a href="associatedArticle.html">associatedArticle</a></span></td>
+                            <td><a href="MediaObject.html" class="type-link">MediaObject</a></td>
+                            <td>A NewsArticle associated with the Media Object.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        function showExample(format) {
+            document.getElementById('jsonld-example').style.display = 'none';
+            document.getElementById('microdata-example').style.display = 'none';
+            
+            var tabs = document.querySelectorAll('.example-tab');
+            tabs.forEach(function(tab) {
+                tab.classList.remove('active');
+            });
+            
+            document.getElementById(format + '-example').style.display = 'block';
+            event.target.classList.add('active');
+        }
+    </script>
+</body>
+</html>

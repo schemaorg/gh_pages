@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ReplaceAction - schema.org Type</title>
+    <link rel="stylesheet" href="schema-org.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>schema.org</h1>
+        </div>
+    </header>
+    
+    <div class="container">
+        <div class="breadcrumb">
+            <a href="index.html">Home</a> &gt; <a href="Thing.html">Thing</a> &gt; <a href="Action.html">Action</a> &gt; <a href="UpdateAction.html">UpdateAction</a> &gt; ReplaceAction</div>
+        <div class="main-content">
+            <h1>ReplaceAction</h1>
+            
+            <div class="type-info">
+                <p><strong>The act of editing a recipient by replacing an old object with a new object.</strong></p>
+                <div class="type-hierarchy">
+                    <strong>Subclass of:</strong>
+                    <span class="hierarchy-item"><a href="UpdateAction.html">UpdateAction</a></span>
+                </div></div>
+            <div class="properties-section">
+                <h2>Properties from ReplaceAction</h2>
+                <table class="property-table">
+                    <thead>
+                        <tr>
+                            <th>Property</th>
+                            <th>Expected Type</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><span class="property-name"><a href="replacee.html">replacee</a></span></td>
+                            <td><span class="expected-type"><a href="Thing.html">Thing</a></span></td>
+                            <td>A sub property of object. The object that is being replaced.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="property-name"><a href="replacer.html">replacer</a></span></td>
+                            <td><span class="expected-type"><a href="Thing.html">Thing</a></span></td>
+                            <td>A sub property of object. The object that replaces.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="properties-section">
+                <h2>Properties from UpdateAction</h2>
+                <table class="property-table">
+                    <thead>
+                        <tr>
+                            <th>Property</th>
+                            <th>Expected Type</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><span class="property-name"><a href="collection.html">collection</a></span></td>
+                            <td><span class="expected-type"><a href="Thing.html">Thing</a></span></td>
+                            <td>A sub property of object. The collection target of the action.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="property-name"><a href="targetCollection.html">targetCollection</a></span></td>
+                            <td><span class="expected-type"><a href="Thing.html">Thing</a></span></td>
+                            <td>A sub property of object. The collection target of the action.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="properties-section">
+                <h2>Properties from Action</h2>
+                <table class="property-table">
+                    <thead>
+                        <tr>
+                            <th>Property</th>
+                            <th>Expected Type</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><span class="property-name"><a href="actionProcess.html">actionProcess</a></span></td>
+                            <td><span class="expected-type"><a href="HowTo.html">HowTo</a></span></td>
+                            <td>Description of the process by which the action was performed.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="property-name"><a href="actionStatus.html">actionStatus</a></span></td>
+                            <td><span class="expected-type"><a href="ActionStatusType.html">ActionStatusType</a></span></td>
+                            <td>Indicates the current disposition of the Action.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="property-name"><a href="agent.html">agent</a></span></td>
+                            <td><span class="expected-type"><a href="Organization.html">Organization</a></span></td>
+                            <td>The direct performer or driver of the action (animate or inanimate). E.g. *John* wrote a book.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="property-name"><a href="endTime.html">endTime</a></span></td>
+                            <td><span class="expected-type">DateTime</span></td>
+                            <td>The endTime of something. For a reserved event or service (e.g. FoodEstablishmentReservation), the time that it is expected to end. For actions that span a period of time, when the action was performed. E.g. John wrote a book from January to *December*. For media, including audio and video, it's the time offset of the end of a clip within a larger file.\\n\\nNote that Event uses startDate/endDate instead of startTime/endTime, even when describing dates with times. This situation may be clarified in future revisions.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="property-name"><a href="error.html">error</a></span></td>
+                            <td><span class="expected-type"><a href="Thing.html">Thing</a></span></td>
+                            <td>For failed actions, more information on the cause of the failure.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="property-name"><a href="instrument.html">instrument</a></span></td>
+                            <td><span class="expected-type"><a href="Thing.html">Thing</a></span></td>
+                            <td>The object that helped the agent perform the action. E.g. John wrote a book with *a pen*.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="property-name"><a href="location.html">location</a></span></td>
+                            <td><span class="expected-type"><a href="Place.html">Place</a></span></td>
+                            <td>The location of, for example, where an event is happening, where an organization is located, or where an action takes place.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="property-name"><a href="object.html">object</a></span></td>
+                            <td><span class="expected-type"><a href="Thing.html">Thing</a></span></td>
+                            <td>The object upon which the action is carried out, whose state is kept intact or changed. Also known as the semantic roles patient, affected or undergoer (which change their state) or theme (which doesn't). E.g. John read *a book*.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="property-name"><a href="participant.html">participant</a></span></td>
+                            <td><span class="expected-type"><a href="Organization.html">Organization</a></span></td>
+                            <td>Other co-agents that participated in the action indirectly. E.g. John wrote a book with *Steve*.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="property-name"><a href="result.html">result</a></span></td>
+                            <td><span class="expected-type"><a href="Thing.html">Thing</a></span></td>
+                            <td>The result produced in the action. E.g. John wrote *a book*.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="property-name"><a href="startTime.html">startTime</a></span></td>
+                            <td><span class="expected-type">DateTime</span></td>
+                            <td>The startTime of something. For a reserved event or service (e.g. FoodEstablishmentReservation), the time that it is expected to start. For actions that span a period of time, when the action was performed. E.g. John wrote a book from *January* to December. For media, including audio and video, it's the time offset of the start of a clip within a larger file.\\n\\nNote that Event uses startDate/endDate instead of startTime/endTime, even when describing dates with times. This situation may be clarified in future revisions.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="property-name"><a href="target.html">target</a></span></td>
+                            <td><span class="expected-type"><a href="EntryPoint.html">EntryPoint</a></span></td>
+                            <td>Indicates a target EntryPoint, or url, for an Action.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="properties-section">
+                <h2>Properties from Thing</h2>
+                <table class="property-table">
+                    <thead>
+                        <tr>
+                            <th>Property</th>
+                            <th>Expected Type</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><span class="property-name"><a href="additionalType.html">additionalType</a></span></td>
+                            <td><span class="expected-type">Text</span></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td><span class="property-name"><a href="alternateName.html">alternateName</a></span></td>
+                            <td><span class="expected-type">Text</span></td>
+                            <td>An alias for the item.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="property-name"><a href="description.html">description</a></span></td>
+                            <td><span class="expected-type">Text</span></td>
+                            <td>A description of the item.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="property-name"><a href="disambiguatingDescription.html">disambiguatingDescription</a></span></td>
+                            <td><span class="expected-type">Text</span></td>
+                            <td>A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="property-name"><a href="identifier.html">identifier</a></span></td>
+                            <td><span class="expected-type"><a href="PropertyValue.html">PropertyValue</a></span></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td><span class="property-name"><a href="image.html">image</a></span></td>
+                            <td><span class="expected-type"><a href="ImageObject.html">ImageObject</a></span></td>
+                            <td>An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].</td>
+                        </tr>
+                        <tr>
+                            <td><span class="property-name"><a href="mainEntityOfPage.html">mainEntityOfPage</a></span></td>
+                            <td><span class="expected-type"><a href="CreativeWork.html">CreativeWork</a></span></td>
+                            <td>Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="property-name"><a href="name.html">name</a></span></td>
+                            <td><span class="expected-type">Text</span></td>
+                            <td>The name of the item.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="property-name"><a href="potentialAction.html">potentialAction</a></span></td>
+                            <td><span class="expected-type"><a href="Action.html">Action</a></span></td>
+                            <td>Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="property-name"><a href="sameAs.html">sameAs</a></span></td>
+                            <td><span class="expected-type"><a href="URL.html">URL</a></span></td>
+                            <td>URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="property-name"><a href="subjectOf.html">subjectOf</a></span></td>
+                            <td><span class="expected-type"><a href="CreativeWork.html">CreativeWork</a></span></td>
+                            <td>A CreativeWork or Event about this Thing.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="property-name"><a href="url.html">url</a></span></td>
+                            <td><span class="expected-type"><a href="URL.html">URL</a></span></td>
+                            <td>URL of the item.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        function showExample(format) {
+            document.getElementById('jsonld-example').style.display = 'none';
+            document.getElementById('microdata-example').style.display = 'none';
+            
+            var tabs = document.querySelectorAll('.example-tab');
+            tabs.forEach(function(tab) {
+                tab.classList.remove('active');
+            });
+            
+            document.getElementById(format + '-example').style.display = 'block';
+            event.target.classList.add('active');
+        }
+    </script>
+</body>
+</html>

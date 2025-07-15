@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ProductModel - schema.org Type</title>
+    <link rel="stylesheet" href="schema-org.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>schema.org</h1>
+        </div>
+    </header>
+    
+    <div class="container">
+        <div class="breadcrumb">
+            <a href="index.html">Home</a> &gt; <a href="Thing.html">Thing</a> &gt; <a href="Product.html">Product</a> &gt; ProductModel</div>
+        <div class="main-content">
+            <h1>ProductModel</h1>
+            
+            <div class="type-info">
+                <p><strong>A datasheet or vendor specification of a product (in the sense of a prototypical description).</strong></p>
+                <div class="type-hierarchy">
+                    <strong>Subclass of:</strong>
+                    <span class="hierarchy-item"><a href="Product.html">Product</a></span>
+                </div></div>
+            <div class="properties-section">
+                <h2>Properties from ProductModel</h2>
+                <table class="property-table">
+                    <thead>
+                        <tr>
+                            <th>Property</th>
+                            <th>Expected Type</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><span class="property-name"><a href="isVariantOf.html">isVariantOf</a></span></td>
+                            <td><span class="expected-type"><a href="ProductModel.html">ProductModel</a></span></td>
+                            <td>Indicates the kind of product that this is a variant of. In the case of [[ProductModel]], this is a pointer (from a ProductModel) to a base product from which this product is a variant. It is safe to infer that the variant inherits all product features from the base model, unless defined locally. This is not transitive. In the case of a [[ProductGroup]], the group description also serves as a template, representing a set of Products that vary on explicitly defined, specific dimensions only (so it defines both a set of variants, as well as which values distinguish amongst those variants). When used with [[ProductGroup]], this property can apply to any [[Product]] included in the group.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="property-name"><a href="predecessorOf.html">predecessorOf</a></span></td>
+                            <td><span class="expected-type"><a href="ProductModel.html">ProductModel</a></span></td>
+                            <td>A pointer from a previous, often discontinued variant of the product to its newer variant.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="property-name"><a href="successorOf.html">successorOf</a></span></td>
+                            <td><span class="expected-type"><a href="ProductModel.html">ProductModel</a></span></td>
+                            <td>A pointer from a newer variant of a product  to its previous, often discontinued predecessor.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="properties-section">
+                <h2>Properties from Product</h2>
+                <table class="property-table">
+                    <thead>
+                        <tr>
+                            <th>Property</th>
+                            <th>Expected Type</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><span class="property-name"><a href="color.html">color</a></span></td>
+                            <td><span class="expected-type">Text</span></td>
+                            <td>The color of the product.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="property-name"><a href="isAccessoryOrSparePartFor.html">isAccessoryOrSparePartFor</a></span></td>
+                            <td><span class="expected-type"><a href="Product.html">Product</a></span></td>
+                            <td>A pointer to another product (or multiple products) for which this product is an accessory or spare part.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="property-name"><a href="isConsumableFor.html">isConsumableFor</a></span></td>
+                            <td><span class="expected-type"><a href="Product.html">Product</a></span></td>
+                            <td>A pointer to another product (or multiple products) for which this product is a consumable.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="property-name"><a href="isRelatedTo.html">isRelatedTo</a></span></td>
+                            <td><span class="expected-type"><a href="Product.html">Product</a></span></td>
+                            <td>A pointer to another, somehow related product (or multiple products).</td>
+                        </tr>
+                        <tr>
+                            <td><span class="property-name"><a href="isSimilarTo.html">isSimilarTo</a></span></td>
+                            <td><span class="expected-type"><a href="Product.html">Product</a></span></td>
+                            <td>A pointer to another, functionally similar product (or multiple products).</td>
+                        </tr>
+                        <tr>
+                            <td><span class="property-name"><a href="manufacturer.html">manufacturer</a></span></td>
+                            <td><span class="expected-type"><a href="Organization.html">Organization</a></span></td>
+                            <td>The manufacturer of the product.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="property-name"><a href="model.html">model</a></span></td>
+                            <td><span class="expected-type"><a href="ProductModel.html">ProductModel</a></span></td>
+                            <td>The model of the product. Use with the URL of a ProductModel or a textual representation of the model identifier. The URL of the ProductModel can be from an external source. It is recommended to additionally provide strong product identifiers via the gtin8/gtin13/gtin14 and mpn properties.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="property-name"><a href="productID.html">productID</a></span></td>
+                            <td><span class="expected-type">Text</span></td>
+                            <td>The product identifier, such as ISBN. For example: ``` meta itemprop=\</td>
+                        </tr>
+                        <tr>
+                            <td><span class="property-name"><a href="productionDate.html">productionDate</a></span></td>
+                            <td><span class="expected-type">Date</span></td>
+                            <td>The date of production of the item, e.g. vehicle.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="property-name"><a href="purchaseDate.html">purchaseDate</a></span></td>
+                            <td><span class="expected-type">Date</span></td>
+                            <td>The date the item, e.g. vehicle, was purchased by the current owner.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="property-name"><a href="releaseDate.html">releaseDate</a></span></td>
+                            <td><span class="expected-type">Date</span></td>
+                            <td>The release date of a product or product model. This can be used to distinguish the exact variant of a product.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="properties-section">
+                <h2>Properties from Thing</h2>
+                <table class="property-table">
+                    <thead>
+                        <tr>
+                            <th>Property</th>
+                            <th>Expected Type</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><span class="property-name"><a href="additionalType.html">additionalType</a></span></td>
+                            <td><span class="expected-type">Text</span></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td><span class="property-name"><a href="alternateName.html">alternateName</a></span></td>
+                            <td><span class="expected-type">Text</span></td>
+                            <td>An alias for the item.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="property-name"><a href="description.html">description</a></span></td>
+                            <td><span class="expected-type">Text</span></td>
+                            <td>A description of the item.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="property-name"><a href="disambiguatingDescription.html">disambiguatingDescription</a></span></td>
+                            <td><span class="expected-type">Text</span></td>
+                            <td>A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="property-name"><a href="identifier.html">identifier</a></span></td>
+                            <td><span class="expected-type"><a href="PropertyValue.html">PropertyValue</a></span></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td><span class="property-name"><a href="image.html">image</a></span></td>
+                            <td><span class="expected-type"><a href="ImageObject.html">ImageObject</a></span></td>
+                            <td>An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].</td>
+                        </tr>
+                        <tr>
+                            <td><span class="property-name"><a href="mainEntityOfPage.html">mainEntityOfPage</a></span></td>
+                            <td><span class="expected-type"><a href="CreativeWork.html">CreativeWork</a></span></td>
+                            <td>Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="property-name"><a href="name.html">name</a></span></td>
+                            <td><span class="expected-type">Text</span></td>
+                            <td>The name of the item.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="property-name"><a href="potentialAction.html">potentialAction</a></span></td>
+                            <td><span class="expected-type"><a href="Action.html">Action</a></span></td>
+                            <td>Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="property-name"><a href="sameAs.html">sameAs</a></span></td>
+                            <td><span class="expected-type"><a href="URL.html">URL</a></span></td>
+                            <td>URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="property-name"><a href="subjectOf.html">subjectOf</a></span></td>
+                            <td><span class="expected-type"><a href="CreativeWork.html">CreativeWork</a></span></td>
+                            <td>A CreativeWork or Event about this Thing.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="property-name"><a href="url.html">url</a></span></td>
+                            <td><span class="expected-type"><a href="URL.html">URL</a></span></td>
+                            <td>URL of the item.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="properties-section">
+                <h2>Instances of ProductModel may appear as a value for the following properties</h2>
+                <table class="property-table">
+                    <thead>
+                        <tr>
+                            <th>Property</th>
+                            <th>On Types</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><span class="property-name"><a href="isVariantOf.html">isVariantOf</a></span></td>
+                            <td><a href="ProductModel.html" class="type-link">ProductModel</a></td>
+                            <td>Indicates the kind of product that this is a variant of. In the case of [[ProductModel]], this is a pointer (from a ProductModel) to a base product from which this product is a variant. It is safe to infer that the variant inherits all product features from the base model, unless defined locally. This is not transitive. In the case of a [[ProductGroup]], the group description also serves as a template, representing a set of Products that vary on explicitly defined, specific dimensions only (so it defines both a set of variants, as well as which values distinguish amongst those variants). When used with [[ProductGroup]], this property can apply to any [[Product]] included in the group.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="property-name"><a href="model.html">model</a></span></td>
+                            <td><a href="Product.html" class="type-link">Product</a></td>
+                            <td>The model of the product. Use with the URL of a ProductModel or a textual representation of the model identifier. The URL of the ProductModel can be from an external source. It is recommended to additionally provide strong product identifiers via the gtin8/gtin13/gtin14 and mpn properties.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="property-name"><a href="predecessorOf.html">predecessorOf</a></span></td>
+                            <td><a href="ProductModel.html" class="type-link">ProductModel</a></td>
+                            <td>A pointer from a previous, often discontinued variant of the product to its newer variant.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="property-name"><a href="successorOf.html">successorOf</a></span></td>
+                            <td><a href="ProductModel.html" class="type-link">ProductModel</a></td>
+                            <td>A pointer from a newer variant of a product  to its previous, often discontinued predecessor.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        function showExample(format) {
+            document.getElementById('jsonld-example').style.display = 'none';
+            document.getElementById('microdata-example').style.display = 'none';
+            
+            var tabs = document.querySelectorAll('.example-tab');
+            tabs.forEach(function(tab) {
+                tab.classList.remove('active');
+            });
+            
+            document.getElementById(format + '-example').style.display = 'block';
+            event.target.classList.add('active');
+        }
+    </script>
+</body>
+</html>

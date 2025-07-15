@@ -1,0 +1,145 @@
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background: #f4f4f4;
+}
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+header {
+    background: #fff;
+    border-bottom: 1px solid #ddd;
+    padding: 20px 0;
+}
+header h1 {
+    margin: 0;
+    color: #3366cc;
+}
+.breadcrumb {
+    padding: 10px 0;
+    color: #666;
+}
+.breadcrumb a {
+    color: #3366cc;
+    text-decoration: none;
+}
+.breadcrumb a:hover {
+    text-decoration: underline;
+}
+.main-content {
+    background: #fff;
+    padding: 20px;
+    margin: 20px 0;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+.type-info {
+    background: #f9f9f9;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-bottom: 30px;
+}
+.type-hierarchy {
+    margin: 20px 0;
+}
+.hierarchy-item {
+    display: inline-block;
+    margin: 0 5px;
+}
+.properties-section {
+    margin: 30px 0;
+}
+.property-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+}
+.property-table th {
+    background: #f0f0f0;
+    text-align: left;
+    padding: 10px;
+    border: 1px solid #ddd;
+}
+.property-table td {
+    padding: 10px;
+    border: 1px solid #ddd;
+}
+.property-name {
+    font-family: monospace;
+}
+.property-name a {
+    color: #3366cc;
+    text-decoration: none;
+}
+.property-name a:hover {
+    text-decoration: underline;
+}
+.expected-type {
+    color: #666;
+    font-style: italic;
+}
+.expected-type a {
+    color: #666;
+    text-decoration: none;
+}
+.expected-type a:hover {
+    text-decoration: underline;
+}
+.type-link {
+    color: #3366cc;
+    text-decoration: none;
+}
+.type-link:hover {
+    text-decoration: underline;
+}
+.examples-section {
+    margin: 30px 0;
+}
+.example-tabs {
+    border-bottom: 2px solid #ddd;
+    margin-bottom: 20px;
+}
+.example-tab {
+    display: inline-block;
+    padding: 10px 20px;
+    background: #f0f0f0;
+    border: 1px solid #ddd;
+    border-bottom: none;
+    cursor: pointer;
+    margin-right: 5px;
+}
+.example-tab.active {
+    background: #fff;
+    border-bottom: 2px solid #fff;
+    margin-bottom: -2px;
+}
+.example-content {
+    background: #f9f9f9;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+pre {
+    background: #f4f4f4;
+    padding: 15px;
+    overflow-x: auto;
+    border-radius: 3px;
+}
+code {
+    font-family: Consolas, Monaco, monospace;
+}
+ul li {
+    margin: 5px 0;
+}
+ul li a {
+    color: #3366cc;
+    text-decoration: none;
+}
+ul li a:hover {
+    text-decoration: underline;
+}

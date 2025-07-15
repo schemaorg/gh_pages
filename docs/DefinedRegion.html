@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DefinedRegion - schema.org Type</title>
+    <link rel="stylesheet" href="schema-org.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>schema.org</h1>
+        </div>
+    </header>
+    
+    <div class="container">
+        <div class="breadcrumb">
+            <a href="index.html">Home</a> &gt; DefinedRegion</div>
+        <div class="main-content">
+            <h1>DefinedRegion</h1>
+            
+            <div class="type-info">
+                <p><strong></strong></p></div>
+            <div class="properties-section">
+                <h2>Properties from DefinedRegion</h2>
+                <table class="property-table">
+                    <thead>
+                        <tr>
+                            <th>Property</th>
+                            <th>Expected Type</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><span class="property-name"><a href="addressCountry.html">addressCountry</a></span></td>
+                            <td><span class="expected-type"><a href="Country.html">Country</a></span></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td><span class="property-name"><a href="addressRegion.html">addressRegion</a></span></td>
+                            <td><span class="expected-type">Text</span></td>
+                            <td>The region in which the locality is, and which is in the country. For example, California or another appropriate first-level [Administrative division](https://en.wikipedia.org/wiki/List_of_administrative_divisions_by_country).</td>
+                        </tr>
+                        <tr>
+                            <td><span class="property-name"><a href="postalCode.html">postalCode</a></span></td>
+                            <td><span class="expected-type">Text</span></td>
+                            <td>The postal code. For example, 94043.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="property-name"><a href="postalCodePrefix.html">postalCodePrefix</a></span></td>
+                            <td><span class="expected-type">Text</span></td>
+                            <td>A defined range of postal codes indicated by a common textual prefix. Used for non-numeric systems such as UK.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="property-name"><a href="postalCodeRange.html">postalCodeRange</a></span></td>
+                            <td><span class="expected-type"><a href="PostalCodeRangeSpecification.html">PostalCodeRangeSpecification</a></span></td>
+                            <td>A defined range of postal codes.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="properties-section">
+                <h2>Instances of DefinedRegion may appear as a value for the following properties</h2>
+                <table class="property-table">
+                    <thead>
+                        <tr>
+                            <th>Property</th>
+                            <th>On Types</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><span class="property-name"><a href="shippingDestination.html">shippingDestination</a></span></td>
+                            <td><a href="DeliveryTimeSettings.html" class="type-link">DeliveryTimeSettings</a></td>
+                            <td>indicates (possibly multiple) shipping destinations. These can be defined in several ways, e.g. postalCode ranges.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="property-name"><a href="shippingOrigin.html">shippingOrigin</a></span></td>
+                            <td><a href="OfferShippingDetails.html" class="type-link">OfferShippingDetails</a></td>
+                            <td>Indicates the origin of a shipment, i.e. where it should be coming from.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        function showExample(format) {
+            document.getElementById('jsonld-example').style.display = 'none';
+            document.getElementById('microdata-example').style.display = 'none';
+            
+            var tabs = document.querySelectorAll('.example-tab');
+            tabs.forEach(function(tab) {
+                tab.classList.remove('active');
+            });
+            
+            document.getElementById(format + '-example').style.display = 'block';
+            event.target.classList.add('active');
+        }
+    </script>
+</body>
+</html>

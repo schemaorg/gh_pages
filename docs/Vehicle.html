@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vehicle - schema.org Type</title>
+    <link rel="stylesheet" href="schema-org.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>schema.org</h1>
+        </div>
+    </header>
+    
+    <div class="container">
+        <div class="breadcrumb">
+            <a href="index.html">Home</a> &gt; <a href="Thing.html">Thing</a> &gt; <a href="Product.html">Product</a> &gt; Vehicle</div>
+        <div class="main-content">
+            <h1>Vehicle</h1>
+            
+            <div class="type-info">
+                <p><strong>A vehicle is a device that is designed or used to transport people or cargo over land, water, air, or through space.</strong></p>
+                <div class="type-hierarchy">
+                    <strong>Subclass of:</strong>
+                    <span class="hierarchy-item"><a href="Product.html">Product</a></span>
+                </div>
+                <div class="type-hierarchy">
+                    <strong>More specific types:</strong>
+                    <span class="hierarchy-item"><a href="Car.html">Car</a></span>
+                </div></div>
+            <div class="properties-section">
+                <h2>Properties from Vehicle</h2>
+                <table class="property-table">
+                    <thead>
+                        <tr>
+                            <th>Property</th>
+                            <th>Expected Type</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><span class="property-name"><a href="cargoVolume.html">cargoVolume</a></span></td>
+                            <td><span class="expected-type"><a href="QuantitativeValue.html">QuantitativeValue</a></span></td>
+                            <td>The available volume for cargo or luggage. For automobiles, this is usually the trunk volume.\\n\\nTypical unit code(s): LTR for liters, FTQ for cubic foot/feet\\n\\nNote: You can use [[minValue]] and [[maxValue]] to indicate ranges.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="property-name"><a href="dateVehicleFirstRegistered.html">dateVehicleFirstRegistered</a></span></td>
+                            <td><span class="expected-type">Date</span></td>
+                            <td>The date of the first registration of the vehicle with the respective public authorities.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="property-name"><a href="driveWheelConfiguration.html">driveWheelConfiguration</a></span></td>
+                            <td><span class="expected-type"><a href="DriveWheelConfigurationValue.html">DriveWheelConfigurationValue</a></span></td>
+                            <td>The drive wheel configuration, i.e. which roadwheels will receive torque from the vehicle's engine via the drivetrain.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="property-name"><a href="fuelConsumption.html">fuelConsumption</a></span></td>
+                            <td><span class="expected-type"><a href="QuantitativeValue.html">QuantitativeValue</a></span></td>
+                            <td>The amount of fuel consumed for traveling a particular distance or temporal duration with the given vehicle (e.g. liters per 100 km).\\n\\n* Note 1: There are unfortunately no standard unit codes for liters per 100 km.  Use [[unitText]] to indicate the unit of measurement, e.g. L/100 km.\\n* Note 2: There are two ways of indicating the fuel consumption, [[fuelConsumption]] (e.g. 8 liters per 100 km) and [[fuelEfficiency]] (e.g. 30 miles per gallon). They are reciprocal.\\n* Note 3: Often, the absolute value is useful only when related to driving speed (\</td>
+                        </tr>
+                        <tr>
+                            <td><span class="property-name"><a href="fuelEfficiency.html">fuelEfficiency</a></span></td>
+                            <td><span class="expected-type"><a href="QuantitativeValue.html">QuantitativeValue</a></span></td>
+                            <td>The distance traveled per unit of fuel used; most commonly miles per gallon (mpg) or kilometers per liter (km/L).\\n\\n* Note 1: There are unfortunately no standard unit codes for miles per gallon or kilometers per liter. Use [[unitText]] to indicate the unit of measurement, e.g. mpg or km/L.\\n* Note 2: There are two ways of indicating the fuel consumption, [[fuelConsumption]] (e.g. 8 liters per 100 km) and [[fuelEfficiency]] (e.g. 30 miles per gallon). They are reciprocal.\\n* Note 3: Often, the absolute value is useful only when related to driving speed (\</td>
+                        </tr>
+                        <tr>
+                            <td><span class="property-name"><a href="knownVehicleDamages.html">knownVehicleDamages</a></span></td>
+                            <td><span class="expected-type">Text</span></td>
+                            <td>A textual description of known damages, both repaired and unrepaired.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="property-name"><a href="mileageFromOdometer.html">mileageFromOdometer</a></span></td>
+                            <td><span class="expected-type"><a href="QuantitativeValue.html">QuantitativeValue</a></span></td>
+                            <td>The total distance travelled by the particular vehicle since its initial production, as read from its odometer.\\n\\nTypical unit code(s): KMT for kilometers, SMI for statute miles.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="property-name"><a href="numberOfAirbags.html">numberOfAirbags</a></span></td>
+                            <td><span class="expected-type">Number</span></td>
+                            <td>The number or type of airbags in the vehicle.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="property-name"><a href="numberOfAxles.html">numberOfAxles</a></span></td>
+                            <td><span class="expected-type">Number</span></td>
+                            <td>The number of axles.\\n\\nTypical unit code(s): C62.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="property-name"><a href="numberOfDoors.html">numberOfDoors</a></span></td>
+                            <td><span class="expected-type">Number</span></td>
+                            <td>The number of doors.\\n\\nTypical unit code(s): C62.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="property-name"><a href="numberOfForwardGears.html">numberOfForwardGears</a></span></td>
+                            <td><span class="expected-type">Number</span></td>
+                            <td>The total number of forward gears available for the transmission system of the vehicle.\\n\\nTypical unit code(s): C62.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="property-name"><a href="numberOfPreviousOwners.html">numberOfPreviousOwners</a></span></td>
+                            <td><span class="expected-type">Number</span></td>
+                            <td>The number of owners of the vehicle, including the current one.\\n\\nTypical unit code(s): C62.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="property-name"><a href="steeringPosition.html">steeringPosition</a></span></td>
+                            <td><span class="expected-type"><a href="SteeringPositionValue.html">SteeringPositionValue</a></span></td>
+                            <td>The position of the steering wheel or similar device (mostly for cars).</td>
+                        </tr>
+                        <tr>
+                            <td><span class="property-name"><a href="vehicleConfiguration.html">vehicleConfiguration</a></span></td>
+                            <td><span class="expected-type">Text</span></td>
+                            <td>A short text indicating the configuration of the vehicle, e.g. '5dr hatchback ST 2.5 MT 225 hp' or 'limited edition'.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="property-name"><a href="vehicleEngine.html">vehicleEngine</a></span></td>
+                            <td><span class="expected-type"><a href="EngineSpecification.html">EngineSpecification</a></span></td>
+                            <td>Information about the engine or engines of the vehicle.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="property-name"><a href="vehicleIdentificationNumber.html">vehicleIdentificationNumber</a></span></td>
+                            <td><span class="expected-type">Text</span></td>
+                            <td>The Vehicle Identification Number (VIN) is a unique serial number used by the automotive industry to identify individual motor vehicles.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="property-name"><a href="vehicleInteriorColor.html">vehicleInteriorColor</a></span></td>
+                            <td><span class="expected-type">Text</span></td>
+                            <td>The color or color combination of the interior of the vehicle.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="property-name"><a href="vehicleInteriorType.html">vehicleInteriorType</a></span></td>
+                            <td><span class="expected-type">Text</span></td>
+                            <td>The type or material of the interior of the vehicle (e.g. synthetic fabric, leather, wood, etc.). While most interior types are characterized by the material used, an interior type can also be based on vehicle usage or target audience.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="property-name"><a href="vehicleModelDate.html">vehicleModelDate</a></span></td>
+                            <td><span class="expected-type">Date</span></td>
+                            <td>The release date of a vehicle model (often used to differentiate versions of the same make and model).</td>
+                        </tr>
+                        <tr>
+                            <td><span class="property-name"><a href="vehicleSeatingCapacity.html">vehicleSeatingCapacity</a></span></td>
+                            <td><span class="expected-type">Number</span></td>
+                            <td>The number of passengers that can be seated in the vehicle, both in terms of the physical space available, and in terms of limitations set by law.\\n\\nTypical unit code(s): C62 for persons.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="property-name"><a href="vehicleSpecialUsage.html">vehicleSpecialUsage</a></span></td>
+                            <td><span class="expected-type">Text</span></td>
+                            <td>Indicates whether the vehicle has been used for special purposes, like commercial rental, driving school, or as a taxi. The legislation in many countries requires this information to be revealed when offering a car for sale.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="property-name"><a href="vehicleTransmission.html">vehicleTransmission</a></span></td>
+                            <td><span class="expected-type"><a href="QualitativeValue.html">QualitativeValue</a></span></td>
+                            <td>The type of component used for transmitting the power from a rotating power source to the wheels or other relevant component(s) (\</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="properties-section">
+                <h2>Properties from Product</h2>
+                <table class="property-table">
+                    <thead>
+                        <tr>
+                            <th>Property</th>
+                            <th>Expected Type</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><span class="property-name"><a href="color.html">color</a></span></td>
+                            <td><span class="expected-type">Text</span></td>
+                            <td>The color of the product.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="property-name"><a href="isAccessoryOrSparePartFor.html">isAccessoryOrSparePartFor</a></span></td>
+                            <td><span class="expected-type"><a href="Product.html">Product</a></span></td>
+                            <td>A pointer to another product (or multiple products) for which this product is an accessory or spare part.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="property-name"><a href="isConsumableFor.html">isConsumableFor</a></span></td>
+                            <td><span class="expected-type"><a href="Product.html">Product</a></span></td>
+                            <td>A pointer to another product (or multiple products) for which this product is a consumable.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="property-name"><a href="isRelatedTo.html">isRelatedTo</a></span></td>
+                            <td><span class="expected-type"><a href="Product.html">Product</a></span></td>
+                            <td>A pointer to another, somehow related product (or multiple products).</td>
+                        </tr>
+                        <tr>
+                            <td><span class="property-name"><a href="isSimilarTo.html">isSimilarTo</a></span></td>
+                            <td><span class="expected-type"><a href="Product.html">Product</a></span></td>
+                            <td>A pointer to another, functionally similar product (or multiple products).</td>
+                        </tr>
+                        <tr>
+                            <td><span class="property-name"><a href="manufacturer.html">manufacturer</a></span></td>
+                            <td><span class="expected-type"><a href="Organization.html">Organization</a></span></td>
+                            <td>The manufacturer of the product.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="property-name"><a href="model.html">model</a></span></td>
+                            <td><span class="expected-type"><a href="ProductModel.html">ProductModel</a></span></td>
+                            <td>The model of the product. Use with the URL of a ProductModel or a textual representation of the model identifier. The URL of the ProductModel can be from an external source. It is recommended to additionally provide strong product identifiers via the gtin8/gtin13/gtin14 and mpn properties.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="property-name"><a href="productID.html">productID</a></span></td>
+                            <td><span class="expected-type">Text</span></td>
+                            <td>The product identifier, such as ISBN. For example: ``` meta itemprop=\</td>
+                        </tr>
+                        <tr>
+                            <td><span class="property-name"><a href="productionDate.html">productionDate</a></span></td>
+                            <td><span class="expected-type">Date</span></td>
+                            <td>The date of production of the item, e.g. vehicle.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="property-name"><a href="purchaseDate.html">purchaseDate</a></span></td>
+                            <td><span class="expected-type">Date</span></td>
+                            <td>The date the item, e.g. vehicle, was purchased by the current owner.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="property-name"><a href="releaseDate.html">releaseDate</a></span></td>
+                            <td><span class="expected-type">Date</span></td>
+                            <td>The release date of a product or product model. This can be used to distinguish the exact variant of a product.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="properties-section">
+                <h2>Properties from Thing</h2>
+                <table class="property-table">
+                    <thead>
+                        <tr>
+                            <th>Property</th>
+                            <th>Expected Type</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><span class="property-name"><a href="additionalType.html">additionalType</a></span></td>
+                            <td><span class="expected-type">Text</span></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td><span class="property-name"><a href="alternateName.html">alternateName</a></span></td>
+                            <td><span class="expected-type">Text</span></td>
+                            <td>An alias for the item.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="property-name"><a href="description.html">description</a></span></td>
+                            <td><span class="expected-type">Text</span></td>
+                            <td>A description of the item.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="property-name"><a href="disambiguatingDescription.html">disambiguatingDescription</a></span></td>
+                            <td><span class="expected-type">Text</span></td>
+                            <td>A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="property-name"><a href="identifier.html">identifier</a></span></td>
+                            <td><span class="expected-type"><a href="PropertyValue.html">PropertyValue</a></span></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td><span class="property-name"><a href="image.html">image</a></span></td>
+                            <td><span class="expected-type"><a href="ImageObject.html">ImageObject</a></span></td>
+                            <td>An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].</td>
+                        </tr>
+                        <tr>
+                            <td><span class="property-name"><a href="mainEntityOfPage.html">mainEntityOfPage</a></span></td>
+                            <td><span class="expected-type"><a href="CreativeWork.html">CreativeWork</a></span></td>
+                            <td>Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="property-name"><a href="name.html">name</a></span></td>
+                            <td><span class="expected-type">Text</span></td>
+                            <td>The name of the item.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="property-name"><a href="potentialAction.html">potentialAction</a></span></td>
+                            <td><span class="expected-type"><a href="Action.html">Action</a></span></td>
+                            <td>Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="property-name"><a href="sameAs.html">sameAs</a></span></td>
+                            <td><span class="expected-type"><a href="URL.html">URL</a></span></td>
+                            <td>URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="property-name"><a href="subjectOf.html">subjectOf</a></span></td>
+                            <td><span class="expected-type"><a href="CreativeWork.html">CreativeWork</a></span></td>
+                            <td>A CreativeWork or Event about this Thing.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="property-name"><a href="url.html">url</a></span></td>
+                            <td><span class="expected-type"><a href="URL.html">URL</a></span></td>
+                            <td>URL of the item.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        function showExample(format) {
+            document.getElementById('jsonld-example').style.display = 'none';
+            document.getElementById('microdata-example').style.display = 'none';
+            
+            var tabs = document.querySelectorAll('.example-tab');
+            tabs.forEach(function(tab) {
+                tab.classList.remove('active');
+            });
+            
+            document.getElementById(format + '-example').style.display = 'block';
+            event.target.classList.add('active');
+        }
+    </script>
+</body>
+</html>

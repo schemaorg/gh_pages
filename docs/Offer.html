@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Offer - schema.org Type</title>
+    <link rel="stylesheet" href="schema-org.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>schema.org</h1>
+        </div>
+    </header>
+    
+    <div class="container">
+        <div class="breadcrumb">
+            <a href="index.html">Home</a> &gt; <a href="Thing.html">Thing</a> &gt; <a href="Intangible.html">Intangible</a> &gt; Offer</div>
+        <div class="main-content">
+            <h1>Offer</h1>
+            
+            <div class="type-info">
+                <p><strong>An offer to transfer some rights to an item or to provide a service — for example, an offer to sell tickets to an event, to rent the DVD of a movie, to stream a TV show over the internet, to repair a motorcycle, or to loan a book.\\n\\nNote: As the [[businessFunction]] property, which identifies the form of offer (e.g. sell, lease, repair, dispose), defaults to http://purl.org/goodrelations/v1#Sell; an Offer without a defined businessFunction value can be assumed to be an offer to sell.\\n\\nFor [GTIN](http://www.gs1.org/barcodes/technical/idkeys/gtin)-related fields, see [Check Digit calculator](http://www.gs1.org/barcodes/support/check_digit_calculator) and [validation guide](http://www.gs1us.org/resources/standards/gtin-validation-guide) from [GS1](http://www.gs1.org/).</strong></p>
+                <div class="type-hierarchy">
+                    <strong>Subclass of:</strong>
+                    <span class="hierarchy-item"><a href="Intangible.html">Intangible</a></span>
+                </div>
+                <div class="type-hierarchy">
+                    <strong>More specific types:</strong>
+                    <span class="hierarchy-item"><a href="AggregateOffer.html">AggregateOffer</a></span>
+                </div></div>
+            <div class="properties-section">
+                <h2>Properties from Offer</h2>
+                <table class="property-table">
+                    <thead>
+                        <tr>
+                            <th>Property</th>
+                            <th>Expected Type</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><span class="property-name"><a href="addOn.html">addOn</a></span></td>
+                            <td><span class="expected-type"><a href="Offer.html">Offer</a></span></td>
+                            <td>An additional offer that can only be obtained in combination with the first base offer (e.g. supplements and extensions that are available for a surcharge).</td>
+                        </tr>
+                        <tr>
+                            <td><span class="property-name"><a href="offeredBy.html">offeredBy</a></span></td>
+                            <td><span class="expected-type"><a href="Organization.html">Organization</a></span></td>
+                            <td>A pointer to the organization or person making the offer.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="property-name"><a href="priceValidUntil.html">priceValidUntil</a></span></td>
+                            <td><span class="expected-type">Date</span></td>
+                            <td>The date after which the price is no longer available.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="property-name"><a href="shippingDetails.html">shippingDetails</a></span></td>
+                            <td><span class="expected-type"><a href="OfferShippingDetails.html">OfferShippingDetails</a></span></td>
+                            <td>Indicates information about the shipping policies and options associated with an [[Offer]].</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="properties-section">
+                <h2>Properties from Thing</h2>
+                <table class="property-table">
+                    <thead>
+                        <tr>
+                            <th>Property</th>
+                            <th>Expected Type</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><span class="property-name"><a href="additionalType.html">additionalType</a></span></td>
+                            <td><span class="expected-type">Text</span></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td><span class="property-name"><a href="alternateName.html">alternateName</a></span></td>
+                            <td><span class="expected-type">Text</span></td>
+                            <td>An alias for the item.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="property-name"><a href="description.html">description</a></span></td>
+                            <td><span class="expected-type">Text</span></td>
+                            <td>A description of the item.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="property-name"><a href="disambiguatingDescription.html">disambiguatingDescription</a></span></td>
+                            <td><span class="expected-type">Text</span></td>
+                            <td>A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="property-name"><a href="identifier.html">identifier</a></span></td>
+                            <td><span class="expected-type"><a href="PropertyValue.html">PropertyValue</a></span></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td><span class="property-name"><a href="image.html">image</a></span></td>
+                            <td><span class="expected-type"><a href="ImageObject.html">ImageObject</a></span></td>
+                            <td>An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].</td>
+                        </tr>
+                        <tr>
+                            <td><span class="property-name"><a href="mainEntityOfPage.html">mainEntityOfPage</a></span></td>
+                            <td><span class="expected-type"><a href="CreativeWork.html">CreativeWork</a></span></td>
+                            <td>Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="property-name"><a href="name.html">name</a></span></td>
+                            <td><span class="expected-type">Text</span></td>
+                            <td>The name of the item.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="property-name"><a href="potentialAction.html">potentialAction</a></span></td>
+                            <td><span class="expected-type"><a href="Action.html">Action</a></span></td>
+                            <td>Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="property-name"><a href="sameAs.html">sameAs</a></span></td>
+                            <td><span class="expected-type"><a href="URL.html">URL</a></span></td>
+                            <td>URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="property-name"><a href="subjectOf.html">subjectOf</a></span></td>
+                            <td><span class="expected-type"><a href="CreativeWork.html">CreativeWork</a></span></td>
+                            <td>A CreativeWork or Event about this Thing.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="property-name"><a href="url.html">url</a></span></td>
+                            <td><span class="expected-type"><a href="URL.html">URL</a></span></td>
+                            <td>URL of the item.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="properties-section">
+                <h2>Instances of Offer may appear as a value for the following properties</h2>
+                <table class="property-table">
+                    <thead>
+                        <tr>
+                            <th>Property</th>
+                            <th>On Types</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><span class="property-name"><a href="acceptedOffer.html">acceptedOffer</a></span></td>
+                            <td><a href="Order.html" class="type-link">Order</a></td>
+                            <td>The offer(s) -- e.g., product, quantity and price combinations -- included in the order.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="property-name"><a href="addOn.html">addOn</a></span></td>
+                            <td><a href="Offer.html" class="type-link">Offer</a></td>
+                            <td>An additional offer that can only be obtained in combination with the first base offer (e.g. supplements and extensions that are available for a surcharge).</td>
+                        </tr>
+                        <tr>
+                            <td><span class="property-name"><a href="expectsAcceptanceOf.html">expectsAcceptanceOf</a></span></td>
+                            <td><a href="ActionAccessSpecification.html" class="type-link">ActionAccessSpecification</a></td>
+                            <td>An Offer which must be accepted before the user can perform the Action. For example, the user may need to buy a movie before being able to watch it.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="property-name"><a href="makesOffer.html">makesOffer</a></span></td>
+                            <td><a href="Organization.html" class="type-link">Organization</a></td>
+                            <td>A pointer to products or services offered by the organization or person.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="examples-section">
+                <h2>Examples</h2>
+                <div class="example-tabs">
+                    <div class="example-tab active" onclick="showExample('jsonld')">JSON-LD</div>
+                    <div class="example-tab" onclick="showExample('microdata')">Microdata</div>
+                </div>
+                <div id="jsonld-example" class="example-content">
+                    <h3>JSON-LD</h3>
+                    <pre><code>{
+  "@context": "https://schema.org",
+  "@type": "Product",
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "3.5",
+    "reviewCount": "11"
+  },
+  "description": "0.7 cubic feet countertop microwave. Has six preset cooking categories and convenience features like Add-A-Minute and Child Lock.",
+  "name": "Kenmore White 17\" Microwave",
+  "image": "kenmore-microwave-17in.jpg",
+  "offers": {
+    "@type": "Offer",
+    "availability": "https://schema.org/InStock",
+    "price": "55.00",
+    "priceCurrency": "USD"
+  },
+  "review": [
+    {
+      "@type": "Review",
+      "author": "Ellie",
+      "datePublished": "2011-04-01",
+      "reviewBody": "The lamp burned out and now I have to replace it.",
+      "name": "Not a happy camper",
+      "reviewRating": {
+        "@type": "Rating",
+        "bestRating": "5",
+        "ratingValue": "1",
+        "worstRating": "1"
+      }
+    },
+    {
+      "@type": "Review",
+      "author": "Lucas",
+      "datePublished": "2011-03-25",
+      "reviewBody": "Great microwave for the price. It is small and fits in my apartment.",
+      "name": "Value purchase",
+      "reviewRating": {
+        "@type": "Rating",
+        "bestRating": "5",
+        "ratingValue": "4",
+        "worstRating": "1"
+      }
+    }
+  ]
+}</code></pre>
+                </div>
+                <div id="microdata-example" class="example-content" style="display:none;">
+                    <h3>Microdata</h3>
+                    <pre><code><!--price is 1000, a number, with locale-specific thousands separator
+    and decimal mark, and the $ character is marked up with the
+    machine-readable code "USD" -->
+    <span itemprop="priceCurrency" content="USD">$</span><span
+          itemprop="price" content="1000.00">1,000.00</span>
+
+    <link itemprop="availability" href="https://schema.org/InStock" />In stock</code></pre>
+                </div></div>
+        </div>
+    </div>
+    
+    <script>
+        function showExample(format) {
+            document.getElementById('jsonld-example').style.display = 'none';
+            document.getElementById('microdata-example').style.display = 'none';
+            
+            var tabs = document.querySelectorAll('.example-tab');
+            tabs.forEach(function(tab) {
+                tab.classList.remove('active');
+            });
+            
+            document.getElementById(format + '-example').style.display = 'block';
+            event.target.classList.add('active');
+        }
+    </script>
+</body>
+</html>
