@@ -1,0 +1,12 @@
+https://schema.org/docs/schemas.html
+https://schema.org/docs/full.html
+https://schema.org/docs/gs.html
+https://schema.org/docs/about.html
+https://schema.org/docs/howwework.html
+https://schema.org/docs/releases.html
+https://schema.org/docs/faq.html
+https://schema.org/docs/datamodel.html
+https://schema.org/docs/developers.html
+https://schema.org/docs/extension.html
+https://schema.org/docs/meddocs.html
+https://schema.org/docs/hotels.html
