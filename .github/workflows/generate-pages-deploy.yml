@@ -5,10 +5,10 @@ on:
     branches: [ main, master ]
     paths:
       - 'data/schema.ttl'
+      - 'data/schema.json'
       - 'data/examples/**'
-      - 'generate_schema_pages.py'
-      - 'generate_jekyll_pages.py'
-      - 'generate_index_page.py'
+      - 'generate_pages_from_jsonld.py'
+      - 'convert_ttl_to_jsonld.py'
       - '.github/workflows/generate-pages-deploy.yml'
   workflow_dispatch:
 
@@ -43,8 +43,16 @@ jobs:
       
       - name: Generate schema pages
         run: |
-          echo "=== Running Jekyll generator ==="
-          python generate_jekyll_pages.py || { echo "Jekyll generator failed!"; exit 1; }
+          echo "=== Converting TTL to JSON-LD if needed ==="
+          if [ ! -f "data/schema.json" ]; then
+            echo "Converting schema.ttl to schema.json..."
+            python convert_ttl_to_jsonld.py || { echo "Conversion failed!"; exit 1; }
+          else
+            echo "schema.json already exists"
+          fi
+          echo ""
+          echo "=== Running JSON-LD based generator ==="
+          python generate_pages_from_jsonld.py || { echo "Generator failed!"; exit 1; }
           echo ""
           echo "=== Checking generated files ==="
           echo "Types directory:"
@@ -66,9 +74,6 @@ jobs:
             echo "_properties directory not found!"
             exit 1
           fi
-          echo ""
-          echo "=== Running index generator ==="
-          python generate_index_page.py
       
       - name: List generated files
         run: |
