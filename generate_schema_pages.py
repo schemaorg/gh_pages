@@ -16,7 +16,7 @@ class SchemaParser:
         self.properties = {}  # property_name -> {label, comment, domain_includes, range_includes}
         self.inverse_properties = defaultdict(list)  # type -> list of properties that accept this type
         
-    def parse_schema_ttl(self, filename='schema.ttl'):
+    def parse_schema_ttl(self, filename='data/schema.ttl'):
         """Parse the schema.ttl file and extract types and properties"""
         print(f"Parsing {filename}...")
         
@@ -96,7 +96,7 @@ class ExampleParser:
     def __init__(self):
         self.examples = defaultdict(list)  # type_name -> list of examples
         
-    def parse_examples(self, examples_dir='examples'):
+    def parse_examples(self, examples_dir='data/examples'):
         """Parse all example files and extract examples by type"""
         print("Parsing examples...")
         
