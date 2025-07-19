@@ -44,14 +44,28 @@ jobs:
       - name: Generate schema pages
         run: |
           echo "=== Running Jekyll generator ==="
-          python generate_jekyll_pages.py
+          python generate_jekyll_pages.py || { echo "Jekyll generator failed!"; exit 1; }
           echo ""
           echo "=== Checking generated files ==="
           echo "Types directory:"
-          ls -la docs/_types/ 2>/dev/null | head -5 || echo "_types directory not found"
+          if [ -d "docs/_types" ]; then
+            echo "Found _types directory"
+            ls -la docs/_types/ | head -5
+            echo "Total type files: $(ls docs/_types/*.md 2>/dev/null | wc -l)"
+          else
+            echo "_types directory not found!"
+            exit 1
+          fi
           echo ""
           echo "Properties directory:"
-          ls -la docs/_properties/ 2>/dev/null | head -5 || echo "_properties directory not found"
+          if [ -d "docs/_properties" ]; then
+            echo "Found _properties directory"
+            ls -la docs/_properties/ | head -5
+            echo "Total property files: $(ls docs/_properties/*.md 2>/dev/null | wc -l)"
+          else
+            echo "_properties directory not found!"
+            exit 1
+          fi
           echo ""
           echo "=== Running index generator ==="
           python generate_index_page.py

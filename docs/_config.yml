@@ -11,10 +11,10 @@ plugins: []
 collections:
   types:
     output: true
-    permalink: /:name
+    permalink: /:name:output_ext
   properties:
     output: true
-    permalink: /:name
+    permalink: /:name:output_ext
 
 # Default layout
 defaults:
