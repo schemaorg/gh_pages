@@ -1,0 +1,33 @@
+---
+layout: null
+permalink: /debug
+---
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Debug Jekyll Collections</title>
+</head>
+<body>
+    <h1>Jekyll Debug Info</h1>
+    
+    <h2>Site Variables</h2>
+    <ul>
+        <li>baseurl: {{ site.baseurl }}</li>
+        <li>url: {{ site.url }}</li>
+    </ul>
+    
+    <h2>Types Collection ({{ site.types.size }} items)</h2>
+    <ul>
+        {% for type in site.types limit:10 %}
+        <li><a href="{{ type.url }}">{{ type.title }}</a> - {{ type.permalink }}</li>
+        {% endfor %}
+    </ul>
+    
+    <h2>Properties Collection ({{ site.properties.size }} items)</h2>
+    <ul>
+        {% for prop in site.properties limit:10 %}
+        <li><a href="{{ prop.url }}">{{ prop.title }}</a> - {{ prop.permalink }}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

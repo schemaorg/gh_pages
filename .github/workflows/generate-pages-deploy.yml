@@ -51,14 +51,17 @@ jobs:
           echo "Contents of docs directory:"
           ls -la docs/
           echo ""
-          echo "Checking for Person directory:"
-          ls -la docs/Person/ || echo "Person directory not found"
+          echo "Sample type files in _types:"
+          ls docs/_types/ | head -5
           echo ""
-          echo "Total directories in docs:"
-          find docs -type d | wc -l
+          echo "Sample property files in _properties:"
+          ls docs/_properties/ | head -5
           echo ""
-          echo "Total HTML files in docs:"
-          find docs -name "*.html" | wc -l
+          echo "Total type files:"
+          ls docs/_types/*.md 2>/dev/null | wc -l
+          echo ""
+          echo "Total property files:"
+          ls docs/_properties/*.md 2>/dev/null | wc -l
       
       - name: Setup Pages
         uses: actions/configure-pages@v4
