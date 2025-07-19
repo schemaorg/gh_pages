@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ page.title }} - schema.org Type</title>
+    <link rel="stylesheet" href="{{ '/schema-org.css' | relative_url }}">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>schema.org</h1>
+        </div>
+    </header>
+    
+    <div class="container">
+        <div class="breadcrumb">
+            <a href="{{ '/' | relative_url }}">Home</a>
+            {% if page.parent %}
+                {% assign current = page.parent %}
+                {% assign breadcrumb = "" %}
+                {% for i in (1..10) %}
+                    {% assign parent_page = site.types | where: "title", current | first %}
+                    {% if parent_page %}
+                        {% capture breadcrumb %} &gt; <a href="{{ parent_page.url | relative_url }}">{{ current }}</a>{{ breadcrumb }}{% endcapture %}
+                        {% assign current = parent_page.parent %}
+                    {% else %}
+                        {% break %}
+                    {% endif %}
+                {% endfor %}
+                {{ breadcrumb }}
+            {% endif %}
+            &gt; {{ page.title }}
+        </div>
+        
+        <div class="main-content">
+            <h1>{{ page.title }}</h1>
+            {{ content }}
+        </div>
+    </div>
+</body>
+</html>

@@ -174,7 +174,7 @@ class HTMLGenerator:
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{type_name} - schema.org Type</title>
-    <link rel="stylesheet" href="../schema-org.css">
+    <link rel="stylesheet" href="schema-org.css">
 </head>
 <body>
     <header>
@@ -399,7 +399,7 @@ class HTMLGenerator:
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{prop_name} - schema.org Property</title>
-    <link rel="stylesheet" href="../schema-org.css">
+    <link rel="stylesheet" href="schema-org.css">
 </head>
 <body>
     <header>
@@ -478,10 +478,7 @@ class HTMLGenerator:
         # Generate type pages
         for type_name in self.schema_parser.types:
             html = self.generate_type_page(type_name)
-            # Create directory for the type
-            type_dir = os.path.join(output_dir, type_name)
-            os.makedirs(type_dir, exist_ok=True)
-            filename = os.path.join(type_dir, 'index.html')
+            filename = os.path.join(output_dir, f'{type_name}.html')
             with open(filename, 'w', encoding='utf-8') as f:
                 f.write(html)
         
@@ -490,10 +487,7 @@ class HTMLGenerator:
         # Generate property pages
         for prop_name in self.schema_parser.properties:
             html = self.generate_property_page(prop_name)
-            # Create directory for the property
-            prop_dir = os.path.join(output_dir, prop_name)
-            os.makedirs(prop_dir, exist_ok=True)
-            filename = os.path.join(prop_dir, 'index.html')
+            filename = os.path.join(output_dir, f'{prop_name}.html')
             with open(filename, 'w', encoding='utf-8') as f:
                 f.write(html)
         
