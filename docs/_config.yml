@@ -7,6 +7,12 @@ url: "https://nlweb-ai.github.io"
 theme: null
 plugins: []
 
+# Process all HTML files
+markdown: kramdown
+include:
+  - "*.html"
+  - "*.md"
+
 # Collections for schema types
 collections:
   types:

@@ -22,8 +22,12 @@ class SchemaJSONLDParser:
         with open(filename, 'r', encoding='utf-8') as f:
             schema_data = json.load(f)
         
+        print(f"Loaded JSON with keys: {list(schema_data.keys())}")
+        graph = schema_data.get('@graph', [])
+        print(f"Found {len(graph)} items in @graph")
+        
         # Process all items in the graph
-        for item in schema_data.get('@graph', []):
+        for idx, item in enumerate(graph):
             item_id = item.get('@id', '')
             
             # Extract the name from the ID (schema:TypeName -> TypeName)
@@ -33,6 +37,9 @@ class SchemaJSONLDParser:
                 continue
             
             item_type = item.get('@type', '')
+            
+            if idx < 5:
+                print(f"  Item {idx}: @id={item_id}, @type={item_type}")
             
             if item_type == 'rdfs:Class':
                 # This is a type/class
@@ -312,28 +319,80 @@ class JekyllGenerator:
         # Create directories for collections
         types_dir = os.path.join(output_dir, '_types')
         props_dir = os.path.join(output_dir, '_properties')
+        
+        print(f"Creating directories...")
+        print(f"  Types directory: {types_dir}")
+        print(f"  Properties directory: {props_dir}")
+        
         os.makedirs(types_dir, exist_ok=True)
         os.makedirs(props_dir, exist_ok=True)
         
-        print(f"Generating Jekyll pages for {len(self.schema_parser.types)} types...")
+        # Verify directories were created
+        if os.path.exists(types_dir):
+            print(f"  ✓ Types directory created successfully")
+        else:
+            print(f"  ✗ Failed to create types directory!")
+            raise Exception(f"Could not create {types_dir}")
+            
+        if os.path.exists(props_dir):
+            print(f"  ✓ Properties directory created successfully")
+        else:
+            print(f"  ✗ Failed to create properties directory!")
+            raise Exception(f"Could not create {props_dir}")
+        
+        print(f"\nGenerating Jekyll pages for {len(self.schema_parser.types)} types...")
         
         # Generate type pages
+        type_count = 0
         for type_name in self.schema_parser.types:
-            content = self.generate_type_page(type_name)
-            filename = os.path.join(types_dir, f'{type_name}.md')
-            with open(filename, 'w', encoding='utf-8') as f:
-                f.write(content)
+            try:
+                content = self.generate_type_page(type_name)
+                filename = os.path.join(types_dir, f'{type_name}.md')
+                with open(filename, 'w', encoding='utf-8') as f:
+                    f.write(content)
+                type_count += 1
+                if type_count <= 5:
+                    print(f"  Created: {filename}")
+            except Exception as e:
+                print(f"  ERROR creating {type_name}: {e}")
+                raise
         
-        print(f"Generating Jekyll pages for {len(self.schema_parser.properties)} properties...")
+        print(f"  Generated {type_count} type files")
+        
+        print(f"\nGenerating Jekyll pages for {len(self.schema_parser.properties)} properties...")
         
         # Generate property pages
+        prop_count = 0
         for prop_name in self.schema_parser.properties:
-            content = self.generate_property_page(prop_name)
-            filename = os.path.join(props_dir, f'{prop_name}.md')
-            with open(filename, 'w', encoding='utf-8') as f:
-                f.write(content)
+            try:
+                content = self.generate_property_page(prop_name)
+                filename = os.path.join(props_dir, f'{prop_name}.md')
+                with open(filename, 'w', encoding='utf-8') as f:
+                    f.write(content)
+                prop_count += 1
+                if prop_count <= 5:
+                    print(f"  Created: {filename}")
+            except Exception as e:
+                print(f"  ERROR creating {prop_name}: {e}")
+                raise
         
-        print(f"Generated {len(self.schema_parser.types) + len(self.schema_parser.properties)} Jekyll pages")
+        print(f"  Generated {prop_count} property files")
+        
+        # Final verification
+        print(f"\nFinal verification:")
+        if os.path.exists(types_dir):
+            type_files = len([f for f in os.listdir(types_dir) if f.endswith('.md')])
+            print(f"  ✓ {types_dir} contains {type_files} files")
+        else:
+            print(f"  ✗ {types_dir} does not exist!")
+            
+        if os.path.exists(props_dir):
+            prop_files = len([f for f in os.listdir(props_dir) if f.endswith('.md')])
+            print(f"  ✓ {props_dir} contains {prop_files} files")
+        else:
+            print(f"  ✗ {props_dir} does not exist!")
+        
+        print(f"\nTotal generated: {len(self.schema_parser.types) + len(self.schema_parser.properties)} Jekyll pages")
 
 def generate_index_page(schema_parser: SchemaJSONLDParser, output_dir='docs'):
     """Generate index.html with links to all types and properties"""
@@ -347,7 +406,7 @@ def generate_index_page(schema_parser: SchemaJSONLDParser, output_dir='docs'):
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Schema.org Vocabulary</title>
-    <link rel="stylesheet" href="{{% raw %}}{{{{ site.baseurl }}}}/schema-org.css{{% endraw %}}">
+    <link rel="stylesheet" href="{{ site.baseurl }}/schema-org.css">
 </head>
 <body>
     <header>
@@ -368,7 +427,7 @@ def generate_index_page(schema_parser: SchemaJSONLDParser, output_dir='docs'):
 """
     
     for type_name in types_sorted:
-        html += f'                        <li><a href="{{% raw %}}{{{{ site.baseurl }}}}/{type_name}{{% endraw %}}">{type_name}</a></li>\n'
+        html += f'                        <li><a href="{{{{ site.baseurl }}}}/{type_name}">{type_name}</a></li>\n'
     
     html += f"""                    </ul>
                 </div>
@@ -379,7 +438,7 @@ def generate_index_page(schema_parser: SchemaJSONLDParser, output_dir='docs'):
 """
     
     for prop_name in properties_sorted:
-        html += f'                        <li><a href="{{% raw %}}{{{{ site.baseurl }}}}/{prop_name}{{% endraw %}}">{prop_name}</a></li>\n'
+        html += f'                        <li><a href="{{{{ site.baseurl }}}}/{prop_name}">{prop_name}</a></li>\n'
     
     html += """                    </ul>
                 </div>
@@ -396,24 +455,43 @@ def generate_index_page(schema_parser: SchemaJSONLDParser, output_dir='docs'):
     print(f"Generated index.html with {len(types_sorted)} types and {len(properties_sorted)} properties")
 
 def main():
-    # First, convert TTL to JSON if needed
-    if not os.path.exists('data/schema.json'):
-        print("schema.json not found. Converting from schema.ttl...")
-        import convert_ttl_to_jsonld
-        convert_ttl_to_jsonld.main()
-    
-    # Parse schema JSON
-    schema_parser = SchemaJSONLDParser()
-    schema_parser.parse_schema_json()
-    
-    # Generate Jekyll pages
-    generator = JekyllGenerator(schema_parser)
-    generator.generate_all_pages()
-    
-    # Generate index page
-    generate_index_page(schema_parser)
-    
-    print("Schema.org page generation from JSON-LD complete!")
+    try:
+        # Check if schema.json exists
+        if not os.path.exists('data/schema.json'):
+            print("ERROR: data/schema.json not found!")
+            print("Current directory:", os.getcwd())
+            print("Files in current directory:", os.listdir('.'))
+            if os.path.exists('data'):
+                print("Files in data directory:", os.listdir('data'))
+            raise FileNotFoundError("data/schema.json is required")
+        
+        print("Found data/schema.json")
+        
+        # Parse schema JSON
+        print("Creating schema parser...")
+        schema_parser = SchemaJSONLDParser()
+        
+        print("Parsing schema.json...")
+        schema_parser.parse_schema_json()
+        
+        # Generate Jekyll pages
+        print("Creating Jekyll generator...")
+        generator = JekyllGenerator(schema_parser)
+        
+        print("Generating all pages...")
+        generator.generate_all_pages()
+        
+        # Generate index page
+        print("Generating index page...")
+        generate_index_page(schema_parser)
+        
+        print("Schema.org page generation from JSON-LD complete!")
+        
+    except Exception as e:
+        print(f"ERROR: {e}")
+        import traceback
+        traceback.print_exc()
+        raise
 
 if __name__ == "__main__":
     main()

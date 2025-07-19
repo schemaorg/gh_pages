@@ -43,16 +43,38 @@ jobs:
       
       - name: Generate schema pages
         run: |
-          echo "=== Converting TTL to JSON-LD if needed ==="
-          if [ ! -f "data/schema.json" ]; then
-            echo "Converting schema.ttl to schema.json..."
-            python convert_ttl_to_jsonld.py || { echo "Conversion failed!"; exit 1; }
+          echo "=== Pre-generation checks ==="
+          echo "Current directory:"
+          pwd
+          echo ""
+          echo "Python version:"
+          python --version
+          echo ""
+          echo "Checking data/schema.json:"
+          if [ -f "data/schema.json" ]; then
+            echo "Found data/schema.json"
+            echo "File size: $(ls -lh data/schema.json | awk '{print $5}')"
+            echo "First few lines:"
+            head -5 data/schema.json
           else
-            echo "schema.json already exists"
+            echo "ERROR: data/schema.json not found!"
+            ls -la data/
+            exit 1
           fi
           echo ""
           echo "=== Running JSON-LD based generator ==="
-          python generate_pages_from_jsonld.py || { echo "Generator failed!"; exit 1; }
+          python generate_pages_from_jsonld.py 2>&1 || { 
+            echo "Generator failed with exit code $?"
+            echo "Python version:"
+            python --version
+            echo "Current directory:"
+            pwd
+            echo "Files in current directory:"
+            ls -la
+            echo "Files in data directory:"
+            ls -la data/
+            exit 1
+          }
           echo ""
           echo "=== Checking generated files ==="
           echo "Types directory:"
@@ -80,17 +102,24 @@ jobs:
           echo "Contents of docs directory:"
           ls -la docs/
           echo ""
-          echo "Sample type files in _types:"
-          ls docs/_types/ | head -5
+          echo "Looking for _types and _properties directories:"
+          find docs -type d -name "_types" -o -name "_properties" | head -20
           echo ""
-          echo "Sample property files in _properties:"
-          ls docs/_properties/ | head -5
+          if [ -d "docs/_types" ]; then
+            echo "Sample type files in _types:"
+            ls docs/_types/ | head -5
+            echo "Total type files: $(ls docs/_types/*.md 2>/dev/null | wc -l)"
+          else
+            echo "ERROR: docs/_types directory not found!"
+          fi
           echo ""
-          echo "Total type files:"
-          ls docs/_types/*.md 2>/dev/null | wc -l
-          echo ""
-          echo "Total property files:"
-          ls docs/_properties/*.md 2>/dev/null | wc -l
+          if [ -d "docs/_properties" ]; then
+            echo "Sample property files in _properties:"
+            ls docs/_properties/ | head -5
+            echo "Total property files: $(ls docs/_properties/*.md 2>/dev/null | wc -l)"
+          else
+            echo "ERROR: docs/_properties directory not found!"
+          fi
       
       - name: Setup Ruby
         uses: ruby/setup-ruby@v1
@@ -102,26 +131,103 @@ jobs:
       - name: Build Jekyll site
         run: |
           cd docs
-          echo "=== Files before Jekyll build ==="
-          echo "Types in _types:"
-          ls _types/*.md | head -5 || echo "No types found"
-          echo "Properties in _properties:"
-          ls _properties/*.md | head -5 || echo "No properties found"
+          echo "=== Pre-Jekyll build diagnostics ==="
+          echo "Current directory: $(pwd)"
+          echo ""
+          echo "All directories in docs:"
+          find . -type d | sort
+          echo ""
+          echo "Checking for collection directories:"
+          if [ -d "_types" ]; then
+            echo "✓ _types directory exists"
+            echo "  Number of .md files: $(find _types -name '*.md' | wc -l)"
+            echo "  First 3 type files:"
+            find _types -name '*.md' | head -3 | xargs -I {} bash -c 'echo "    {}"; head -10 "{}" | grep -E "^(title:|permalink:)" | sed "s/^/      /"'
+          else
+            echo "✗ _types directory NOT FOUND"
+          fi
+          echo ""
+          if [ -d "_properties" ]; then
+            echo "✓ _properties directory exists"
+            echo "  Number of .md files: $(find _properties -name '*.md' | wc -l)"
+            echo "  First 3 property files:"
+            find _properties -name '*.md' | head -3 | xargs -I {} bash -c 'echo "    {}"; head -10 "{}" | grep -E "^(title:|permalink:)" | sed "s/^/      /"'
+          else
+            echo "✗ _properties directory NOT FOUND"
+          fi
+          echo ""
+          echo "Jekyll config:"
+          cat _config.yml
           echo ""
           echo "=== Building Jekyll ==="
           bundle install
-          bundle exec jekyll build --baseurl /schemaorg --verbose
+          bundle exec jekyll build --baseurl /schemaorg --verbose --trace
           echo ""
-          echo "=== Files after Jekyll build ==="
-          echo "Contents of _site:"
+          echo "=== Post-Jekyll build diagnostics ==="
+          echo "Contents of _site (first 20):"
           ls -la _site/ | head -20
-          echo "Looking for Person.html in _site:"
-          find _site -name "*Person*" -o -name "*person*" | head -10
+          echo ""
+          echo "All HTML files in _site:"
+          find _site -name "*.html" | head -20
+          echo ""
+          echo "Looking for Person.html:"
+          find _site -name "*Person*" -type f | head -10
+          echo ""
+          echo "Looking for any property files:"
+          find _site -name "*property*" -o -name "*Property*" | head -10
+          echo ""
+          echo "Checking collection output:"
+          if [ -d "_site/types" ]; then
+            echo "Found _site/types directory"
+            ls _site/types/ | head -5
+          fi
+          if [ -d "_site/properties" ]; then
+            echo "Found _site/properties directory"
+            ls _site/properties/ | head -5
+          fi
+          echo ""
+          echo "Checking Jekyll processing of debug.html:"
+          if [ -f "_site/debug.html" ]; then
+            if grep -q "site.baseurl" _site/debug.html; then
+              echo "WARNING: Jekyll did not process liquid tags!"
+              echo "First 30 lines of debug.html:"
+              head -30 _site/debug.html
+            else
+              echo "Jekyll processed debug.html successfully"
+              echo "Checking collections in debug.html:"
+              grep -A5 "Types Collection" _site/debug.html || echo "Types Collection not found"
+              grep -A5 "Properties Collection" _site/debug.html || echo "Properties Collection not found"
+            fi
+          else
+            echo "debug.html not found in _site"
+          fi
         env:
           JEKYLL_ENV: production
       
       - name: Setup Pages
         uses: actions/configure-pages@v4
+      
+      - name: Pre-upload verification
+        run: |
+          echo "=== Final verification before artifact upload ==="
+          echo "Checking ./docs/_site directory:"
+          if [ -d "./docs/_site" ]; then
+            echo "✓ _site directory exists"
+            echo "Total files: $(find ./docs/_site -type f | wc -l)"
+            echo "Total directories: $(find ./docs/_site -type d | wc -l)"
+            echo ""
+            echo "Top-level contents:"
+            ls -la ./docs/_site/ | head -15
+            echo ""
+            echo "HTML files at root:"
+            ls ./docs/_site/*.html 2>/dev/null | head -10 || echo "No HTML files at root"
+            echo ""
+            echo "All directories in _site:"
+            find ./docs/_site -type d | head -20
+          else
+            echo "✗ ERROR: ./docs/_site directory does not exist!"
+            exit 1
+          fi
       
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
