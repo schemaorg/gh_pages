@@ -14,7 +14,7 @@ collections:
     permalink: /:name
   properties:
     output: true
-    permalink: /property/:name
+    permalink: /:name
 
 # Default layout
 defaults:

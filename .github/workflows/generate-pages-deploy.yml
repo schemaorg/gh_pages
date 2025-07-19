@@ -43,7 +43,17 @@ jobs:
       
       - name: Generate schema pages
         run: |
+          echo "=== Running Jekyll generator ==="
           python generate_jekyll_pages.py
+          echo ""
+          echo "=== Checking generated files ==="
+          echo "Types directory:"
+          ls -la docs/_types/ 2>/dev/null | head -5 || echo "_types directory not found"
+          echo ""
+          echo "Properties directory:"
+          ls -la docs/_properties/ 2>/dev/null | head -5 || echo "_properties directory not found"
+          echo ""
+          echo "=== Running index generator ==="
           python generate_index_page.py
       
       - name: List generated files
@@ -73,8 +83,21 @@ jobs:
       - name: Build Jekyll site
         run: |
           cd docs
+          echo "=== Files before Jekyll build ==="
+          echo "Types in _types:"
+          ls _types/*.md | head -5 || echo "No types found"
+          echo "Properties in _properties:"
+          ls _properties/*.md | head -5 || echo "No properties found"
+          echo ""
+          echo "=== Building Jekyll ==="
           bundle install
-          bundle exec jekyll build --baseurl /schemaorg
+          bundle exec jekyll build --baseurl /schemaorg --verbose
+          echo ""
+          echo "=== Files after Jekyll build ==="
+          echo "Contents of _site:"
+          ls -la _site/ | head -20
+          echo "Looking for Person.html in _site:"
+          find _site -name "*Person*" -o -name "*person*" | head -10
         env:
           JEKYLL_ENV: production
       
