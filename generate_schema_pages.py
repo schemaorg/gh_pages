@@ -174,7 +174,7 @@ class HTMLGenerator:
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{type_name} - schema.org Type</title>
-    <link rel="stylesheet" href="schema-org.css">
+    <link rel="stylesheet" href="../schema-org.css">
 </head>
 <body>
     <header>
@@ -195,7 +195,7 @@ class HTMLGenerator:
             parent = self.schema_parser.types.get(parent, {}).get('subclass_of')
         
         for ancestor in reversed(breadcrumb_trail):
-            html += f' &gt; <a href="{ancestor}.html">{ancestor}</a>'
+            html += f' &gt; <a href="{ancestor}">{ancestor}</a>'
         
         html += f' &gt; {type_name}'
         html += '</div>'
@@ -211,7 +211,7 @@ class HTMLGenerator:
             html += f"""
                 <div class="type-hierarchy">
                     <strong>Subclass of:</strong>
-                    <span class="hierarchy-item"><a href="{type_data['subclass_of']}.html">{type_data['subclass_of']}</a></span>
+                    <span class="hierarchy-item"><a href="{type_data['subclass_of']}">{type_data['subclass_of']}</a></span>
                 </div>"""
         
         # Find subtypes
@@ -221,7 +221,7 @@ class HTMLGenerator:
             html += f"""
                 <div class="type-hierarchy">
                     <strong>More specific types:</strong>
-                    {', '.join([f'<span class="hierarchy-item"><a href="{st}.html">{st}</a></span>' for st in subtypes])}
+                    {', '.join([f'<span class="hierarchy-item"><a href="{st}">{st}</a></span>' for st in subtypes])}
                 </div>"""
         
         html += '</div>'
@@ -244,11 +244,11 @@ class HTMLGenerator:
             for prop_name in sorted(type_data['properties']):
                 if prop_name in self.schema_parser.properties:
                     prop_data = self.schema_parser.properties[prop_name]
-                    range_types = ', '.join([f'<a href="{rt}.html">{rt}</a>' if rt in self.schema_parser.types 
+                    range_types = ', '.join([f'<a href="{rt}">{rt}</a>' if rt in self.schema_parser.types 
                                            else rt for rt in prop_data['range_includes']])
                     html += f"""
                         <tr>
-                            <td><span class="property-name"><a href="{prop_name}.html">{prop_name}</a></span></td>
+                            <td><span class="property-name"><a href="{prop_name}">{prop_name}</a></span></td>
                             <td><span class="expected-type">{range_types}</span></td>
                             <td>{prop_data['comment']}</td>
                         </tr>"""
@@ -278,11 +278,11 @@ class HTMLGenerator:
                     for prop_name in sorted(props):
                         if prop_name in self.schema_parser.properties:
                             prop_data = self.schema_parser.properties[prop_name]
-                            range_types = ', '.join([f'<a href="{rt}.html">{rt}</a>' if rt in self.schema_parser.types 
+                            range_types = ', '.join([f'<a href="{rt}">{rt}</a>' if rt in self.schema_parser.types 
                                                    else rt for rt in prop_data['range_includes']])
                             html += f"""
                         <tr>
-                            <td><span class="property-name"><a href="{prop_name}.html">{prop_name}</a></span></td>
+                            <td><span class="property-name"><a href="{prop_name}">{prop_name}</a></span></td>
                             <td><span class="expected-type">{range_types}</span></td>
                             <td>{prop_data['comment']}</td>
                         </tr>"""
@@ -310,11 +310,11 @@ class HTMLGenerator:
             for prop_name in sorted(inverse_properties):
                 if prop_name in self.schema_parser.properties:
                     prop_data = self.schema_parser.properties[prop_name]
-                    domain_types = ', '.join([f'<a href="{dt}.html" class="type-link">{dt}</a>' 
+                    domain_types = ', '.join([f'<a href="{dt}" class="type-link">{dt}</a>' 
                                             for dt in prop_data['domain_includes']])
                     html += f"""
                         <tr>
-                            <td><span class="property-name"><a href="{prop_name}.html">{prop_name}</a></span></td>
+                            <td><span class="property-name"><a href="{prop_name}">{prop_name}</a></span></td>
                             <td>{domain_types}</td>
                             <td>{prop_data['comment']}</td>
                         </tr>"""
@@ -399,7 +399,7 @@ class HTMLGenerator:
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{prop_name} - schema.org Property</title>
-    <link rel="stylesheet" href="schema-org.css">
+    <link rel="stylesheet" href="../schema-org.css">
 </head>
 <body>
     <header>
@@ -426,7 +426,7 @@ class HTMLGenerator:
         
         for range_type in prop_data['range_includes']:
             if range_type in self.schema_parser.types:
-                html += f'<li><a href="{range_type}.html">{range_type}</a></li>'
+                html += f'<li><a href="{range_type}">{range_type}</a></li>'
             else:
                 html += f'<li>{range_type}</li>'
         
@@ -439,7 +439,7 @@ class HTMLGenerator:
                 <ul>"""
         
         for domain_type in prop_data['domain_includes']:
-            html += f'<li><a href="{domain_type}.html">{domain_type}</a></li>'
+            html += f'<li><a href="{domain_type}">{domain_type}</a></li>'
         
         html += """
                 </ul>
@@ -478,7 +478,10 @@ class HTMLGenerator:
         # Generate type pages
         for type_name in self.schema_parser.types:
             html = self.generate_type_page(type_name)
-            filename = os.path.join(output_dir, f'{type_name}.html')
+            # Create directory for the type
+            type_dir = os.path.join(output_dir, type_name)
+            os.makedirs(type_dir, exist_ok=True)
+            filename = os.path.join(type_dir, 'index.html')
             with open(filename, 'w', encoding='utf-8') as f:
                 f.write(html)
         
@@ -487,7 +490,10 @@ class HTMLGenerator:
         # Generate property pages
         for prop_name in self.schema_parser.properties:
             html = self.generate_property_page(prop_name)
-            filename = os.path.join(output_dir, f'{prop_name}.html')
+            # Create directory for the property
+            prop_dir = os.path.join(output_dir, prop_name)
+            os.makedirs(prop_dir, exist_ok=True)
+            filename = os.path.join(prop_dir, 'index.html')
             with open(filename, 'w', encoding='utf-8') as f:
                 f.write(html)
         
