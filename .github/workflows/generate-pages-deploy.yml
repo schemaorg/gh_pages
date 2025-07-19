@@ -121,6 +121,20 @@ jobs:
             echo "ERROR: docs/_properties directory not found!"
           fi
       
+      - name: Create Gemfile if needed
+        run: |
+          if [ ! -f "docs/Gemfile" ]; then
+            echo "Creating Gemfile..."
+            cat > docs/Gemfile << 'EOF'
+source "https://rubygems.org"
+gem "jekyll", "~> 4.3"
+gem "webrick"
+EOF
+          else
+            echo "Gemfile already exists:"
+            cat docs/Gemfile
+          fi
+      
       - name: Setup Ruby
         uses: ruby/setup-ruby@v1
         with:
@@ -161,7 +175,13 @@ jobs:
           echo ""
           echo "=== Building Jekyll ==="
           bundle install
-          bundle exec jekyll build --baseurl /schemaorg --verbose --trace
+          bundle exec jekyll build --baseurl /schemaorg --verbose --trace || {
+            echo ""
+            echo "=== Jekyll build failed! ==="
+            echo "Checking if _site was partially created:"
+            ls -la _site/ 2>/dev/null || echo "No _site directory"
+            exit 1
+          }
           echo ""
           echo "=== Post-Jekyll build diagnostics ==="
           echo "Contents of _site (first 20):"
@@ -229,11 +249,29 @@ jobs:
             exit 1
           fi
       
+      - name: Final directory check
+        run: |
+          echo "=== Absolute path check ==="
+          echo "Current working directory: $(pwd)"
+          echo "docs/_site absolute path: $(realpath docs/_site)"
+          echo ""
+          echo "Checking if docs/_site exists:"
+          if [ -d "docs/_site" ]; then
+            echo "✓ docs/_site exists"
+            echo "Contents:"
+            ls -la docs/_site/ | head -10
+          else
+            echo "✗ docs/_site does not exist!"
+            echo "Contents of docs/:"
+            ls -la docs/
+            exit 1
+          fi
+      
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
           # Upload the Jekyll output
-          path: './docs/_site'
+          path: 'docs/_site'
   
   # Deployment job
   deploy:
