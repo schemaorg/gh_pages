@@ -1,6 +1,6 @@
 ---
-layout: null
-permalink: /debug.html
+layout: none
+permalink: /debug
 ---
 <!DOCTYPE html>
 <html>
@@ -19,14 +19,14 @@ permalink: /debug.html
     <h2>Types Collection ({{ site.types.size }} items)</h2>
     <ul>
         {% for type in site.types limit:10 %}
-        <li><a href="{{ type.url | prepend: site.baseurl | prepend: site.url }}">{{ type.title }}</a> - URL: {{ type.url }} - Permalink: {{ type.permalink }}</li>
+        <li><a href="{{ site.baseurl }}{{ type.url }}">{{ type.title }}</a> - URL: {{ type.url }} - Permalink: {{ type.permalink }}</li>
         {% endfor %}
     </ul>
     
     <h2>Properties Collection ({{ site.properties.size }} items)</h2>
     <ul>
         {% for prop in site.properties limit:10 %}
-        <li><a href="{{ prop.url }}">{{ prop.title }}</a> - {{ prop.permalink }}</li>
+        <li><a href="{{ site.baseurl }}{{ prop.url }}">{{ prop.title }}</a> - {{ prop.permalink }}</li>
         {% endfor %}
     </ul>
 </body>

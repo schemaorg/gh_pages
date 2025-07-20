@@ -174,7 +174,7 @@ jobs:
           echo ""
           echo "=== Building Jekyll ==="
           bundle install
-          bundle exec jekyll build --baseurl /schemaorg --verbose --trace || {
+          bundle exec jekyll build --destination _site --baseurl /schemaorg --verbose --trace || {
             echo ""
             echo "=== Jekyll build failed! ==="
             echo "Checking if _site was partially created:"
@@ -183,8 +183,17 @@ jobs:
           }
           echo ""
           echo "=== Post-Jekyll build diagnostics ==="
-          echo "Contents of _site (first 20):"
-          ls -la _site/ | head -20
+          echo "Checking if _site directory exists:"
+          if [ -d "_site" ]; then
+            echo "✓ _site directory exists"
+            echo "Contents of _site (first 20):"
+            ls -la _site/ | head -20
+          else
+            echo "✗ ERROR: _site directory does not exist!"
+            echo "Jekyll build may have failed silently"
+            echo "Current directory contents:"
+            ls -la
+          fi
           echo ""
           echo "All HTML files in _site:"
           find _site -name "*.html" | head -20
@@ -229,9 +238,14 @@ jobs:
       - name: Pre-upload verification
         run: |
           echo "=== Final verification before artifact upload ==="
+          echo "Current working directory: $(pwd)"
+          echo ""
+          echo "Looking for _site directory:"
+          find . -name "_site" -type d | head -10
+          echo ""
           echo "Checking ./docs/_site directory:"
           if [ -d "./docs/_site" ]; then
-            echo "✓ _site directory exists"
+            echo "✓ _site directory exists at ./docs/_site"
             echo "Total files: $(find ./docs/_site -type f | wc -l)"
             echo "Total directories: $(find ./docs/_site -type d | wc -l)"
             echo ""
@@ -241,10 +255,24 @@ jobs:
             echo "HTML files at root:"
             ls ./docs/_site/*.html 2>/dev/null | head -10 || echo "No HTML files at root"
             echo ""
+            echo "Looking for Person.html:"
+            find ./docs/_site -name "*Person*" | head -10
+            echo ""
             echo "All directories in _site:"
             find ./docs/_site -type d | head -20
           else
             echo "✗ ERROR: ./docs/_site directory does not exist!"
+            echo ""
+            echo "Checking if _site exists elsewhere:"
+            if [ -d "docs/_site" ]; then
+              echo "Found at docs/_site (without ./)"
+              ls -la docs/_site/ | head -10
+            elif [ -d "_site" ]; then
+              echo "Found at _site"
+              ls -la _site/ | head -10
+            else
+              echo "No _site directory found anywhere"
+            fi
             exit 1
           fi
       
