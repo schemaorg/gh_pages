@@ -481,9 +481,9 @@ def main():
         print("Generating all pages...")
         generator.generate_all_pages()
         
-        # Generate index page
-        print("Generating index page...")
-        generate_index_page(schema_parser)
+        # Don't generate index page - we have a custom one
+        # print("Generating index page...")
+        # generate_index_page(schema_parser)
         
         print("Schema.org page generation from JSON-LD complete!")
         

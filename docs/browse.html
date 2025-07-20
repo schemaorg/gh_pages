@@ -1,0 +1,47 @@
+---
+layout: none
+permalink: /browse
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Browse - Schema.org</title>
+    <link rel="stylesheet" href="{{ site.baseurl }}/schema-org.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1><a href="{{ site.baseurl }}/" style="text-decoration: none; color: inherit;">Schema.org</a></h1>
+        </div>
+    </header>
+    
+    <div class="container">
+        <div class="main-content">
+            <h2>Schema.org Type and Property Reference</h2>
+            <p>This is a complete list of all types and properties in the Schema.org vocabulary.</p>
+            
+            <div class="index-container">
+                <div class="index-section">
+                    <h3>Types ({{ site.types.size }} total)</h3>
+                    <ul class="index-list">
+                        {% for type in site.types %}
+                        <li><a href="{{ site.baseurl }}{{ type.url }}">{{ type.title }}</a></li>
+                        {% endfor %}
+                    </ul>
+                </div>
+                
+                <div class="index-section">
+                    <h3>Properties ({{ site.properties.size }} total)</h3>
+                    <ul class="index-list">
+                        {% for property in site.properties %}
+                        <li><a href="{{ site.baseurl }}{{ property.url }}">{{ property.title }}</a></li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
