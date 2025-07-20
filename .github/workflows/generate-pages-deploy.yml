@@ -3,13 +3,14 @@ name: Generate and Deploy Schema Pages
 on:
   push:
     branches: [ main, master ]
-    paths:
-      - 'data/schema.ttl'
-      - 'data/schema.json'
-      - 'data/examples/**'
-      - 'generate_pages_from_jsonld.py'
-      - 'convert_ttl_to_jsonld.py'
-      - '.github/workflows/generate-pages-deploy.yml'
+    # Temporarily removed path filters for debugging
+    # paths:
+    #   - 'data/schema.ttl'
+    #   - 'data/schema.json'
+    #   - 'data/examples/**'
+    #   - 'generate_pages_from_jsonld.py'
+    #   - 'convert_ttl_to_jsonld.py'
+    #   - '.github/workflows/generate-pages-deploy.yml'
   workflow_dispatch:
 
 # Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
