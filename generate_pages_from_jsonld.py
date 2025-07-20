@@ -145,7 +145,7 @@ class JekyllGenerator:
             content += f"""
     <div class="type-hierarchy">
         <strong>Subclass of:</strong>
-        <span class="hierarchy-item"><a href="/{type_data['subclass_of']}">{type_data['subclass_of']}</a></span>
+        <span class="hierarchy-item"><a href="{{{{ site.baseurl }}}}/{type_data['subclass_of']}">{type_data['subclass_of']}</a></span>
     </div>
 """
         
@@ -153,7 +153,7 @@ class JekyllGenerator:
             content += f"""
     <div class="type-hierarchy">
         <strong>More specific types:</strong>
-        {', '.join([f'<span class="hierarchy-item"><a href="/{st}">{st}</a></span>' for st in sorted(subtypes)])}
+        {', '.join([f'<span class="hierarchy-item"><a href="{{{{ site.baseurl }}}}/{st}">{st}</a></span>' for st in sorted(subtypes)])}
     </div>
 """
         
@@ -204,7 +204,7 @@ class JekyllGenerator:
         
         for range_type in prop_data['range_includes']:
             if range_type in self.schema_parser.types:
-                content += f'        <li><a href="/{range_type}">{range_type}</a></li>\n'
+                content += f'        <li><a href="{{{{ site.baseurl }}}}/{range_type}">{range_type}</a></li>\n'
             else:
                 content += f'        <li>{range_type}</li>\n'
         
@@ -217,7 +217,7 @@ class JekyllGenerator:
 """
         
         for domain_type in prop_data['domain_includes']:
-            content += f'        <li><a href="/{domain_type}">{domain_type}</a></li>\n'
+            content += f'        <li><a href="{{{{ site.baseurl }}}}/{domain_type}">{domain_type}</a></li>\n'
         
         content += """    </ul>
 </div>
@@ -244,11 +244,11 @@ class JekyllGenerator:
         for prop_name in properties:
             if prop_name in self.schema_parser.properties:
                 prop_data = self.schema_parser.properties[prop_name]
-                range_types = ', '.join([f'<a href="/{rt}">{rt}</a>' if rt in self.schema_parser.types 
+                range_types = ', '.join([f'<a href="{{{{ site.baseurl }}}}/{rt}">{rt}</a>' if rt in self.schema_parser.types 
                                        else rt for rt in prop_data['range_includes']])
                 html += f"""
             <tr>
-                <td><span class="property-name"><a href="/{prop_name}">{prop_name}</a></span></td>
+                <td><span class="property-name"><a href="{{{{ site.baseurl }}}}/{prop_name}">{prop_name}</a></span></td>
                 <td><span class="expected-type">{range_types}</span></td>
                 <td>{prop_data['comment']}</td>
             </tr>
@@ -280,11 +280,11 @@ class JekyllGenerator:
         for prop_name in properties:
             if prop_name in self.schema_parser.properties:
                 prop_data = self.schema_parser.properties[prop_name]
-                domain_types = ', '.join([f'<a href="/{dt}" class="type-link">{dt}</a>' 
+                domain_types = ', '.join([f'<a href="{{{{ site.baseurl }}}}/{dt}" class="type-link">{dt}</a>' 
                                         for dt in prop_data['domain_includes']])
                 html += f"""
             <tr>
-                <td><span class="property-name"><a href="/{prop_name}">{prop_name}</a></span></td>
+                <td><span class="property-name"><a href="{{{{ site.baseurl }}}}/{prop_name}">{prop_name}</a></span></td>
                 <td>{domain_types}</td>
                 <td>{prop_data['comment']}</td>
             </tr>
