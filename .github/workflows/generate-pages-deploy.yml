@@ -126,11 +126,9 @@ jobs:
         run: |
           if [ ! -f "docs/Gemfile" ]; then
             echo "Creating Gemfile..."
-            cat > docs/Gemfile << 'EOF'
-source "https://rubygems.org"
-gem "jekyll", "~> 4.3"
-gem "webrick"
-EOF
+            echo 'source "https://rubygems.org"' > docs/Gemfile
+            echo 'gem "jekyll", "~> 4.3"' >> docs/Gemfile
+            echo 'gem "webrick"' >> docs/Gemfile
           else
             echo "Gemfile already exists:"
             cat docs/Gemfile
