@@ -172,9 +172,11 @@ jobs:
           echo "Jekyll config:"
           cat _config.yml
           echo ""
-          echo "=== Building Jekyll ==="
+          echo "=== Installing Jekyll dependencies ==="
           bundle install
-          bundle exec jekyll build --destination _site --baseurl /schemaorg --verbose --trace || {
+          echo ""
+          echo "=== Building Jekyll site ==="
+          JEKYLL_ENV=production bundle exec jekyll build --destination _site --baseurl /schemaorg --verbose --trace || {
             echo ""
             echo "=== Jekyll build failed! ==="
             echo "Checking if _site was partially created:"
@@ -205,14 +207,25 @@ jobs:
           find _site -name "*property*" -o -name "*Property*" | head -10
           echo ""
           echo "Checking collection output:"
+          echo "Direct search for Person:"
+          ls -la _site/Person* 2>/dev/null || echo "No Person file found at root"
+          echo ""
           if [ -d "_site/types" ]; then
             echo "Found _site/types directory"
             ls _site/types/ | head -5
+          else
+            echo "No _site/types directory"
           fi
           if [ -d "_site/properties" ]; then
             echo "Found _site/properties directory"
             ls _site/properties/ | head -5
+          else
+            echo "No _site/properties directory"
           fi
+          echo ""
+          echo "Checking if collections were built:"
+          echo "Files in _site root:"
+          ls _site/ | grep -E "(Person|Thing|name|description)" | head -10 || echo "No schema files found"
           echo ""
           echo "Checking Jekyll processing of debug.html:"
           if [ -f "_site/debug.html" ]; then

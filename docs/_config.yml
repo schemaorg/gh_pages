@@ -4,8 +4,10 @@ baseurl: "/schemaorg"
 url: "https://nlweb-ai.github.io"
 
 # GitHub Pages settings
-theme: null
-plugins: []
+plugins:
+  - jekyll-redirect-from
+  - jekyll-sitemap
+  - jekyll-feed
 
 # Process all HTML files
 markdown: kramdown
@@ -17,10 +19,10 @@ include:
 collections:
   types:
     output: true
-    permalink: /:name:output_ext
+    permalink: /:name
   properties:
     output: true
-    permalink: /:name:output_ext
+    permalink: /:name
 
 # Default layout
 defaults:
