@@ -1,0 +1,32 @@
+/* Detail Tree CSS */
+.detail-tree {
+    font-family: monospace;
+    font-size: 14px;
+    line-height: 1.4;
+}
+
+.tree-node {
+    margin-left: 20px;
+}
+
+.tree-expand {
+    cursor: pointer;
+    user-select: none;
+}
+
+.tree-expand:before {
+    content: '▶ ';
+}
+
+.tree-expand.expanded:before {
+    content: '▼ ';
+}
+
+.tree-link {
+    color: #0066cc;
+    text-decoration: none;
+}
+
+.tree-link:hover {
+    text-decoration: underline;
+}

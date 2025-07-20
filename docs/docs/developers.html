@@ -8,13 +8,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="Schema.org is a set of extensible schemas that enables webmasters to embed
     structured data on their web pages for use by search engines and other applications." />
-    <link rel="shortcut icon" type="image/png" href="/docs/favicon.ico"/>
-    <link rel="stylesheet" type="text/css" href="/docs/schemaorg.css" />
-    <link rel="stylesheet" type="text/css" href="/docs/devnote.css" />
-    <link rel="stylesheet" type="text/css" href="/docs/prettify.css" />
-    <link rel="stylesheet" type="text/css" href="/docs/devnote.css" />
+    <link rel="shortcut icon" type="image/png" href="../favicon.ico"/>
+    <link rel="stylesheet" type="text/css" href="../schema-org.css" />
+    <link rel="stylesheet" type="text/css" href="devnote.css" />
+    <link rel="stylesheet" type="text/css" href="prettify.css" />
+    <link rel="stylesheet" type="text/css" href="devnote.css" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="/docs/schemaorg.js"></script>
+    <script src="schemaorg.js"></script>
     
 <!-- Static Doc Insert Head end -->
 
@@ -26,7 +26,7 @@
 
 <div class="devnote"><b>Note</b>: You are viewing the development
   version of <a href="https://schema.org">Schema.org</a>.
-  See <a href="/docs/howwework.html">how we work</a> for more details.
+  See <a href="howwework.html">how we work</a> for more details.
 </div>
 <div id="container">
   <div id="headerwrap">
@@ -40,16 +40,16 @@
         <div id="selectionbar2">
           <ul>
             <li>
-              <a href="/docs/documents.html">Docs</a>
+              <a href="documents.html">Docs</a>
             </li>
             <li>
-              <a href="/docs/schemas.html">Schemas</a>
+              <a href="schemas.html">Schemas</a>
             </li>
             <li>
               <a href="https://validator.schema.org">Validate</a>
             </li>
             <li>
-              <a href="/docs/about.html">About</a>
+              <a href="about.html">About</a>
             </li>
           </ul>
         </div> <!-- selectionbar -->
@@ -124,7 +124,7 @@ This page provides basic developer-oriented information about Schema.org. In par
 
 <p>Select the file and format required and click Download.  The CSV format downloads are split across two files: <em>Types</em> includes definitions of Types and Enumeration Values, including lists of associated properties; <em>Properties</em> contains property definitions.<br/>
 <br/>
-File <em>schemaorg-current-https</em> contains the definition of all terms in, all sections of, the vocabulary.  The file <em>schemaorg-all-https</em> contains the definition of all terms in, all sections of, the vocabulary, <strong>plus</strong> terms retired from the vocabulary (<em>See the <a href="/docs/attic.home.html">attic section</a> for details</em>).</p>
+File <em>schemaorg-current-https</em> contains the definition of all terms in, all sections of, the vocabulary.  The file <em>schemaorg-all-https</em> contains the definition of all terms in, all sections of, the vocabulary, <strong>plus</strong> terms retired from the vocabulary (<em>See the <a href="attic.home.html">attic section</a> for details</em>).</p>
 
 <p>For those preferring to use http based definitions of Schema.org terms, these equivalent definitions are available in the <em>schemaorg-current-http</em> and <em>schemaorg-all-http</em> files. For more information on using https or http based terms see the <a href="https://schema.org/docs/faq.html#19">FAQ</a> for details.</p>
 <br/>
@@ -184,7 +184,7 @@ File <em>schemaorg-current-https</em> contains the definition of all terms in, a
 
    <p>
     A simplification of the Schema.org type hierarchy, in which each type has at most one super-type, represented
-    in a hybrid format that combines JSON-LD, <a href="https://en.wikipedia.org/wiki/RDF_Schema">RDFS</a> and <a href="https://d3js.org/">D3</a>: <a href="/docs/tree.jsonld">tree.jsonld</a>.
+    in a hybrid format that combines JSON-LD, <a href="https://en.wikipedia.org/wiki/RDF_Schema">RDFS</a> and <a href="https://d3js.org/">D3</a>: <a href="tree.jsonld">tree.jsonld</a>.
   </p>
   <p>
     This file is made available to support developers using the <a href="https://d3js.org/">D3</a> JavaScript library for manipulating documents based on data.
@@ -193,14 +193,14 @@ File <em>schemaorg-current-https</em> contains the definition of all terms in, a
 	</p>
 
    <h3 id="owl">OWL</h3>
-    <p>As an experimental feature, an <a href="https://en.wikipedia.org/wiki/Web_Ontology_Language">OWL</a> definition file <a href="/docs/schemaorg.owl">schemaorg.owl</a> is available. It includes
+    <p>As an experimental feature, an <a href="https://en.wikipedia.org/wiki/Web_Ontology_Language">OWL</a> definition file <a href="schemaorg.owl">schemaorg.owl</a> is available. It includes
         the core and all current extensions to the vocabulary.</p>
     <p>The structure of the file differs from the above vocabulary definition files, in that <code>schema:domainIncludes</code> and <code>schema:rangeIncludes</code>
         values are converted into <code>rdfs:domain</code> and <code>rdfs:range</code> values using <code>owl:unionOf</code> to capture the multiplicity of values.
         Included in the range values are the, implicit within the vocabulary, default values of <a href="/Text">Text</a>, <a href="/URL">URL</a>,
         and <a href="/Role">Role</a>.</p>
     <p>This file has been made available to enable the representation of the vocabulary in some OWL-based modeling tools.
-      The mapping into OWL is an approximation, and should not be considered an authoritative definition for Schema.org's terms; see <a href="/docs/datamodel.html">datamodel page</a> for details.
+      The mapping into OWL is an approximation, and should not be considered an authoritative definition for Schema.org's terms; see <a href="datamodel.html">datamodel page</a> for details.
       As an experimental feature, there are no expectations as to its interpretation by any third party tools.</p>
 
 		</article>
@@ -248,7 +248,7 @@ function dowloadfunc(){
 
  <!-- Static Doc Insert Footer -->
     <div id="footer">
-      <p><a href="/docs/terms.html">Terms and conditions</a></p>
+      <p><a href="terms.html">Terms and conditions</a></p>
       <div id="versioninfo">
         <span class="sep">â¢</span>
         Schema.org

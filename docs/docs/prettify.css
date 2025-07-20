@@ -1,0 +1,18 @@
+/* Prettify CSS for code highlighting */
+.prettyprint {
+    background-color: #f5f5f5;
+    border: 1px solid #ccc;
+    padding: 10px;
+    overflow: auto;
+}
+
+.pln { color: #000 }  /* plain text */
+.str { color: #080 }  /* string content */
+.kwd { color: #008 }  /* keyword */
+.com { color: #800 }  /* comment */
+.typ { color: #606 }  /* type name */
+.lit { color: #066 }  /* literal value */
+.pun { color: #660 }  /* punctuation */
+.tag { color: #008 }  /* markup tag */
+.atn { color: #606 }  /* markup attribute name */
+.atv { color: #080 }  /* markup attribute value */
