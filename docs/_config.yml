@@ -5,6 +5,7 @@ url: "https://nlweb-ai.github.io"
 repository: "nlweb-ai/schemaorg"
 
 # GitHub Pages settings
+theme: null
 plugins:
   - jekyll-redirect-from
   - jekyll-sitemap
