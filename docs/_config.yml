@@ -2,6 +2,7 @@ title: Schema.org
 description: Schema.org provides schemas for structured data on the Internet
 baseurl: "/schemaorg"
 url: "https://nlweb-ai.github.io"
+repository: "nlweb-ai/schemaorg"
 
 # GitHub Pages settings
 plugins:
@@ -9,11 +10,12 @@ plugins:
   - jekyll-sitemap
   - jekyll-feed
 
-# Process all HTML files
+# Process all files
 markdown: kramdown
 include:
   - "*.html"
   - "*.md"
+  - "_*"
 
 # Collections for schema types
 collections:
@@ -36,3 +38,10 @@ defaults:
       type: "properties"
     values:
       layout: "property"
+
+# Exclude files from processing
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - vendor

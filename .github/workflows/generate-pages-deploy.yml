@@ -307,6 +307,26 @@ jobs:
             exit 1
           fi
       
+      - name: Prepare artifact directory
+        run: |
+          echo "=== Preparing artifact ==="
+          echo "Current directory: $(pwd)"
+          echo "Checking docs/_site:"
+          if [ -d "docs/_site" ]; then
+            echo "✓ docs/_site exists"
+            echo "Number of files: $(find docs/_site -type f | wc -l)"
+            echo "Number of HTML files: $(find docs/_site -name "*.html" | wc -l)"
+            echo ""
+            echo "Checking for Person.html specifically:"
+            find docs/_site -name "Person.html" -o -name "Person" | head -5
+            echo ""
+            echo "First 10 files in _site:"
+            find docs/_site -type f | head -10
+          else
+            echo "✗ ERROR: docs/_site does not exist!"
+            exit 1
+          fi
+      
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:

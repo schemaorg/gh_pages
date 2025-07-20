@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ page.title }} - Schema.org</title>
+    <link rel="stylesheet" href="{{ '/schema-org.css' | relative_url }}">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1><a href="{{ '/' | relative_url }}" style="text-decoration: none; color: inherit;">Schema.org</a></h1>
+        </div>
+    </header>
+    
+    <div class="container">
+        <div class="main-content">
+            {{ content }}
+        </div>
+    </div>
+</body>
+</html>
