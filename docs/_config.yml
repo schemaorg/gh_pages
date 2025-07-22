@@ -1,8 +1,8 @@
 title: Schema.org
 description: Schema.org provides schemas for structured data on the Internet
-baseurl: "/schemaorg"
-url: "https://nlweb-ai.github.io"
-repository: "nlweb-ai/schemaorg"
+baseurl: "/gh_pages"
+url: "https://schemaorg.github.io"
+repository: "schemaorg/gh_pages"
 
 # GitHub Pages settings
 theme: null

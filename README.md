@@ -13,11 +13,11 @@ To enable GitHub Pages for this repository:
 ## Viewing the Site
 
 Once deployed, the site will be available at:
-`https://nlweb-ai.github.io/schemaorg/`
+`https://schemaorg.github.io/gh_pages/`
 
 ## Current Schema Types
 
-- [Person](https://nlweb-ai.github.io/schemaorg/Person.html) - A person (alive, dead, undead, or fictional)
+- [Person](https://schemaorg.github.io/gh_pages/Person.html) - A person (alive, dead, undead, or fictional)
 
 ## Local Development
 
