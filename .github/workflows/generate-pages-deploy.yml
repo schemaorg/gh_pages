@@ -63,6 +63,10 @@ jobs:
             exit 1
           fi
           echo ""
+          echo "=== Cleaning old generated files ==="
+          rm -rf docs/_types docs/_properties
+          echo "Removed old collection directories"
+          echo ""
           echo "=== Running JSON-LD based generator ==="
           python generate_pages_from_jsonld.py 2>&1 || { 
             echo "Generator failed with exit code $?"
