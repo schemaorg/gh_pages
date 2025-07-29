@@ -84,11 +84,12 @@ header h1 {
     font-style: italic;
 }
 .expected-type a {
-    color: #666;
+    color: #3366cc;
     text-decoration: none;
 }
 .expected-type a:hover {
     text-decoration: underline;
+    color: #0645ad;
 }
 .type-link {
     color: #3366cc;
