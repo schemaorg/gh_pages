@@ -1,0 +1,24 @@
+---
+layout: default
+title: Test Links
+---
+
+<h1>Testing Jekyll Link Processing</h1>
+
+<table>
+    <tr>
+        <td>Property link test:</td>
+        <td><span class="property-name"><a href="{{ site.baseurl }}/name">name</a></span></td>
+    </tr>
+    <tr>
+        <td>Expected type link test:</td>
+        <td><span class="expected-type"><a href="{{ site.baseurl }}/Text">Text</a></span></td>
+    </tr>
+    <tr>
+        <td>Multiple links test:</td>
+        <td><span class="expected-type"><a href="{{ site.baseurl }}/Text">Text</a>, <a href="{{ site.baseurl }}/URL">URL</a></span></td>
+    </tr>
+</table>
+
+<p>If the links above work, then Jekyll is processing correctly.</p>
+</content>
