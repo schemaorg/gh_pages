@@ -244,8 +244,8 @@ class JekyllGenerator:
         for prop_name in properties:
             if prop_name in self.schema_parser.properties:
                 prop_data = self.schema_parser.properties[prop_name]
-                range_types = ', '.join([f'<a href="{{{{ site.baseurl }}}}/{rt}">{rt}</a>' if rt in self.schema_parser.types 
-                                       else rt for rt in prop_data['range_includes']])
+                range_types = ', '.join([f'<a href="{{{{ site.baseurl }}}}/{rt}">{rt}</a>' 
+                                       for rt in prop_data['range_includes']])
                 html += f"""
             <tr>
                 <td><span class="property-name"><a href="{{{{ site.baseurl }}}}/{prop_name}">{prop_name}</a></span></td>
