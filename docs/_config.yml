@@ -19,7 +19,6 @@ include:
   - "_*"
 
 # Force processing of HTML files
-plugins_dir: .
 liquid:
   error_mode: warn
   strict_filters: false
