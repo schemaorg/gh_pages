@@ -12,18 +12,37 @@ body {
     font-size: 14px;
     line-height: 1.5;
     color: #333;
-    background-color: #fff;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
 }
 
-/* Container */
+/* Container - for doc pages (ID) */
 #container {
     width: 100%;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
 }
 
-/* Header Styles */
+/* Container - for type pages (class) */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Header Styles - for type pages */
+header {
+    background: #fff;
+    border-bottom: 1px solid #ddd;
+    padding: 20px 0;
+}
+
+header h1 {
+    margin: 0;
+    color: #900;
+    font-size: 24px;
+}
+
+/* Header Styles - for doc pages */
 #headerwrap {
     background-color: #f8f8f8;
     border-bottom: 1px solid #e0e0e0;
@@ -101,19 +120,44 @@ body {
     padding: 10px 20px;
     text-align: center;
     font-size: 13px;
+    margin: 0;
 }
 
 .devnote a {
     color: #0066cc;
 }
 
-/* Main Content */
+/* Main Content - for doc pages */
 #mainContent {
-    flex: 1;
     max-width: 1200px;
     margin: 0 auto;
-    padding: 40px 20px;
+    padding: 20px;
     width: 100%;
+}
+
+/* Main Content - for type pages */
+.main-content {
+    background: #fff;
+    padding: 20px;
+    margin: 20px 0;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+/* Breadcrumb navigation */
+.breadcrumb {
+    padding: 10px 0;
+    color: #666;
+    font-size: 13px;
+}
+
+.breadcrumb a {
+    color: #0066cc;
+    text-decoration: none;
+}
+
+.breadcrumb a:hover {
+    text-decoration: underline;
 }
 
 .row {
@@ -124,7 +168,7 @@ body {
     font-size: 28px;
     line-height: 1.3;
     color: #333;
-    margin-bottom: 20px;
+    margin: 0 0 20px 0;
 }
 
 .row p {
@@ -199,7 +243,7 @@ a:hover {
 
 /* Additional Utility Classes */
 .header-bottom {
-    height: 1px;
+    height: 0;
 }
 
 .live-only {
@@ -307,4 +351,60 @@ article h2 {
     margin-top: 35px;
     margin-bottom: 20px;
     color: #333;
+}
+
+/* Type page specific styles */
+.type-info {
+    background: #f9f9f9;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-bottom: 30px;
+}
+
+.type-hierarchy {
+    margin: 20px 0;
+}
+
+.hierarchy-item {
+    padding-left: 20px;
+}
+
+.property-list {
+    margin: 20px 0;
+}
+
+.property-item {
+    margin: 10px 0;
+    padding: 10px;
+    background: #f5f5f5;
+    border-left: 3px solid #900;
+}
+
+.property-name {
+    font-weight: bold;
+    color: #900;
+}
+
+.property-description {
+    margin-top: 5px;
+    color: #666;
+}
+
+.subclass-list, .instance-list {
+    margin: 20px 0;
+}
+
+.subclass-item, .instance-item {
+    display: inline-block;
+    margin: 5px;
+    padding: 5px 10px;
+    background: #e9e9e9;
+    border-radius: 3px;
+    text-decoration: none;
+    color: #333;
+}
+
+.subclass-item:hover, .instance-item:hover {
+    background: #d0d0d0;
 }
