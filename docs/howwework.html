@@ -1,6 +1,6 @@
 ---
 layout: none
-permalink: /howwework
+permalink:  /docs/howwework.html
 ---
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
@@ -34,7 +34,7 @@ permalink: /howwework
 
 <div class="devnote"><b>Note</b>: You are viewing the development
   version of <a href="https://schema.org">Schema.org</a>.
-  See <a href="howwework.html">how we work</a> for more details.
+  See <a href="{{ site.baseurl }}/docs/howwework.html">how we work</a> for more details.
 </div>
 <div id="container">
   <div id="headerwrap">
@@ -48,16 +48,16 @@ permalink: /howwework
         <div id="selectionbar2">
           <ul>
             <li>
-              <a href="documents.html">Docs</a>
+              <a href="{{ site.baseurl }}/docs/gs.html">Docs</a>
             </li>
             <li>
-              <a href="schemas.html">Schemas</a>
+              <a href="{{ site.baseurl }}/docs/schemas.html">Schemas</a>
             </li>
             <li>
               <a href="https://validator.schema.org">Validate</a>
             </li>
             <li>
-              <a href="about.html">About</a>
+              <a href="{{ site.baseurl }}/docs/about.html">About</a>
             </li>
           </ul>
         </div> <!-- selectionbar -->
@@ -97,7 +97,7 @@ permalink: /howwework
 
 <p>
 This document provides a brief overview of schema.org's process for developing and
-changing schemas. It accompanies the <a href="about.html">about schema.org</a> page
+changing schemas. It accompanies the <a href="{{ site.baseurl }}/docs/about.html">about schema.org</a> page
 which describes the organizational structure of the project.
 </p>
 
@@ -140,7 +140,7 @@ which describes the organizational structure of the project.
 <p>
 Schema.org is developed incrementally. Since 2011 we have published several
 substantial updates a year. These are known as <em>releases</em> and are
-documented on the <a href="releases.html">releases</a> page. Each release
+documented on the <a href="{{ site.baseurl }}/docs/releases.html">releases</a> page. Each release
 has a name that is assigned upon publication (e.g. "2.1"). Recent releases have
 also been given project-internal code names prior to launch, e.g. "sdo-phobos",
 which makes it easier to decide upon the final name (e.g. "2.9" versus "3.0") as the work
@@ -149,13 +149,13 @@ develops.
 
 <p>
 The content of each release is based on public discussions hosted on W3C's
-community group platform and on the Github site. All <a href="releases.html">changes</a> to the
+community group platform and on the Github site. All <a href="{{ site.baseurl }}/docs/releases.html">changes</a> to the
 project have been through unanimous agreement of the Steering Group membership, strongly
 informed by the opinions, contributions and discussions in the wider community.
 </p>
 
 <p>
-Recently we have been expanding on this model with two types of <a href="extension.html">extension</a> vocabulary: hosted and external extensions.
+Recently we have been expanding on this model with two types of <a href="{{ site.baseurl }}/docs/extension.html">extension</a> vocabulary: hosted and external extensions.
 Hosted extensions are effectively part of schema.org but "tagged" within a subdomain (e.g. <a href="bib.home.html">bib.schema.org</a>,
 <a href="auto.home.html">auto.schema.org</a>). External extensions (e.g.
 see <a href="http://blog.schema.org/2016/02/gs1-milestone-first-schemaorg-external.html">GS1's Web Vocabulary</a>) are published elsewhere on the Web, and are typically managed by other
@@ -166,7 +166,7 @@ of the schema.org project, with their design often led by one or more dedicated 
 <p>
 For general use, publishers and consumers are encouraged to use the latest release and to use simple non-versioned schema.org URLs such as 'https://schema.org/Place'
 in structured data applications. However there are settings in which more precise versioning is important. Schema.org also provides dated snapshots of each release, including
-both human and machine readable definitions of the schema.org core vocabulary. These are linked from the <a href="releases.html">releases page</a>. In addition,
+both human and machine readable definitions of the schema.org core vocabulary. These are linked from the <a href="{{ site.baseurl }}/docs/releases.html">releases page</a>. In addition,
 the <a href="/schemaVersion">schemaVersion</a> property has been defined to provide a way for documents to indicate the specific intended version of schema.org's
 definitions. Finally, all changes to the site and its underlying software are now <a href="https://github.com/schemaorg/schemaorg/">published via Github</a>.
 </p>
@@ -179,7 +179,7 @@ definitions. Finally, all changes to the site and its underlying software are no
 <p>The schema.org site contains:</p>
 
 <ul>
- <li>A homepage and a few <a href="documents.html">overview documents</a> such as this.</li>
+ <li>A homepage and a few <a href="{{ site.baseurl }}/docs/gs.html">overview documents</a> such as this.</li>
  <li>Term definitions - one page for each term. Every schema.org term is either a type (e.g. <a href="/Event">Event</a>),
    a property (e.g. <a href="/workPerformed">workPerformed</a>),
    or an enumerated value (e.g. <a href="/ReservationCancelled">ReservationCancelled</a>). Definitions consist of an identifier such as "<code>Event</code>",
@@ -206,8 +206,8 @@ definitions. Finally, all changes to the site and its underlying software are no
 <h2 id="schemalang">Schema definitions</h2>
 
  <p>Schema.org essentially defines a dictionary of terms (types, properties and enumerated values). To understand its evolution, a brief summary
-   of the definition structure is needed (see also <a href="datamodel.html">datamodel overview</a>). In schema.org, each type can have one or more supertypes,
- although it is rare to have more than one supertype. This provides the main <a href="full.html">hierarchical</a> navigational structure of schema.org: a tree of
+   of the definition structure is needed (see also <a href="{{ site.baseurl }}/docs/datamodel.html">datamodel overview</a>). In schema.org, each type can have one or more supertypes,
+ although it is rare to have more than one supertype. This provides the main <a href="{{ site.baseurl }}/docs/full.html">hierarchical</a> navigational structure of schema.org: a tree of
  types with <a href="/Thing">Thing</a> at the root. Each property may have a more general super-property (e.g. <a href="/partOfSeason">partOfSeason</a> is a specialization of
  <a href="/isPartOf">isPartOf</a>), but there is no unified hierarchy of properties. Pairs of properties can also be marked as being inverses of each other: i.e. they
  say effectively the thing, expressed in opposite direction, e.g. <a href="/alumni">alumni</a>/<a href="/alumniOf">alumniOf</a>, <a href="/isPartOf">isPartOf</a>/<a href="/hasPart">hasPart</a>.
@@ -244,7 +244,7 @@ and property-to-type associations that gradually make schema.org more coherent, 
 improve usability. </p>
 
 <p>
-  A common change is for a property to be marked as applicable to some previously unrelated type, or to expect to take values of a new type. When this happens the textual definitions are often adjusted slightly too. This is either by listing the new types explicitly, or through the use of a more general term like "item", "entity" or "thing". The issue summaries in the project <a href="releases.html">releases</a> page are a good guide to the kind of changes to expect in future.
+  A common change is for a property to be marked as applicable to some previously unrelated type, or to expect to take values of a new type. When this happens the textual definitions are often adjusted slightly too. This is either by listing the new types explicitly, or through the use of a more general term like "item", "entity" or "thing". The issue summaries in the project <a href="{{ site.baseurl }}/docs/releases.html">releases</a> page are a good guide to the kind of changes to expect in future.
 </p>
 
 </section>
@@ -252,7 +252,7 @@ improve usability. </p>
 
 <h2 id="extensibility">Extensibility Mechanisms</h2>
 <p>
-In addition to the two dedicated <a href="extension.html">extension</a> mechanisms (hosted and external) there are several other ways in which schema.org structured
+In addition to the two dedicated <a href="{{ site.baseurl }}/docs/extension.html">extension</a> mechanisms (hosted and external) there are several other ways in which schema.org structured
 data can be extended with complete independence from the evolving definitions and discussions at schema.org.</p>
 
 <ul>
@@ -275,7 +275,7 @@ data can be extended with complete independence from the evolving definitions an
 <h2 id="pending">Early Access Fixes and Pending Releases</h2>
 
 <p><b>Early Access Fixes</b>: We have recently introduced mechanisms for more rapid updates to the schema.org site, in between official named releases. Prior to 2015, the schema.org site was only ever updated during official releases (or for occasional emergency repairs such as software bug fixes). In 2015 we introduced
-both the hosted <a href="extension.html">extensions</a> mechanism and the notion of "Early Access Fixes" which could be published to schema.org immediately with the agreement of the steering committee. An "Early Access Fixes" section at the top of the <a href="releases.html">releases</a> page lists any recently implemented fixes that have occurred
+both the hosted <a href="{{ site.baseurl }}/docs/extension.html">extensions</a> mechanism and the notion of "Early Access Fixes" which could be published to schema.org immediately with the agreement of the steering committee. An "Early Access Fixes" section at the top of the <a href="{{ site.baseurl }}/docs/releases.html">releases</a> page lists any recently implemented fixes that have occurred
 since the most recent release.
 </p>
 
@@ -295,7 +295,7 @@ Version 3.0 of schema.org introduces the "pending schemas" extension. The pendin
 
 <p>
 This page has a relatively limited audience. Here are some questions and answers that go into greater depth than the more mainstream,
-webmaster-focussed <a href="faq.html">schema.org FAQ</a>.
+webmaster-focussed <a href="{{ site.baseurl }}/docs/faq.html">schema.org FAQ</a>.
 </p>
 
 <dl>
@@ -376,7 +376,7 @@ encouraging discussion amongst their contributors.
   <dd>The Schema.org webmaster's role, assisting the <a href="about.html#cgsg">steering group</a>, is to:
     <ul>
       <li>Take operational responsibility for the day-to-day running of the schema.org site and other online presence such as W3C community groups, Github, development sites.</li>
-      <li>Prepare and implement release candidates and site updates as described in <a href="howwework.html">this document</a>, drawing upon the rough consensus of
+      <li>Prepare and implement release candidates and site updates as described in <a href="{{ site.baseurl }}/docs/howwework.html">this document</a>, drawing upon the rough consensus of
         the wider community, and implemented with the approval of the steering committee.</li>
       <li>Facilitate wide-ranging community and industry involvement during schema design discussions, e.g. via W3C, Github.</li>
     </ul>
@@ -392,7 +392,7 @@ encouraging discussion amongst their contributors.
    ethics and professional conduct</a>, as well as each other. Attention is also drawn to the <a href="https://schema.org/docs/terms.html">terms of service</a> document which includes copyright (CC BY-SA 3.0) and W3C RF commitments from schema.org's founders (i.e. the founding search engines).
  </p>
  <p>In terms of workflow, the primary difference between schema.org and W3C's recommendation track process is an emphasis on incremental publication of releases (several
-   releases per year) approved by a small <a href="about.html#cgsg">steering group</a> whose role is to evaluate and approve release candidates prepared by the project <a href="#webmaster">webmaster</a> on the basis of wider discussion. Releases are <a href="releases.html">published</a> to the official site by the <a href="#webmaster">project webmaster</a> following the review and approval of the <a href="about.html#cgsg">steering group</a>.
+   releases per year) approved by a small <a href="about.html#cgsg">steering group</a> whose role is to evaluate and approve release candidates prepared by the project <a href="#webmaster">webmaster</a> on the basis of wider discussion. Releases are <a href="{{ site.baseurl }}/docs/releases.html">published</a> to the official site by the <a href="#webmaster">project webmaster</a> following the review and approval of the <a href="about.html#cgsg">steering group</a>.
    Steering Group review occurs in public email threads (e.g. <a href="https://lists.w3.org/Archives/Public/public-schemaorg/2015May/0000.html">v2.0</a>,
    <a href="https://lists.w3.org/Archives/Public/public-schemaorg/2015Jul/0003.html">v2.1</a>,
    <a href="https://lists.w3.org/Archives/Public/public-schemaorg/2015Sep/0007.html">v2.2</a>,
@@ -416,7 +416,7 @@ encouraging discussion amongst their contributors.
    <p>
    The main forum for schema.org discussions is the <a href="http://www.w3.org/community/schemaorg/">W3C Schema.org Community Group</a>. There are also a number of more topical <a href="#grouplist">related community groups</a>, as mentioned below.
    Anyone can participate in these or <a  href="http://www.w3.org/community/">other</a> W3C community groups, regardless of whether their employer has
-     <a href="https://www.w3.org/Consortium/join">joined W3C</a>. These groups each host public email-based discussions. For schema.org, due to the broad scope of the project, the majority of our detailed discussions tend to occur in Github, organized as "<a href="https://github.com/schemaorg/schemaorg/issues">issues</a>". Substantial textual contributors (of schemas and examples) are expected to join the community group and review the project <a href="terms.html">terms of service</a>, but everyone is welcome to discuss issues (in Github or elsewhere), suggest small changes or otherwise collaborate.
+     <a href="https://www.w3.org/Consortium/join">joined W3C</a>. These groups each host public email-based discussions. For schema.org, due to the broad scope of the project, the majority of our detailed discussions tend to occur in Github, organized as "<a href="https://github.com/schemaorg/schemaorg/issues">issues</a>". Substantial textual contributors (of schemas and examples) are expected to join the community group and review the project <a href="{{ site.baseurl }}/docs/terms.html">terms of service</a>, but everyone is welcome to discuss issues (in Github or elsewhere), suggest small changes or otherwise collaborate.
    </p>
    <p>
    The best way to propose changes to schema.org is to raise an <a href="https://github.com/schemaorg/schemaorg/issues">issue</a> at Github, perhaps accompanied
@@ -452,7 +452,7 @@ encouraging discussion amongst their contributors.
 
  <!-- Static Doc Insert Footer -->
     <div id="footer">
-      <p><a href="terms.html">Terms and conditions</a></p>
+      <p><a href="{{ site.baseurl }}/docs/terms.html">Terms and conditions</a></p>
       <div id="versioninfo">
         <span class="sep">â¢</span>
         Schema.org

@@ -1,6 +1,6 @@
 ---
 layout: none
-permalink: /developers
+permalink:  /docs/developers.html
 ---
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
@@ -30,7 +30,7 @@ permalink: /developers
 
 <div class="devnote"><b>Note</b>: You are viewing the development
   version of <a href="https://schema.org">Schema.org</a>.
-  See <a href="howwework.html">how we work</a> for more details.
+  See <a href="{{ site.baseurl }}/docs/howwework.html">how we work</a> for more details.
 </div>
 <div id="container">
   <div id="headerwrap">
@@ -44,16 +44,16 @@ permalink: /developers
         <div id="selectionbar2">
           <ul>
             <li>
-              <a href="documents.html">Docs</a>
+              <a href="{{ site.baseurl }}/docs/gs.html">Docs</a>
             </li>
             <li>
-              <a href="schemas.html">Schemas</a>
+              <a href="{{ site.baseurl }}/docs/schemas.html">Schemas</a>
             </li>
             <li>
               <a href="https://validator.schema.org">Validate</a>
             </li>
             <li>
-              <a href="about.html">About</a>
+              <a href="{{ site.baseurl }}/docs/about.html">About</a>
             </li>
           </ul>
         </div> <!-- selectionbar -->
@@ -104,7 +104,7 @@ This page provides basic developer-oriented information about Schema.org. In par
 <ul>
   <li>The underlying source files are all available in our
     <a href="http://github.com/schemaorg/schemaorg/">Github repository</a>. Editorial work is conducted in Turtle format, and defined using an approach
-    <a href="datamodel.html">based on</a> <a href="https://en.wikipedia.org/wiki/RDF_Schema">RDF Schema</a>.
+    <a href="{{ site.baseurl }}/docs/datamodel.html">based on</a> <a href="https://en.wikipedia.org/wiki/RDF_Schema">RDF Schema</a>.
   </li>
   <li>Period releases are published on the Schema.org site, after staging on staging.schema.org. The corresponding data files are linked below, and are also available <a href="https://github.com/schemaorg/schemaorg/tree/main/data/releases">at Github</a>.</li>
   <li>Machine-readable definitions of individual terms are also available as JSON-LD, embedded into the term page HTML. Note that in many cases, it is more useful to consider schema.org as a whole.</li>
@@ -204,7 +204,7 @@ File <em>schemaorg-current-https</em> contains the definition of all terms in, a
         Included in the range values are the, implicit within the vocabulary, default values of <a href="/Text">Text</a>, <a href="/URL">URL</a>,
         and <a href="/Role">Role</a>.</p>
     <p>This file has been made available to enable the representation of the vocabulary in some OWL-based modeling tools.
-      The mapping into OWL is an approximation, and should not be considered an authoritative definition for Schema.org's terms; see <a href="datamodel.html">datamodel page</a> for details.
+      The mapping into OWL is an approximation, and should not be considered an authoritative definition for Schema.org's terms; see <a href="{{ site.baseurl }}/docs/datamodel.html">datamodel page</a> for details.
       As an experimental feature, there are no expectations as to its interpretation by any third party tools.</p>
 
 		</article>
@@ -252,7 +252,7 @@ function dowloadfunc(){
 
  <!-- Static Doc Insert Footer -->
     <div id="footer">
-      <p><a href="terms.html">Terms and conditions</a></p>
+      <p><a href="{{ site.baseurl }}/docs/terms.html">Terms and conditions</a></p>
       <div id="versioninfo">
         <span class="sep">â¢</span>
         Schema.org

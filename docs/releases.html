@@ -1,6 +1,6 @@
 ---
 layout: none
-permalink: /releases
+permalink:  /docs/releases.html
 ---
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
@@ -88,7 +88,7 @@ ul {
 
 <div class="devnote"><b>Note</b>: You are viewing the development
   version of <a href="https://schema.org">Schema.org</a>.
-  See <a href="howwework.html">how we work</a> for more details.
+  See <a href="{{ site.baseurl }}/docs/howwework.html">how we work</a> for more details.
 </div>
 <div id="container">
   <div id="headerwrap">
@@ -102,16 +102,16 @@ ul {
         <div id="selectionbar2">
           <ul>
             <li>
-              <a href="documents.html">Docs</a>
+              <a href="{{ site.baseurl }}/docs/gs.html">Docs</a>
             </li>
             <li>
-              <a href="schemas.html">Schemas</a>
+              <a href="{{ site.baseurl }}/docs/schemas.html">Schemas</a>
             </li>
             <li>
               <a href="https://validator.schema.org">Validate</a>
             </li>
             <li>
-              <a href="about.html">About</a>
+              <a href="{{ site.baseurl }}/docs/about.html">About</a>
             </li>
           </ul>
         </div> <!-- selectionbar -->
@@ -149,7 +149,7 @@ ul {
 <h1>Releases</h1>
 
 <p>This page lists schema.org releases, most recent first. New developments are <a href="https://github.com/schemaorg/schemaorg">discussed on Github</a>; editorial works-in-progress
-  are publicly staged on the <a href="https://staging.schema.org/">staging.schema.org</a> drafting site for review and collaboration. See <a href="howwework.html">how we work</a> for more background.</p>
+  are publicly staged on the <a href="https://staging.schema.org/">staging.schema.org</a> drafting site for review and collaboration. See <a href="{{ site.baseurl }}/docs/howwework.html">how we work</a> for more background.</p>
 
 <p>
 A summary view of the current published release is available from: <a href="https://schema.org/version/latest">https://schema.org/version/latest</a>
@@ -1044,7 +1044,7 @@ new <a href="/OccupationalExperienceRequirements">OccupationalExperienceRequirem
   <ul>
     <li>Fix invalid link to home page on Attic section (retired vocabulary).</li>
     <li>Reinstated home pages for auto, bib, health-lifesci and meta sections (2023 note: these are no longer used).</li>
-    <li>Fix invalid links to section home pages on <a href="schemas.html">Schemas</a> page.</li>
+    <li>Fix invalid links to section home pages on <a href="{{ site.baseurl }}/docs/schemas.html">Schemas</a> page.</li>
     <li>Update wording on pages for terms that are superseded, new or retired.</li>
     <li>Reinstated link to section home page for non-core terms.</li>
   </ul>
@@ -1096,7 +1096,7 @@ new <a href="/OccupationalExperienceRequirements">OccupationalExperienceRequirem
   <h3>Site Improvements</h3>
 
   <ul>
-    <li id="g2706"><a href="https://github.com/schemaorg/schemaorg/pull/2706">PR #2706</a>: Improvements to underlying site build architecture including separation of vocabulary definition and display logic; move to Python 3; and simplified local build and test processes.  Full <a href="full.html">Type hierarchy page</a> is now more usable and accessible (collapsible navigation). Copy example to clipboard button added to Examples on term definition pages.</li>
+    <li id="g2706"><a href="https://github.com/schemaorg/schemaorg/pull/2706">PR #2706</a>: Improvements to underlying site build architecture including separation of vocabulary definition and display logic; move to Python 3; and simplified local build and test processes.  Full <a href="{{ site.baseurl }}/docs/full.html">Type hierarchy page</a> is now more usable and accessible (collapsible navigation). Copy example to clipboard button added to Examples on term definition pages.</li>
     <li id="g2760"><a href="https://github.com/schemaorg/schemaorg/pull/2760">PR #2760</a>: Added structured representation of JSON-LD examples tab to Examples display on term definition pages.</li>
     <li id="g2726"><a href="https://github.com/schemaorg/schemaorg/pull/2726">PR #2726</a>: Removed previous RDFa term description from within html of term definition pages, replace with equivalent JSON-LD script element.</li>
     <li id="g2747"><a href="https://github.com/schemaorg/schemaorg/pull/2747">issue #2747</a> implemented in <a href="https://github.com/schemaorg/schemaorg/pull/2748">PR #2748</a>: Fixed invalid comment syntax in the JSON-LD element of 47 examples.</li>
@@ -1839,7 +1839,7 @@ Fixing some typos and missing commas in example for <a href="/Schedule">Schedule
 <h3>Site Improvements</h3>
 <ul>
 <li id="g2132"><a href="https://github.com/schemaorg/schemaorg/issues/2132">Issue #2132</a>:
-Added some hierarchy to the <a href="documents.html">documentation page</a>.
+Added some hierarchy to the <a href="{{ site.baseurl }}/docs/gs.html">documentation page</a>.
 </li>
 
 </ul>
@@ -1930,7 +1930,7 @@ Added <a href="/Clip">Clip</a> to expected values of <a href="/video">video</a>,
 </li>
 
 <li id="g2013"><a href="https://github.com/schemaorg/schemaorg/issues/2013">Issue #2013</a>:
-  Fixed typo in <a href="hotels.html">hotels.html</a>.
+  Fixed typo in <a href="{{ site.baseurl }}/docs/hotels.html">hotels.html</a>.
 </li>
 
 <li id="g2003"><a href="https://github.com/schemaorg/schemaorg/issues/2003">Issue #2003</a>:
@@ -1942,7 +1942,7 @@ Added <a href="/Clip">Clip</a> to expected values of <a href="/video">video</a>,
 </li>
 
 <li id="g1937"><a href="https://github.com/schemaorg/schemaorg/issues/1937">Issue #1937</a>:
-  Added a direct link to <a href="developers.html">Developers</a> page from  <a href="schemas.html">Schemas</a> page.
+  Added a direct link to <a href="{{ site.baseurl }}/docs/developers.html">Developers</a> page from  <a href="{{ site.baseurl }}/docs/schemas.html">Schemas</a> page.
 </li>
 
 <li id="g1605"><a href="https://github.com/schemaorg/schemaorg/issues/1605">Issue #1605</a>:
@@ -2014,7 +2014,7 @@ Added <a href="/Clip">Clip</a> to expected values of <a href="/video">video</a>,
 Version 3.5. See <a href="https://github.com/schemaorg/schemaorg/issues/2052">planning pages</a>.
 This release moved a number of new terms into the Schema.org core. It also
 <a href="https://lists.w3.org/Archives/Public/public-schemaorg/2019Mar/0049.html">simplifies and clarifies</a>
-the Schema.org <a href="extension.html">extension</a> model, reducing our emphasis on using
+the Schema.org <a href="{{ site.baseurl }}/docs/extension.html">extension</a> model, reducing our emphasis on using
 named subdomains for topical groups of schemas. New terms introduced in 3.5 include improvements
 for describing projects, grants and funding agencies; for describing open-ended date ranges (e.g. datasets);
 and a substantial vocabulary for Educational and Occupational Credentials.
@@ -2216,7 +2216,7 @@ Added <a href="/Play">Play</a> subtype of <a href="/CreativeWork">CreativeWork</
 <!-- <li id="g1234"><a href="https://github.com/schemaorg/schemaorg/issues/1234">Issue #1234</a>: ...</li> -->
 <li>Added <a href="https://github.com/schemaorg/schemaorg/commit/b2c1fb41734633cc1d67c8cbcef2b0bd60bb22a0">section</a> to Github README discouraging large projects without prior discussion.</li>
 <li>Linked <a href="https://travis-ci.org/schemaorg/schemaorg/">Travis-CI</a> from Github README.</li>
-<li><a href="https://lists.w3.org/Archives/Public/public-schemaorg/2019Mar/0049.html">Clarified and simplified</a> the <a href="extension.html">Extension</a> mechanism.</li>
+<li><a href="https://lists.w3.org/Archives/Public/public-schemaorg/2019Mar/0049.html">Clarified and simplified</a> the <a href="{{ site.baseurl }}/docs/extension.html">Extension</a> mechanism.</li>
 </ul>
 
 </td>
@@ -2304,7 +2304,7 @@ the <a href="/about">about</a> property, <a href="/subjectOf">subjectOf</a>.
 <li id="g1857"><a href="https://github.com/schemaorg/schemaorg/issues/1857">Issue #1857</a>: Updated site search function to use Google Custom Search v2 API.</li>
 <li id="g1646"><a href="https://github.com/schemaorg/schemaorg/issues/1646">Issue #1646</a>: Updated various links to use https when referring to this site.</li>
 <li id="g1722"><a href="https://github.com/schemaorg/schemaorg/issues/1722">Issue #1722</a>: Continuous Integration tests now check RDFa syntax.</li>
-<li id="g1946"><a href="https://github.com/schemaorg/schemaorg/issues/1946">Issue #1946</a>: Linked experimental D3/RDFS and OWL representations from the <a href="developers.html">developers</a> page.</li>
+<li id="g1946"><a href="https://github.com/schemaorg/schemaorg/issues/1946">Issue #1946</a>: Linked experimental D3/RDFS and OWL representations from the <a href="{{ site.baseurl }}/docs/developers.html">developers</a> page.</li>
 </ul>
 
 </td>
@@ -2533,7 +2533,7 @@ and property <a href="/hasBroadcastChannel">hasBroadcastChannel</a> (inverse: <a
 <li id="g1398"><a href="https://github.com/schemaorg/schemaorg/issues/1398">Issue #1398</a>: Added HTML anchor to support links to the "incoming" section of pages documenting types (see <a href="https://schema.org/QuantitativeValue#incoming">example</a>).</li>
 <li id="g1483"><a href="https://github.com/schemaorg/schemaorg/issues/1483">Issue #1483</a>: Added a sitemap.xml file.</li>
 <li id="g53"><a href="https://github.com/schemaorg/schemaorg/issues/53">Issue #53</a>: Added <a href="https://travis-ci.org/schemaorg/schemaorg">Travis-CI</a> monitoring for test cases and syntax checking of examples.</li>
-<li id="g1351"><a href="https://github.com/schemaorg/schemaorg/pull/1351">Issue #1351</a>: Improvements to the output formats of downloads section in <a href="developers.html">developers page</a>.</li>
+<li id="g1351"><a href="https://github.com/schemaorg/schemaorg/pull/1351">Issue #1351</a>: Improvements to the output formats of downloads section in <a href="{{ site.baseurl }}/docs/developers.html">developers page</a>.</li>
 </ul>
 
 <h3>Quick fixes and Examples</h3>
@@ -2580,10 +2580,10 @@ Version 3.1 (working name 'sdo-makemake'). See <a href="https://github.com/schem
 <h3>Vocabulary</h3>
 <ul>
 <li id="g915"><a href="https://github.com/schemaorg/schemaorg/issues/915">Issue #915</a>: Added substantial vocabulary for hotels and related accommodation, alongside
-  a <a href="hotels.html">dedicated documentation page</a>. New vocabulary includes
+  a <a href="{{ site.baseurl }}/docs/hotels.html">dedicated documentation page</a>. New vocabulary includes
   <a href="/LodgingBusiness">LodgingBusiness</a>,
   <a href="/Accommodation">Accommodation</a>,
-  and several subtypes which can be used (via <a href="datamodel.html">multiple typing</a>)
+  and several subtypes which can be used (via <a href="{{ site.baseurl }}/docs/datamodel.html">multiple typing</a>)
   alongside the existing <a href="/Offer">Offer</a> type. Other terms include
   <a href="/starRating">starRating</a>,
   <a href="/amenityFeature">amenityFeature</a>,
@@ -2626,7 +2626,7 @@ rather than <a href="/TelevisionStation">TelevisionStation</a> (per <a href="#g5
 <h3>Site improvements</h3>
 <ul>
 <li id="g1234"><a href="https://github.com/schemaorg/schemaorg/issues/1234">Issue #1234</a>: <a href="https://github.com/schemaorg/schemaorg/pull/1242">Enhanced</a> incoming properties display (Instances of [...] may appear as values for the following properties) to include properties from extensions.</li>
-<li id="g479"><a href="https://github.com/schemaorg/schemaorg/issues/479">Issue #479</a>: Updated and clarified the <a href="datamodel.html">datamodel</a> document, including conformance section.</li>
+<li id="g479"><a href="https://github.com/schemaorg/schemaorg/issues/479">Issue #479</a>: Updated and clarified the <a href="{{ site.baseurl }}/docs/datamodel.html">datamodel</a> document, including conformance section.</li>
 <li id="g1213"><a href="https://github.com/schemaorg/schemaorg/pull/1213">Issue #1213</a>: Fixes for <a href="https://github.com/schemaorg/schemaorg/issues/1171">site performance problems</a>.</li>
 <li id="g1214"><a href="https://github.com/schemaorg/schemaorg/pull/1214">Issue #1214</a>: Fix for <a href="https://github.com/schemaorg/schemaorg/pull/1211">RDFa formatting errors</a> in per-term pages.</li>
 <li id="g1248"><a href="https://github.com/schemaorg/schemaorg/pull/1248">Issue #1248</a>: Fix for <a href="https://github.com/schemaorg/schemaorg/issues/1249">Need easy way to download rdf definition files</a>. Introduces a <a href="developers.html#defs">Vocabulary definition download</a> section providing access to RDF representations of the vocabulary and extensions in Triple, Quad, JSON-LD, and Turtle format.</li>
@@ -2715,7 +2715,7 @@ The <a href="/grantee">grantee</a> property indicates in each case the person, o
 <li id="g447"><a href="https://github.com/schemaorg/schemaorg/issues/447">Issue #447</a>: Added <a href="/EventSeries">EventSeries</a>.</li>
 <li id="g271"><a href="https://github.com/schemaorg/schemaorg/issues/271">Issue #271</a>: Added <a href="/Quotation">Quotation</a> and <a href="/spokenByCharacter">spokenByCharacter</a>.</li>
 <li id="g1061"><a href="https://github.com/schemaorg/schemaorg/issues/1061">Issue #1061</a>: Added <a href="/ClaimReview">ClaimReview</a> and <a href="/claimReviewed">claimReviewed</a> for fact-checking reviews.</li>
-<li id="g1059"><a href="https://github.com/schemaorg/schemaorg/issues/1059">Issue #1059</a>: Created a pending area (update: renamed in 2023 as "new terms") to enable publication of <a href="howwework.html">work-in-progress</a> drafts for wider review.</li>
+<li id="g1059"><a href="https://github.com/schemaorg/schemaorg/issues/1059">Issue #1059</a>: Created a pending area (update: renamed in 2023 as "new terms") to enable publication of <a href="{{ site.baseurl }}/docs/howwework.html">work-in-progress</a> drafts for wider review.</li>
 <li id="g1045"><a href="https://github.com/schemaorg/schemaorg/issues/1045">Issue #1045</a>: Added <a href="/LinkRole">LinkRole</a> as a subtype of <a href="/Role">Role</a>, and a <a href="/linkRelationship">linkRelationship</a> property.</li>
 <li id="g243"><a href="https://github.com/schemaorg/schemaorg/issues/243">Issues #243</a>: Added <a href="/WorkersUnion">WorkersUnion</a>.</li>
 <li id="g1004"><a href="https://github.com/schemaorg/schemaorg/issues/1004">Issue #1004</a>: Added <a href="/broadcastFrequency">broadcastFrequency</a> to <a href="/BroadcastService">BroadcastService</a> to specify the over the air frequency.</li>
@@ -2852,8 +2852,8 @@ per <a href="https://github.com/schemaorg/schemaorg/issues/784">#784</a>. Added 
 <li><a href="https://github.com/schemaorg/schemaorg/issues/769">Issue #769</a>: Sorting of multi-inheritance breadcrumbs on term pages.</li>
 <li><a href="https://github.com/schemaorg/schemaorg/issues/761">Issue #761</a>: Updated linking structure in 'more...' section of term pages.</li>
 <li>Listing of extension contents on extension home pages (eg. <a href="https://bib.schema.org/">bib.schema.org</a>)</li>
-<li>Term counts added to <a href="schemas.html">docs/schemas.html</a> - <em>The core vocabulary currently consists of 638 Types, 980 Properties, and 219 Enumeration values.</em></li>
-<li>List of enabled extensions added to <a href="schemas.html">docs/schemas.html</a>.</li>
+<li>Term counts added to <a href="{{ site.baseurl }}/docs/schemas.html">docs/schemas.html</a> - <em>The core vocabulary currently consists of 638 Types, 980 Properties, and 219 Enumeration values.</em></li>
+<li>List of enabled extensions added to <a href="{{ site.baseurl }}/docs/schemas.html">docs/schemas.html</a>.</li>
 <li>Various internal software fixes, unit tests and cleanup.</li>
 </ul>
 
@@ -2900,13 +2900,13 @@ href="/InteractionCounter">InteractionCounter</a>. InteractionCounter allows for
 <h3>Site improvements</h3>
 
 <ul>
-<li><a href="https://github.com/schemaorg/schemaorg/issues/429">Issue #429</a>: Hosted <a href="extension.html">extensions</a> e.g. <a href="http://bib.schema.org">bib.schema.org</a> are now enabled and linked from 'core' pages with appropriate navigation and <a href="https://github.com/schemaorg/schemaorg/issues/684">styling</a>.</li>
+<li><a href="https://github.com/schemaorg/schemaorg/issues/429">Issue #429</a>: Hosted <a href="{{ site.baseurl }}/docs/extension.html">extensions</a> e.g. <a href="http://bib.schema.org">bib.schema.org</a> are now enabled and linked from 'core' pages with appropriate navigation and <a href="https://github.com/schemaorg/schemaorg/issues/684">styling</a>.</li>
 <li><a href="https://github.com/schemaorg/schemaorg/issues/655">Issue #655</a>: Extension definitions now include an <a href="/isPartOf">isPartOf</a> property to link them to the extension.</li>
 <li><a href="https://github.com/schemaorg/schemaorg/issues/527">Issue #527</a>: Added materials from <a href="kickoff.html">Kickoff Workshop in 2011</a>.</li>
 <li><a href="https://github.com/schemaorg/schemaorg/issues/78">Issue #78</a>: Multiple supertypes are now displayed properly. It is possible for several schema.org types to apply to a single thing, and for a type to have multiple parent types. This is relatively rare, but important to display. For example, anything that is a <a href="/LocalBusiness">LocalBusiness</a> is considered both an <a href="/Organization">Organization</a> and a <a href="/Place">Place</a>; so all subtypes of LocalBusiness have both as supertypes. We can now show this more clearly, e.g. <a href="/ElectronicsStore">ElectronicsStore</a>.</li>
-<li>Added <a href="schemaorg.css">CSS</a> for explicit styling (<code></code>) in <a href="releases.html">releases page</a> during Steering Group review of candidate releases.</li>
+<li>Added <a href="schemaorg.css">CSS</a> for explicit styling (<code></code>) in <a href="{{ site.baseurl }}/docs/releases.html">releases page</a> during Steering Group review of candidate releases.</li>
 <li><a href="https://github.com/schemaorg/schemaorg/issues/557">Issue #557</a>, <a href="https://github.com/schemaorg/schemaorg/issues/660">#660</a>, <a href="https://github.com/schemaorg/schemaorg/issues/695">#695</a>, <a href="https://github.com/schemaorg/schemaorg/issues/469">#469</a>: Several <a href="/DataType">DataType</a>-related navigation fixes, following recent <a href="https://github.com/schemaorg/schemaorg/issues/130">modeling changes</a>.</li>
-<li><a href="https://github.com/schemaorg/schemaorg/issues/548">Issue #548</a>: Added a <a href="/favicon.ico">favicon.ico</a> image. The text is <em>tiny</em> and not intended for humans to read.</li>
+<li><a href="https://github.com/schemaorg/schemaorg/issues/548">Issue #548</a>: Added a <a href="{{ site.baseurl }}/favicon.ico">favicon.ico</a> image. The text is <em>tiny</em> and not intended for humans to read.</li>
 <li>Behind the scenes: cleanup and improvements to Python code, unit tests, <a href="https://github.com/schemaorg/schemaorg/issues/654">CSS</a>, <a href="https://github.com/schemaorg/schemaorg/pull/608">filetree layout</a>.</li>
 </ul>
 
@@ -2935,7 +2935,7 @@ href="/InteractionCounter">InteractionCounter</a>. InteractionCounter allows for
 <span id="v2.0"></span>
 <a href="http://htmlpreview.github.io/?https://github.com/schemaorg/schemaorg/blob/main/data/releases/2.0/schema-all.html">2.0</a><br/>sdo-gozer<br/>(2015-05-12)</td>
 <td>Version 2.0 consolidates and integrates schema.org's existing vocabulary. This version features many updated definitions, type/property associations and term names that
-improve consistency and usability. It also introduces a new <a href="extension.html">extension system</a>.
+improve consistency and usability. It also introduces a new <a href="{{ site.baseurl }}/docs/extension.html">extension system</a>.
 Version 2.0 adds various new terms including <a href="/mainEntityOfPage">mainEntityOfPage</a> and major contributions from the
 <a href="https://www.w3.org/community/gao/">Automotive Ontology community</a>.
 </td>
@@ -2958,7 +2958,7 @@ The new vocabulary includes a number of properties such as: <a href="/numberOfAi
 <br/>
 Thanks to Martin Hepp, Mirek Sopek, Karol SzczepaÅski and <a href="https://www.w3.org/community/gao/participants">others</a>
 in the <a href="https://www.w3.org/community/gao/">Automotive Ontology</a> community group.
-We <a href="https://github.com/schemaorg/schemaorg/issues/262">anticipate</a> substantial additions that build on this foundation will be contributed as an <a href="extension.html">extension</a>.
+We <a href="https://github.com/schemaorg/schemaorg/issues/262">anticipate</a> substantial additions that build on this foundation will be contributed as an <a href="{{ site.baseurl }}/docs/extension.html">extension</a>.
 </li>
 <li id="propvalue">
 <a href="https://github.com/schemaorg/schemaorg/issues/263">Issue #301</a>: Added a generic property/values mechanism, building upon <a href="/PropertyValueSpecification">PropertyValueSpecification</a>, <a href="/StructuredValue">StructuredValue</a> and <a href="/value">value</a>; added
@@ -3013,7 +3013,7 @@ the superseded names can still be used, although we encourage consumers and prod
 <h3>Site improvements</h3>
 
 <ul>
-<li id="extng"><a href="https://github.com/schemaorg/schemaorg/issues/429">Issue #429</a>: Implementation of new <a href="extension.html">extension system</a>.</li>
+<li id="extng"><a href="https://github.com/schemaorg/schemaorg/issues/429">Issue #429</a>: Implementation of new <a href="{{ site.baseurl }}/docs/extension.html">extension system</a>.</li>
 <li id="404handler"><a href="https://github.com/schemaorg/schemaorg/issues/6">Issue #6</a>: Improved 404 handler for missing pages, with support for old-style "/Person/Minister" extension URLs and Action-related "/query-input" pseudo-properties.</li>
 <li id="d3"><a href="https://github.com/schemaorg/schemaorg/issues/318">Issue #318</a>: Added an <em>experimental</em> JSON(-LD) view of the hierarchy. This combines <a href="http://d3js.org/">D3</a> with <a href="http://www.w3.org/TR/rdf-schema/">RDF schema</a>. Thanks to Gregg Kellogg and Sandro Hawke for collaboration.</li>
 <li>Various behind-the-scenes improvement to the site software.</li>
@@ -3178,7 +3178,7 @@ Expand <a href="/track">track</a> to allow <a href="/ItemList">ItemList</a> valu
 <ul>
 <li>Added links to supporting blog posts for <a href="/Role">Role</a>, <a href="/Action">Action</a> and <a href="/Periodical">Periodical</a>.</li>
 <li>Added "alt" attributes to all image examples.</li>
-<li>Fixed the <a href="full.html">Full Hierarchy</a> page.</li>
+<li>Fixed the <a href="{{ site.baseurl }}/docs/full.html">Full Hierarchy</a> page.</li>
 </ul>
 
 <h3>Quick fixes and Examples</h3>
@@ -3253,7 +3253,7 @@ establishes a model that can be applied elsewhere, e.g. ongoing work on <a href=
 <p>This update also improves the display and navigation of <a href="/supersededBy">supersededBy</a> relations between
 schema.org properties (e.g. see <a href="/seller">seller</a>).</p>
 
-<p>The <a href="terms.html">Terms of service</a> document was also updated to note
+<p>The <a href="{{ site.baseurl }}/docs/terms.html">Terms of service</a> document was also updated to note
 that <a href="http://www.yandex.com/">Yandex</a> is now a schema.org Sponsor and to adopt the patent terms used by W3C.</p>
 
 (<a href="http://lists.w3.org/Archives/Public/public-vocabs/2014Aug/0170.html">announcement</a>)
@@ -3552,12 +3552,12 @@ extra types, in particular those defined externally."
 
 <tr id="v0.95">
 <td class="release">0.95<br/>(2012-06-26)</td>
-<td>Added <a href="meddocs.html">Medical/Health</a> vocabulary.</td>
+<td>Added <a href="{{ site.baseurl }}/docs/meddocs.html">Medical/Health</a> vocabulary.</td>
 <td>
 <p>
 This release added substantial vocabulary in the medical/health domain (around 100 classes, 200 properties). The additions are
 mainly organized beneath the <a href="/MedicalEntity">MedicalEntity</a> type. An
-<a href="meddocs.html">overview document</a> is also provided. From the <a href="http://blog.schema.org/2012/06/health-and-medical-vocabulary-for.html">blog post</a>:
+<a href="{{ site.baseurl }}/docs/meddocs.html">overview document</a> is also provided. From the <a href="http://blog.schema.org/2012/06/health-and-medical-vocabulary-for.html">blog post</a>:
 </p>
 <p>"This collaborative project drew upon search expertise from the schema.org partners but also gained immeasurably through feedback from expert reviewers including the US NCBI; physicians at Harvard, Duke and other institutions, as well as from several health Web sites. Contributions from the W3C Healthcare and Lifesciences group and Web Schemas community also helped bridge the complex worlds of Web standards, search and medicine/healthcare."
 </p>
@@ -3604,7 +3604,7 @@ For each of embedURL, contentURL, downloadURL, ensure there is an equivalent pro
 
  <!-- Static Doc Insert Footer -->
     <div id="footer">
-      <p><a href="terms.html">Terms and conditions</a></p>
+      <p><a href="{{ site.baseurl }}/docs/terms.html">Terms and conditions</a></p>
       <div id="versioninfo">
         <span class="sep">â¢</span>
         Schema.org

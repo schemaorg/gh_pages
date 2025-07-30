@@ -1,3 +1,7 @@
+---
+layout: none
+permalink:  /docs/schemas.html
+---
 
 <!DOCTYPE html>
 <html lang="en">
@@ -8,14 +12,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="Schema.org is a set of extensible schemas that enables webmasters to embed
     structured data on their web pages for use by search engines and other applications." />
-    <link rel="shortcut icon" type="image/png" href="../favicon.ico"/>
-    <link rel="stylesheet" type="text/css" href="../schema-org.css" />
-    <link rel="stylesheet" type="text/css" href="devnote.css" />
-    <link rel="stylesheet" type="text/css" href="prettify.css" />
-    <link rel="stylesheet" type="text/css" href="devnote.css" />
+    <link rel="shortcut icon" type="image/png" href="{{ site.baseurl }}/favicon.ico"/>
+    <link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/schema-org.css" />
+    <link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/devnote.css" />
+    <link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/prettify.css" />
+    <link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/devnote.css" />
     <meta name="theme-color" content="#990000" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="schemaorg.js"></script>
+    <script src="{{ site.baseurl }}/schemaorg.js"></script>
     
 
 </head>
@@ -25,7 +29,7 @@
 
 <div class="devnote"><b>Note</b>: You are viewing the development
   version of <a href="https://schema.org">Schema.org</a>.
-  See <a href="howwework.html">how we work</a> for more details.
+  See <a href="{{ site.baseurl }}/docs/howwework.html">how we work</a> for more details.
 </div>
 <div id="container">
   <div id="headerwrap">
@@ -39,16 +43,16 @@
         <div id="selectionbar2">
           <ul>
             <li>
-              <a href="documents.html">Docs</a>
+              <a href="{{ site.baseurl }}/docs/gs.html">Docs</a>
             </li>
             <li>
-              <a href="schemas.html">Schemas</a>
+              <a href="{{ site.baseurl }}/docs/schemas.html">Schemas</a>
             </li>
             <li>
               <a href="https://validator.schema.org">Validate</a>
             </li>
             <li>
-              <a href="about.html">About</a>
+              <a href="{{ site.baseurl }}/docs/about.html">About</a>
             </li>
           </ul>
         </div> <!-- selectionbar -->
@@ -90,8 +94,8 @@ The vocabulary currently consists of 816 Types, 1516 Properties 14 Datatypes, 94
 
 <br /><b>Browse the full hierarchy in HTML:</b>
 <ul>
-  <li><a href="../Thing">One page per type</a></li>
-  <li><a href="full.html">Full list of types, shown on one page</a></li>
+  <li><a href="{{ site.baseurl }}/Thing">One page per type</a></li>
+  <li><a href="{{ site.baseurl }}/docs/full.html">Full list of types, shown on one page</a></li>
 </ul>
 
   <script src="termfind/termfind.js"></script>
@@ -176,7 +180,7 @@ The vocabulary currently consists of 816 Types, 1516 Properties 14 Datatypes, 94
 
     <a href="/Event" 
             class="core" title="Event">Event</a></li>
-  <li><a href="meddocs.html">Health and medical types</a>: notes on the health and medical types under 
+  <li><a href="{{ site.baseurl }}/docs/meddocs.html">Health and medical types</a>: notes on the health and medical types under 
     
     
     
@@ -257,22 +261,22 @@ The vocabulary currently consists of 816 Types, 1516 Properties 14 Datatypes, 94
             class="core" title="Action">Action</a></li>
 </ul>
 
-<br/>See also the <a href="releases.html">releases</a> page for recent updates and project history.<br/>
+<br/>See also the <a href="{{ site.baseurl }}/docs/releases.html">releases</a> page for recent updates and project history.<br/>
 
 <br />
-We also have a small set of <a href="../DataType">primitive data types</a> for numbers, text, etc. More details about the data model, etc. are available <a href="datamodel.html">here</a>.
+We also have a small set of <a href="{{ site.baseurl }}/DataType">primitive data types</a> for numbers, text, etc. More details about the data model, etc. are available <a href="{{ site.baseurl }}/docs/datamodel.html">here</a>.
 <br />
 
 <br />Developer information / Download Machine Readable files (RDF, JSON-LD, etc):
 <ul>
-  <li><a href="developers.html">Schema.org for Developers</a>
+  <li><a href="{{ site.baseurl }}/docs/developers.html">Schema.org for Developers</a>
 </ul>
 </section>
 <section>
 
  <h2 id="ext">Extensions</h2>
 
- <p>As schema.org has grown, we have explored various mechanisms for <a href="extension.html">community extension</a> as
+ <p>As schema.org has grown, we have explored various mechanisms for <a href="{{ site.baseurl }}/docs/extension.html">community extension</a> as
    a way of adding more detailed descriptive vocabulary that builds on the schema.org core. Some areas of Schema.org were
    developed as "named extensions", and have dedicated entry pages. We previously called these "hosted" extensions, but
    they are best considered simply as views into a single collection of schema definitions.
@@ -315,7 +319,7 @@ schema.org site functionality. These terms are not intended for general usage in
 </p>
 
 <p>
-Unlike other core and section terms, these areas may be updated at any time without the need for a full <a href="releases.html">release</a>.
+Unlike other core and section terms, these areas may be updated at any time without the need for a full <a href="{{ site.baseurl }}/docs/releases.html">release</a>.
 </p>
 
 </section>
@@ -338,7 +342,7 @@ Unlike other core and section terms, these areas may be updated at any time with
   <!-- Footer start from PageFooter.j2 -->
     
     <div id="footer">
-      <p><a href="terms.html">Terms and conditions</a></p>
+      <p><a href="{{ site.baseurl }}/docs/terms.html">Terms and conditions</a></p>
       <div id="versioninfo">
         <span class="sep">â¢</span>
         Schema.org
