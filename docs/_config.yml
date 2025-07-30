@@ -26,6 +26,10 @@ liquid:
   strict_filters: false
   strict_variables: false
 
+# Ensure front matter is processed
+frontmatter:
+  enabled: true
+
 # Collections for schema types
 collections:
   types:
