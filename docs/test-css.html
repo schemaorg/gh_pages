@@ -1,0 +1,48 @@
+---
+layout: null
+permalink: /test-css.html
+---
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CSS Test Page</title>
+    <meta charset="utf-8">
+    
+    <!-- Test different CSS path formats -->
+    <link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/schema-org.css" />
+    <link rel="stylesheet" type="text/css" href="/gh_pages/schema-org.css" />
+    <link rel="stylesheet" type="text/css" href="schema-org.css" />
+    
+    <style>
+        body { margin: 40px; font-family: sans-serif; }
+        .test { padding: 20px; margin: 10px 0; border: 1px solid #ccc; }
+        .success { background: #d4edda; }
+        .fail { background: #f8d7da; }
+    </style>
+</head>
+<body>
+    <h1>CSS Path Test</h1>
+    
+    <div class="test">
+        <h2>Jekyll Variables Test</h2>
+        <p><strong>site.baseurl:</strong> {{ site.baseurl }}</p>
+        <p><strong>site.url:</strong> {{ site.url }}</p>
+        <p><strong>page.url:</strong> {{ page.url }}</p>
+    </div>
+    
+    <div class="test">
+        <h2>CSS Path Test</h2>
+        <p>If the main CSS is loading, this page should have the Schema.org styling.</p>
+        <p>Check the network tab to see which CSS paths are working.</p>
+    </div>
+    
+    <div class="test">
+        <h2>Expected Paths</h2>
+        <ul>
+            <li>With baseurl: {{ site.baseurl }}/schema-org.css</li>
+            <li>Hardcoded: /gh_pages/schema-org.css</li>
+            <li>Relative: schema-org.css</li>
+        </ul>
+    </div>
+</body>
+</html>

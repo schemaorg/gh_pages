@@ -17,6 +17,8 @@ include:
   - "*.html"
   - "*.md"
   - "_*"
+  - "*.css"
+  - "*.js"
 
 # Force processing of HTML files
 liquid:
