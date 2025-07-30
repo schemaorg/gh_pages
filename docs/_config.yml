@@ -18,6 +18,13 @@ include:
   - "*.md"
   - "_*"
 
+# Force processing of HTML files
+plugins_dir: .
+liquid:
+  error_mode: warn
+  strict_filters: false
+  strict_variables: false
+
 # Collections for schema types
 collections:
   types:
