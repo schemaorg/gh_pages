@@ -1,3 +1,7 @@
+---
+layout: none
+permalink: /hotels
+---
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
@@ -8,13 +12,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="Schema.org is a set of extensible schemas that enables webmasters to embed
     structured data on their web pages for use by search engines and other applications." />
-    <link rel="shortcut icon" type="image/png" href="../favicon.ico"/>
-    <link rel="stylesheet" type="text/css" href="../schema-org.css" />
-    <link rel="stylesheet" type="text/css" href="devnote.css" />
-    <link rel="stylesheet" type="text/css" href="prettify.css" />
-    <link rel="stylesheet" type="text/css" href="devnote.css" />
+    <link rel="shortcut icon" type="image/png" href="{{ site.baseurl }}/favicon.ico"/>
+    <link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/schema-org.css" />
+    <link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/devnote.css" />
+    <link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/prettify.css" />
+    <link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/devnote.css" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="schemaorg.js"></script>
+    <script src="{{ site.baseurl }}/schemaorg.js"></script>
     
 <!-- Static Doc Insert Head end -->
 
@@ -97,15 +101,15 @@
 <p>When modeling hotel-related information in Web content with schema.org, there are three core objects:</p>
 
 <ul>
-    <li>A <strong><a href="../LodgingBusiness">lodging business</a></strong>, e.g. a hotel, hostel, resort, or a camping site): essentially the place and local business that houses the actual units of the establishment (e.g. hotel rooms). The lodging business can encompass multiple buildings but is in most cases a coherent place.</li>
-    <li>An <strong><a href="../Accommodation">accommodation</a></strong>, i.e. the actually relevant units of the establishment (e.g. hotel rooms, suites, apartments, meeting rooms, camping pitches, etc.). These are the actual objects that are offered for rental.</li>
-    <li>An <strong><a href="../Offer">offer</a></strong> to let a hotel room (or other forms of accommodations) for a particular amount of money and for a given type of usage (e.g. occupancy), typically further constrained by advance booking requirements and other terms and conditions.
+    <li>A <strong><a href="{{ site.baseurl }}/LodgingBusiness">lodging business</a></strong>, e.g. a hotel, hostel, resort, or a camping site): essentially the place and local business that houses the actual units of the establishment (e.g. hotel rooms). The lodging business can encompass multiple buildings but is in most cases a coherent place.</li>
+    <li>An <strong><a href="{{ site.baseurl }}/Accommodation">accommodation</a></strong>, i.e. the actually relevant units of the establishment (e.g. hotel rooms, suites, apartments, meeting rooms, camping pitches, etc.). These are the actual objects that are offered for rental.</li>
+    <li>An <strong><a href="{{ site.baseurl }}/Offer">offer</a></strong> to let a hotel room (or other forms of accommodations) for a particular amount of money and for a given type of usage (e.g. occupancy), typically further constrained by advance booking requirements and other terms and conditions.
 </ul>
 
 <p>In schema.org, an offer for a hotel room is using the same patterns as an offer for any other type of product or service, e.g. a TV set or a welding service. However, a hotel room is not a subclass of <a href= "../Product">Product</a> or <a href= "../Service">Service</a>.  To enable an offer to be described, use is made of the Multi-Typed Entity (MTE) feature of Schema.org.
 </p>
 <p>
-When defining an instance of an <a href="../Accommodation">Accommodation</a>, that is offered by a <a href="../LodgingBusiness">LodgingBusiness</a>, it is described as being both the appropriate Type for the accommodation <em>and</em> a <a href= "../Product">Product</a>.  Thus for example a <a href="../Hotel">Hotel</a> will make an <a href="../Offer">Offer</a>, or offers, for a <a href="../HotelRoom">HotelRoom</a>, that is also identified as a <a href= "../Product">Product</a>. Prices and terms and conditions are thus not properties of the hotel or hotel room, but of the offer for a certain room or room category.</p>
+When defining an instance of an <a href="{{ site.baseurl }}/Accommodation">Accommodation</a>, that is offered by a <a href="{{ site.baseurl }}/LodgingBusiness">LodgingBusiness</a>, it is described as being both the appropriate Type for the accommodation <em>and</em> a <a href= "../Product">Product</a>.  Thus for example a <a href="{{ site.baseurl }}/Hotel">Hotel</a> will make an <a href="{{ site.baseurl }}/Offer">Offer</a>, or offers, for a <a href="{{ site.baseurl }}/HotelRoom">HotelRoom</a>, that is also identified as a <a href= "../Product">Product</a>. Prices and terms and conditions are thus not properties of the hotel or hotel room, but of the offer for a certain room or room category.</p>
 
 The markup for MTE's is very simple:
 <ul>
@@ -123,14 +127,14 @@ The markup for MTE's is very simple:
 
 
 
-<p>In the case of rental accommodations, it is important to attach the <a href= "../businessFunction">businessFunction</a> property with the value <a href="http://purl.org/goodrelations/v1#LeaseOut">LeaseOut</a> to the <a href="../Offer">offer</a>, unless you want to sell the property. This allows reusing and extending the same types for dwellings for real estate offers in schema.org.</p>
+<p>In the case of rental accommodations, it is important to attach the <a href= "../businessFunction">businessFunction</a> property with the value <a href="http://purl.org/goodrelations/v1#LeaseOut">LeaseOut</a> to the <a href="{{ site.baseurl }}/Offer">offer</a>, unless you want to sell the property. This allows reusing and extending the same types for dwellings for real estate offers in schema.org.</p>
 <h3>Basic Model</h3>
 <p>The diagram shown below illustrates the basic pattern for describing hotel room offers and offers for other forms of accommodations.</p>
-<p>All accommodation Types are subclasses of <a href="../Place">https://schema.org/Place</a>. To use them as the subject of an offer, you should use the MTE technique of assigining your instances to be both an Accommodation subclass and a Product.  All types of lodging businesses are subclasses of <a href="../LocalBusiness">https://schema.org/LocalBusiness</a> which itself is a subclass of <a href="../Place">https://schema.org/Place</a> and <a href="../Organization">https://schema.org/Organization</a>.</p>
+<p>All accommodation Types are subclasses of <a href="{{ site.baseurl }}/Place">https://schema.org/Place</a>. To use them as the subject of an offer, you should use the MTE technique of assigining your instances to be both an Accommodation subclass and a Product.  All types of lodging businesses are subclasses of <a href="{{ site.baseurl }}/LocalBusiness">https://schema.org/LocalBusiness</a> which itself is a subclass of <a href="{{ site.baseurl }}/Place">https://schema.org/Place</a> and <a href="{{ site.baseurl }}/Organization">https://schema.org/Organization</a>.</p>
 
-<p>The relationship between an accommodation and the local business it belongs to is represented via the <a href="../containedInPlace">containedInPlace</a> (from hotel room to hotel) or <a href="../containsPlace">containsPlace</a> (from hotel to hotel room) properties. The relationship between the offer and the room included in the offer can be represented via either the <a href="../offers">offers</a> property (from the room product to the offer) or via <a href="../itemOffered">itemsOffered</a> (from the offer to the room).</p>
-<p>The relationship between the lodging business and its offers for rooms is represented via the <a href="../makesOffer">makesOffer</a> property (from the hotel to the offer) or via the <a href="../offeredBy">offeredBy</a> property (from the offer to the hotel).</p>
-<p>When the offer includes more than just the bare room (e.g. meals) or multiple nights we use the <a href="../includesObject">includesObject</a> property and one or more <a href="../TypeAndQuantityNode">TypeAndQuantityNode</a> nodes.
+<p>The relationship between an accommodation and the local business it belongs to is represented via the <a href="{{ site.baseurl }}/containedInPlace">containedInPlace</a> (from hotel room to hotel) or <a href="{{ site.baseurl }}/containsPlace">containsPlace</a> (from hotel to hotel room) properties. The relationship between the offer and the room included in the offer can be represented via either the <a href="{{ site.baseurl }}/offers">offers</a> property (from the room product to the offer) or via <a href="{{ site.baseurl }}/itemOffered">itemsOffered</a> (from the offer to the room).</p>
+<p>The relationship between the lodging business and its offers for rooms is represented via the <a href="{{ site.baseurl }}/makesOffer">makesOffer</a> property (from the hotel to the offer) or via the <a href="{{ site.baseurl }}/offeredBy">offeredBy</a> property (from the offer to the hotel).</p>
+<p>When the offer includes more than just the bare room (e.g. meals) or multiple nights we use the <a href="{{ site.baseurl }}/includesObject">includesObject</a> property and one or more <a href="{{ site.baseurl }}/TypeAndQuantityNode">TypeAndQuantityNode</a> nodes.
 
 <img alt="Schema.org pattern for describing hotel room offers" width="960" border="0" src="schema_hotels_1.png" title="Schema.org pattern for describing hotel room offers" />
 
@@ -138,33 +142,33 @@ The markup for MTE's is very simple:
 <p>Currently, there are explicit types for the following kinds of lodging businesses:</p>
 
 <ul>
-    <li><a href="../BedAndBreakfast">BedAndBreakfast</a></li>
-    <li><a href="../Campground">Campground</a></li>
-    <li><a href="../Hostel">Hostel</a></li>
-    <li><a href="../Hotel">Hotel</a></li>
-    <li><a href="../Motel">Motel</a></li>
-    <li><a href="../Resort">Resort</a></li>
+    <li><a href="{{ site.baseurl }}/BedAndBreakfast">BedAndBreakfast</a></li>
+    <li><a href="{{ site.baseurl }}/Campground">Campground</a></li>
+    <li><a href="{{ site.baseurl }}/Hostel">Hostel</a></li>
+    <li><a href="{{ site.baseurl }}/Hotel">Hotel</a></li>
+    <li><a href="{{ site.baseurl }}/Motel">Motel</a></li>
+    <li><a href="{{ site.baseurl }}/Resort">Resort</a></li>
 </ul>
 
-<p>This list might be extended in the future. For other forms, the generic type <a href="../LodgingBusiness">LodgingBusiness</a> can be used. The property <a href="../additionalType">additionalType</a> allows using external identifiers for indicating the exact type in such cases.</p>
+<p>This list might be extended in the future. For other forms, the generic type <a href="{{ site.baseurl }}/LodgingBusiness">LodgingBusiness</a> can be used. The property <a href="{{ site.baseurl }}/additionalType">additionalType</a> allows using external identifiers for indicating the exact type in such cases.</p>
 
 <h3>Types of Accommodations</h3>
 <p>For kinds of accommodations, the following types more specific types are available:</p>
 
 <ul>
-    <li><a href="../Apartment">Apartment</a></li>
-    <li><a href="../CampingPitch">CampingPitch</a></li>
-    <li><a href="../Room">Room</a>
+    <li><a href="{{ site.baseurl }}/Apartment">Apartment</a></li>
+    <li><a href="{{ site.baseurl }}/CampingPitch">CampingPitch</a></li>
+    <li><a href="{{ site.baseurl }}/Room">Room</a>
         <ul>
-            <li><a href="../HotelRoom">HotelRoom</a></li>
-            <li><a href="../MeetingRoom">MeetingRoom</a></li>
+            <li><a href="{{ site.baseurl }}/HotelRoom">HotelRoom</a></li>
+            <li><a href="{{ site.baseurl }}/MeetingRoom">MeetingRoom</a></li>
         </ul>
     </li>
-    <li><a href="../House">House</a></li>
-    <li><a href="../Suite">Suite</a></li>
+    <li><a href="{{ site.baseurl }}/House">House</a></li>
+    <li><a href="{{ site.baseurl }}/Suite">Suite</a></li>
 </ul>
 
-<p>This list might be extended in the future. For other forms, the generic type <a href="../Accommodation">Accommodation</a> can be used. The property <a href="../additionalType">additionalType</a> allows using external identifiers for indicating the exact type in such cases.</p>
+<p>This list might be extended in the future. For other forms, the generic type <a href="{{ site.baseurl }}/Accommodation">Accommodation</a> can be used. The property <a href="{{ site.baseurl }}/additionalType">additionalType</a> allows using external identifiers for indicating the exact type in such cases.</p>
 
 <h2 id="minimal">Minimal Example</h2>
 <p>In the most basic form, we can just model the hotel with basic information like photos and star rating and a price range, but without individual room rates and availability information:</p>
@@ -189,9 +193,9 @@ enjoying your morning coffee.&lt;/span&gt;
   Room rates: &lt;span itemprop=&quot;priceRange&quot;&gt;$100 - $240&lt;/span&gt;
 &lt;/div&gt;</pre>
 
-<p>See the page for <a href="../Hotel">https://schema.org/Hotel</a> for a complete list of additional properties for describing the hotel. Popular properties are also explained in more detail below.</p>
+<p>See the page for <a href="{{ site.baseurl }}/Hotel">https://schema.org/Hotel</a> for a complete list of additional properties for describing the hotel. Popular properties are also explained in more detail below.</p>
 
-<p><strong>Note:</strong> In the following, we focus on hotel-related examples, but the basic patterns for other types of lodging businesses are the same. Simply use the more specific types (e.g. <a href="../Campground">Campground</a> or <a href="/MeetingRoom">MeetingRoom</a>).</p>
+<p><strong>Note:</strong> In the following, we focus on hotel-related examples, but the basic patterns for other types of lodging businesses are the same. Simply use the more specific types (e.g. <a href="{{ site.baseurl }}/Campground">Campground</a> or <a href="/MeetingRoom">MeetingRoom</a>).</p>
 
 <h2 id="hotel_info">Information about the Hotel</h2>
 <p>If your Web site provides more detailed information about your hotel, you can use many additional properties for marking them up with schema.org. Below, we highlight a few prominent properties.</p>
@@ -241,7 +245,7 @@ enjoying your morning coffee.&lt;/span&gt;
   Room rates: &lt;span itemprop=&quot;priceRange&quot;&gt;$100 - $240&lt;/span&gt;
 &lt;/div&gt;</pre>
     <h4>Advanced: Type of Star Rating</h4>
-    <p>If available, it makes sense to specify the origin of the star rating, e.g. the name of the awarding institution. In this case, use a <a href="../Rating">rating</a> and its <a href="../author">author</a> property for indicating the party making the rating assessment (e.g. HOTREC, DEHOGA, WHR, or Hotelstars).
+    <p>If available, it makes sense to specify the origin of the star rating, e.g. the name of the awarding institution. In this case, use a <a href="{{ site.baseurl }}/Rating">rating</a> and its <a href="{{ site.baseurl }}/author">author</a> property for indicating the party making the rating assessment (e.g. HOTREC, DEHOGA, WHR, or Hotelstars).
     <p><strong>Example:</strong> 4-star hotel rated by the DEHOGA</p>
         <pre class="prettyprint lang-html linenums">
 &lt;div itemscope itemtype=&quot;https://schema.org/Hotel&quot;&gt;
@@ -278,7 +282,7 @@ enjoying your morning coffee.&lt;/span&gt;
   Click here for a map.&lt;/a&gt;
 &lt;/div&gt;</pre>
     <h3>Opening Hours (Reception)</h3>
-    <p>You can use the <a href="../openingHours">openingHours</a> or <a href="../openingHoursSpecification">openingHoursSpecification</a> properties to indicate the opening hours of the reception of the hotel.</p>
+    <p>You can use the <a href="{{ site.baseurl }}/openingHours">openingHours</a> or <a href="{{ site.baseurl }}/openingHoursSpecification">openingHoursSpecification</a> properties to indicate the opening hours of the reception of the hotel.</p>
     <pre class="prettyprint lang-html linenums">
 &lt;div itemscope itemtype=&quot;https://schema.org/Hotel&quot;&gt;
   &lt;h1&gt;&lt;span itemprop=&quot;name&quot;&gt;ACME Hotel Innsbruck&lt;/span&gt;&lt;/h1&gt;
@@ -291,7 +295,7 @@ enjoying your morning coffee.&lt;/span&gt;
   &lt;meta itemprop=&quot;openingHours&quot; content=&quot;Sun 08:00-12:00&quot;&gt;Sundays 08.00-12.00
 &lt;/div&gt;</pre>
     <h3>Reviews and Ratings</h3>
-    <p>You can attach individual (customer) reviews and aggregate ratings using <a href="../review">review</a> / <a href="../Review">Review</a> and aggregate ratings using <a href="/aggregateRating">aggregateRating</a> / <a href="/AggregateRating">AggregateRating</a>.</p>
+    <p>You can attach individual (customer) reviews and aggregate ratings using <a href="{{ site.baseurl }}/review">review</a> / <a href="{{ site.baseurl }}/Review">Review</a> and aggregate ratings using <a href="/aggregateRating">aggregateRating</a> / <a href="/AggregateRating">AggregateRating</a>.</p>
     <p><strong>Note:</strong> Official hotel star ratings are not reviews but should use the <a href="/starRating">starRating</a> property.</p>
     <h3>Number of Rooms</h3>
     <p><strong>Example:</strong> A hotel with 60 bedrooms</p>
@@ -320,7 +324,7 @@ enjoying your morning coffee.&lt;/span&gt;
   &lt;/span&gt;
 &lt;/div&gt;</pre>
     <h3>Renovation and Date of Establishment</h3>
-    <p>For the date of establishment, use <a href="../foundingDate">foundingDate</a>. For information about renovation activities, use <a href="../additionalProperty">additionalProperty</a> and put the year into its <a href="../value">value</a> property and details into its description.
+    <p>For the date of establishment, use <a href="{{ site.baseurl }}/foundingDate">foundingDate</a>. For information about renovation activities, use <a href="{{ site.baseurl }}/additionalProperty">additionalProperty</a> and put the year into its <a href="{{ site.baseurl }}/value">value</a> property and details into its description.
     <pre class="prettyprint lang-html linenums">
 &lt;div itemscope itemtype=&quot;https://schema.org/Hotel&quot;&gt;
   &lt;h1&gt;&lt;span itemprop=&quot;name&quot;&gt;ACME Hotel Innsbruck&lt;/span&gt;&lt;/h1&gt;
@@ -338,7 +342,7 @@ enjoying your morning coffee.&lt;/span&gt;
   &lt;/span&gt;
 &lt;/div&gt;</pre>
     <h3>Membership in Organizations</h3>
-    <p>Use <a href="../memberOf">memberOf</a> to link to noteworthy organizations.</p>
+    <p>Use <a href="{{ site.baseurl }}/memberOf">memberOf</a> to link to noteworthy organizations.</p>
     <pre class="prettyprint lang-html linenums">
 &lt;div itemscope itemtype=&quot;https://schema.org/Hotel&quot;&gt;
   &lt;h1&gt;&lt;span itemprop=&quot;name&quot;&gt;ACME Hotel Innsbruck&lt;/span&gt;&lt;/h1&gt;
@@ -350,7 +354,7 @@ enjoying your morning coffee.&lt;/span&gt;
   &lt;/span&gt;
 &lt;/div&gt;</pre>
     <h3>Hotels Chains</h3>
-    <p>Use <a href="../parentOrganization">parentOrganization</a> to link a chain hotel to the operating company.</p>
+    <p>Use <a href="{{ site.baseurl }}/parentOrganization">parentOrganization</a> to link a chain hotel to the operating company.</p>
         <pre class="prettyprint lang-html linenums">
 &lt;div itemscope itemtype=&quot;https://schema.org/Hotel&quot;&gt;
   &lt;h1&gt;&lt;span itemprop=&quot;name&quot;&gt;ACME Hotel Innsbruck&lt;/span&gt;&lt;/h1&gt;
@@ -430,7 +434,7 @@ enjoying your morning coffee.&lt;/span&gt;
   &lt;/ul&gt;
 &lt;/div&gt;</pre>
 <h2 id="room_info">Information about Rooms</h2>
-<p>Some hotels just indicate basic information about the number and type of available room categories. In the simplest form, one can use the <a href="../numberOfRooms">numberOfRooms</a> property with the type of room in the <a href="../unitText">unitText</a> property of a <a href="/QuantitativeValue">QuantitativeValue</a>, like so:</p>
+<p>Some hotels just indicate basic information about the number and type of available room categories. In the simplest form, one can use the <a href="{{ site.baseurl }}/numberOfRooms">numberOfRooms</a> property with the type of room in the <a href="{{ site.baseurl }}/unitText">unitText</a> property of a <a href="/QuantitativeValue">QuantitativeValue</a>, like so:</p>
 <pre class="prettyprint lang-html linenums">
 &lt;div itemscope itemtype=&quot;https://schema.org/Hotel&quot;&gt;
   &lt;h1&gt;&lt;span itemprop=&quot;name&quot;&gt;ACME Hotel Innsbruck&lt;/span&gt;&lt;/h1&gt;
@@ -451,7 +455,7 @@ enjoying your morning coffee.&lt;/span&gt;
 
 <p>In many cases, however, hotel Web sites contain additional information like images and textual descriptions about room categories (like &quot;Hollywood Twin Room&quot;) or even individual rooms (in particular in the case of small, family-owned hotels). Schema.org provides support for describing rooms and linking them to the hotel. This is also needed if you want to describe actual room offers (see below).</p>
 <h3>Basic Pattern: Description and Picture</h3>
-<p>You can link the hotel to its rooms (or suites or guest apartments) via the <a href="../containsPlace">containsPlace</a> property or a room to the hotel it belongs to via the inverse <a href="../containedInPlace">containedInPlace</a>.
+<p>You can link the hotel to its rooms (or suites or guest apartments) via the <a href="{{ site.baseurl }}/containsPlace">containsPlace</a> property or a room to the hotel it belongs to via the inverse <a href="{{ site.baseurl }}/containedInPlace">containedInPlace</a>.
 <pre class="prettyprint lang-html linenums">
 &lt;div itemscope itemtype=&quot;https://schema.org/Hotel&quot;&gt;
   &lt;h1&gt;&lt;span itemprop=&quot;name&quot;&gt;ACME Hotel Innsbruck&lt;/span&gt;&lt;/h1&gt;
@@ -473,7 +477,7 @@ enjoying your morning coffee.&lt;/span&gt;
   &lt;/ul&gt;
 &lt;/div&gt;</pre>
 <h3>Beds and Occupancy</h3>
-<p>You can add more details to the <a href="../HotelRoom">hotel room</a> entities, like the type and number of beds and the occupancy. The occupancy can be a single value (using <a href="../value">value</a>) or a range (using <a href="../minValue">minValue</a> and <a href="../minValue">minValue</a>).<p>
+<p>You can add more details to the <a href="{{ site.baseurl }}/HotelRoom">hotel room</a> entities, like the type and number of beds and the occupancy. The occupancy can be a single value (using <a href="{{ site.baseurl }}/value">value</a>) or a range (using <a href="{{ site.baseurl }}/minValue">minValue</a> and <a href="{{ site.baseurl }}/minValue">minValue</a>).<p>
 <pre class="prettyprint lang-html linenums">
 &lt;div itemscope itemtype=&quot;https://schema.org/Hotel&quot;&gt;
   &lt;h1&gt;&lt;span itemprop=&quot;name&quot;&gt;ACME Hotel Innsbruck&lt;/span&gt;&lt;/h1&gt;
@@ -495,7 +499,7 @@ enjoying your morning coffee.&lt;/span&gt;
 &lt;/div&gt;</pre>
 
 <h3>Features and Services</h3>
-<p>Room features, like &quot;mini-bar&quot;, &quot;wifi&quot; or &quot;air conditioning&quot; can be expressed using the <a href="/amenityFeature">amenityFeature</a> property and an <a href="/LocationFeatureSpecification">LocationFeatureSpecification</a> entity, which is a special form of a <a href="../PropertyValue">property-value</a>. The <a href="../amenityFeature">amenityFeature</a> property does not make a statement on whether the room feature is free or for an additional charge.</p>
+<p>Room features, like &quot;mini-bar&quot;, &quot;wifi&quot; or &quot;air conditioning&quot; can be expressed using the <a href="/amenityFeature">amenityFeature</a> property and an <a href="/LocationFeatureSpecification">LocationFeatureSpecification</a> entity, which is a special form of a <a href="{{ site.baseurl }}/PropertyValue">property-value</a>. The <a href="{{ site.baseurl }}/amenityFeature">amenityFeature</a> property does not make a statement on whether the room feature is free or for an additional charge.</p>
 
 <h4>Room Features</h4>
 <p><strong>Example:</strong> The rooms have a mini-bar and wifi. Charges may or may not apply for those.</p>
@@ -516,9 +520,9 @@ enjoying your morning coffee.&lt;/span&gt;
  &lt;/ul&gt;
 &lt;/div&gt;</pre>
 
-<p><strong>Note:</strong> For modeling the fees of optional room features, you can link the <a href="../Offer">offer</a> for the room to an offer for the feature or service via the <a href="../addOn">addOn</a> property.</p>
+<p><strong>Note:</strong> For modeling the fees of optional room features, you can link the <a href="{{ site.baseurl }}/Offer">offer</a> for the room to an offer for the feature or service via the <a href="{{ site.baseurl }}/addOn">addOn</a> property.</p>
 <h2 id="pricing">Offers and Pricing</h2>
-    <p>A key principle in schema.org is that things do not have prices, but that offers to grant you some rights on the things do have instead. Thus, all commercial aspects of a hotel offer belong to the <a href="../Offer">offer</a> type in schema.org. In the following, we show the use of relevant schema.org elements. Note the use of MTEs, asignining the accommodation instance to also be a <a href="../Product">https://schema.org/Product</a>.</p>
+    <p>A key principle in schema.org is that things do not have prices, but that offers to grant you some rights on the things do have instead. Thus, all commercial aspects of a hotel offer belong to the <a href="{{ site.baseurl }}/Offer">offer</a> type in schema.org. In the following, we show the use of relevant schema.org elements. Note the use of MTEs, asignining the accommodation instance to also be a <a href="{{ site.baseurl }}/Product">https://schema.org/Product</a>.</p>
     <h3>Basic Pattern</h3>
     <p><strong>Example:</strong> Single room for $ 99 per night</p>
     <pre class="prettyprint lang-html linenums">
@@ -556,7 +560,7 @@ enjoying your morning coffee.&lt;/span&gt;
   &lt;/span&gt;
 &lt;/div&gt;</pre>
     <h3>Price Ranges</h3>
-    <p>You can use the <a href="../minPrice">minPrice</a> and <a href="../maxPrice">maxPrice</a> properties to indicate price ranges for rooms.</p>
+    <p>You can use the <a href="{{ site.baseurl }}/minPrice">minPrice</a> and <a href="{{ site.baseurl }}/maxPrice">maxPrice</a> properties to indicate price ranges for rooms.</p>
     <p><strong>Example:</strong> Single rooms cost between $ 99 and $ 179 per night.</p>
     <pre class="prettyprint lang-html linenums">
 &lt;div itemscope itemtype=&quot;https://schema.org/HotelRoom https://schema.org/Product&quot;&gt;
@@ -657,7 +661,7 @@ enjoying your morning coffee.&lt;/span&gt;
   &lt;/span&gt;
 &lt;/div&gt;</pre>
     <h3>Compound Prices</h3>
-    <p>For some types of accommodations, the price has multiple components, e.g. a weekly fee and a flat cleaning and service fee for a vacation home. The <a href="../CompoundPriceSpecification">CompoundPriceSpecification</a> type serves this purpose.</p>
+    <p>For some types of accommodations, the price has multiple components, e.g. a weekly fee and a flat cleaning and service fee for a vacation home. The <a href="{{ site.baseurl }}/CompoundPriceSpecification">CompoundPriceSpecification</a> type serves this purpose.</p>
     <p><strong>Example:</strong> 400 USD per week plus a cleaning fee of 100 USD per stay</p>
     <pre class="prettyprint lang-html linenums">
 &lt;div itemscope itemtype=&quot;https://schema.org/Apartment https://schema.org/Product&quot;&gt;
@@ -683,7 +687,7 @@ enjoying your morning coffee.&lt;/span&gt;
   &lt;/span&gt;
 &lt;/div&gt;</pre>
     <h3>Occupancy</h3>
-    <p>The occupancy for a given room rate can be indicated via <a href="../occupancy">occupancy</a> (total occupancy). For details (e.g. number of adults vs. number of children), you can use the <a href="../name">name</a> property of the <a href="../QuantitativeValue">value</a>.</p>
+    <p>The occupancy for a given room rate can be indicated via <a href="{{ site.baseurl }}/occupancy">occupancy</a> (total occupancy). For details (e.g. number of adults vs. number of children), you can use the <a href="{{ site.baseurl }}/name">name</a> property of the <a href="{{ site.baseurl }}/QuantitativeValue">value</a>.</p>
     <p><strong>Example:</strong> USD 249 per night for a suite with up to two adults and two children</p>
     <pre class="prettyprint lang-html linenums">
 &lt;div itemscope itemtype=&quot;https://schema.org/Suite https://schema.org/Product&quot;&gt;
@@ -730,11 +734,11 @@ enjoying your morning coffee.&lt;/span&gt;
   &lt;/span&gt;
 &lt;/div&gt;</pre>
     <h3>Cancellation Rules and Terms and Conditions</h3>
-    <p>Cancellation policy information and other details of the terms and conditions should be put into the <a href="../description">description</a> property of the <a href="../Offer">offer</a>.</p>
+    <p>Cancellation policy information and other details of the terms and conditions should be put into the <a href="{{ site.baseurl }}/description">description</a> property of the <a href="{{ site.baseurl }}/Offer">offer</a>.</p>
     <h3>Fees for Optional Services</h3>
-    <p>Price information for optional services should be put into an additional <a href="../Offer">offer</a> and linked to from the base offer via the <a href="../addOn">addOn</a> property.</p>
+    <p>Price information for optional services should be put into an additional <a href="{{ site.baseurl }}/Offer">offer</a> and linked to from the base offer via the <a href="{{ site.baseurl }}/addOn">addOn</a> property.</p>
 <h2 id="meals">Meals and Food Services</h2>
-<p>Information about meals can be attached to  the <a href="../Offer">offer</a> by creating a product bundle with multiple <a href="../TypeAndQuantityNode">TypeAndQuantityNode</a> elements and <a href="../FoodService">FoodService</a>.</p>
+<p>Information about meals can be attached to  the <a href="{{ site.baseurl }}/Offer">offer</a> by creating a product bundle with multiple <a href="{{ site.baseurl }}/TypeAndQuantityNode">TypeAndQuantityNode</a> elements and <a href="{{ site.baseurl }}/FoodService">FoodService</a>.</p>
 <p><strong>Example:</strong> Room with breakfast included</p>
 <pre class="prettyprint lang-html linenums">
 &lt;div itemscope itemtype=&quot;https://schema.org/Offer&quot;&gt;

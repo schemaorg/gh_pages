@@ -1,3 +1,7 @@
+---
+layout: none
+permalink: /meddocs
+---
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
@@ -7,13 +11,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="Schema.org is a set of extensible schemas that enables webmasters to embed
     structured data on their web pages for use by search engines and other applications." />
-    <link rel="shortcut icon" type="image/png" href="../favicon.ico"/>
-    <link rel="stylesheet" type="text/css" href="../schema-org.css" />
-    <link rel="stylesheet" type="text/css" href="devnote.css" />
-    <link rel="stylesheet" type="text/css" href="prettify.css" />
-    <link rel="stylesheet" type="text/css" href="devnote.css" />
+    <link rel="shortcut icon" type="image/png" href="{{ site.baseurl }}/favicon.ico"/>
+    <link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/schema-org.css" />
+    <link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/devnote.css" />
+    <link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/prettify.css" />
+    <link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/devnote.css" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="schemaorg.js"></script>
+    <script src="{{ site.baseurl }}/schemaorg.js"></script>
     
 <!-- Static Doc Insert Head end -->
 
@@ -88,7 +92,7 @@
 
   <p>
 This page describes the health and medical types in the schema.org
-schema (<a href="../MedicalEntity">MedicalEntity</a> and
+schema (<a href="{{ site.baseurl }}/MedicalEntity">MedicalEntity</a> and
 subtypes), useful for content publishers that wish to mark up health
 and medical content on the web. Like all schema.org schemas, the
 health and medical schema is intended to make it easier for people to
@@ -115,7 +119,7 @@ are outside of the scope of this schema. The schema does provide a way
 to annotate entities with codes that refer to existing controlled
 medical vocabularies (such as MeSH, SNOMED, ICD, RxNorm, UMLS, etc)
 when they are available. For example, see the <a
-href="../MedicalScholarlyArticle">sample markup for
+href="{{ site.baseurl }}/MedicalScholarlyArticle">sample markup for
 MedicalScholarlyArticle</a>.
   </p>
   <p>
@@ -123,13 +127,13 @@ For more details about the schema, and background on how it came to be,
 read on below. You can find some examples of use of the schema on the
 following types:
 <ul>
-<li><a href="../MedicalCondition">MedicalCondition</a> (information about a
+<li><a href="{{ site.baseurl }}/MedicalCondition">MedicalCondition</a> (information about a
 specific medical condition)</li>
-<li><a href="../Drug">Drug</a> (information about a medical drug)</li>
-<li><a href="../MedicalGuideline">MedicalGuideline</a> (a medical guideline)</li>
-<li><a href="../MedicalWebPage">MedicalWebPage</a> (a single-topic web page
+<li><a href="{{ site.baseurl }}/Drug">Drug</a> (information about a medical drug)</li>
+<li><a href="{{ site.baseurl }}/MedicalGuideline">MedicalGuideline</a> (a medical guideline)</li>
+<li><a href="{{ site.baseurl }}/MedicalWebPage">MedicalWebPage</a> (a single-topic web page
 about a health or medical topic)</li>
-<li><a href="../MedicalScholarlyArticle">MedicalScholarlyArticle</a>
+<li><a href="{{ site.baseurl }}/MedicalScholarlyArticle">MedicalScholarlyArticle</a>
 (a page with a record, abstract, or full text of a medical scholarly publication).</li>
 </ul>
   </p>
@@ -249,10 +253,10 @@ is that there are at least three distinct groups looking for medical
 content -- patients, practicing clinicians, and researchers -- and few
 cues to determine to which audience a piece of content is targeted. To
 address this, authors can use the audience and/or specialty properties
-of the <a href="../WebPage">WebPage</a> type to mark up medical web pages with their target
+of the <a href="{{ site.baseurl }}/WebPage">WebPage</a> type to mark up medical web pages with their target
 audience, including detailed targeting by specialty for
 clinician-targeted content. Similarly, the aspect property of
-<a href="../MedicalWebPage">MedicalWebPage</a> allows
+<a href="{{ site.baseurl }}/MedicalWebPage">MedicalWebPage</a> allows
 content to be tagged with the aspects of medical practice being
 described on the page (diagnosis, treatment, etc).</p>
   </section>

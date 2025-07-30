@@ -1,3 +1,7 @@
+---
+layout: none
+permalink: /gs
+---
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
@@ -8,13 +12,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="Schema.org is a set of extensible schemas that enables webmasters to embed
     structured data on their web pages for use by search engines and other applications." />
-    <link rel="shortcut icon" type="image/png" href="../favicon.ico"/>
-    <link rel="stylesheet" type="text/css" href="../schema-org.css" />
-    <link rel="stylesheet" type="text/css" href="devnote.css" />
-    <link rel="stylesheet" type="text/css" href="prettify.css" />
-    <link rel="stylesheet" type="text/css" href="devnote.css" />
+    <link rel="shortcut icon" type="image/png" href="{{ site.baseurl }}/favicon.ico"/>
+    <link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/schema-org.css" />
+    <link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/devnote.css" />
+    <link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/prettify.css" />
+    <link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/devnote.css" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="schemaorg.js"></script>
+    <script src="{{ site.baseurl }}/schemaorg.js"></script>
     
 <!-- Static Doc Insert Head end -->
 
@@ -91,7 +95,7 @@
 
 <p>Schema.org provides a collection of shared vocabularies webmasters can use to mark up their pages in ways that can be understood by the major search engines: Google, Microsoft, Yandex and Yahoo!</p>
 
-<p>You use the <a href="../">schema.org</a> vocabulary along with the <a href="http://en.wikipedia.org/wiki/Microdata_(HTML)">Microdata</a>, <a href="http://en.wikipedia.org/wiki/RDFa">RDFa</a>, or
+<p>You use the <a href="{{ site.baseurl }}/">schema.org</a> vocabulary along with the <a href="http://en.wikipedia.org/wiki/Microdata_(HTML)">Microdata</a>, <a href="http://en.wikipedia.org/wiki/RDFa">RDFa</a>, or
     <a href="http://en.wikipedia.org/wiki/JSON-LD">JSON-LD</a> formats to add information to your Web content.
 This guide will help get you up to speed with Microdata and schema.org so that you can start adding markup to your web pages.</p>
 
@@ -159,7 +163,7 @@ examples to see how the details compare.</p>
  &lt;h1&gt;Avatar&lt;/h1&gt;
  &lt;span&gt;Director: James Cameron (born August 16, 1954)&lt;/span&gt;
  &lt;span&gt;Science fiction&lt;/span&gt;
- &lt;a href="../movies/avatar-theatrical-trailer.html"&gt;Trailer&lt;/a&gt;
+ &lt;a href="{{ site.baseurl }}/movies/avatar-theatrical-trailer.html"&gt;Trailer&lt;/a&gt;
 &lt;/div&gt;
 </pre>
 
@@ -170,7 +174,7 @@ examples to see how the details compare.</p>
   &lt;h1&gt;Avatar&lt;/h1&gt;
   &lt;span&gt;Director: James Cameron (born August 16, 1954) &lt;/span&gt;
   &lt;span&gt;Science fiction&lt;/span&gt;
-  &lt;a href="../movies/avatar-theatrical-trailer.html"&gt;Trailer&lt;/a&gt;
+  &lt;a href="{{ site.baseurl }}/movies/avatar-theatrical-trailer.html"&gt;Trailer&lt;/a&gt;
 &lt;/div&gt;
 </pre>
 
@@ -182,7 +186,7 @@ examples to see how the details compare.</p>
   &lt;h1&gt;Avatar&lt;/h1&gt;
   &lt;span&gt;Director: James Cameron (born August 16, 1954)&lt;/span&gt;
   &lt;span&gt;Science fiction&lt;/span&gt;
-  &lt;a href="../movies/avatar-theatrical-trailer.html"&gt;Trailer&lt;/a&gt;
+  &lt;a href="{{ site.baseurl }}/movies/avatar-theatrical-trailer.html"&gt;Trailer&lt;/a&gt;
 &lt;/div&gt;</pre>
 
 <p>This specifies that the item contained in the div is in fact a Movie, as defined in the schema.org type hierarchy. Item types are provided as URLs, in this case <code>https://schema.org/Movie</code>.
@@ -196,7 +200,7 @@ examples to see how the details compare.</p>
   &lt;h1 <strong>itemprop="name"</strong>&gt;Avatar&lt;/h1&gt;
   &lt;span&gt;Director: &lt;span <strong>itemprop="director"</strong>&gt;James Cameron&lt;/span&gt; (born August 16, 1954)&lt;/span&gt;
   &lt;span <strong>itemprop="genre"</strong>&gt;Science fiction&lt;/span&gt;
-  &lt;a href="../movies/avatar-theatrical-trailer.html" <strong>itemprop="trailer"</strong>&gt;Trailer&lt;/a&gt;
+  &lt;a href="{{ site.baseurl }}/movies/avatar-theatrical-trailer.html" <strong>itemprop="trailer"</strong>&gt;Trailer&lt;/a&gt;
 &lt;/div&gt;</pre>
 
 <p>Note that we have added additional <code>&lt;span&gt;...&lt;/span&gt;</code> tags to attach the <code>itemprop</code>  attributes to the appropriate text on the page. <code>&lt;span&gt;</code> tags don't change the way pages are rendered by a web browser, so they are a convenient HTML element to use with <code>itemprop</code>.</p>
@@ -214,7 +218,7 @@ examples to see how the details compare.</p>
   Director: &lt;span itemprop="name"&gt;James Cameron&lt;/span&gt; (born &lt;span <strong>itemprop="birthDate"</strong>&gt;August 16, 1954&lt;/span&gt;)
   &lt;/div&gt;
   &lt;span itemprop="genre">Science fiction&lt;/span&gt;
-  &lt;a href="../movies/avatar-theatrical-trailer.html" itemprop="trailer"&gt;Trailer&lt;/a&gt;
+  &lt;a href="{{ site.baseurl }}/movies/avatar-theatrical-trailer.html" itemprop="trailer"&gt;Trailer&lt;/a&gt;
 &lt;/div&gt;</pre>
 
 <p class="backtotop"><a href="#top">Back to top</a></p>
@@ -223,19 +227,19 @@ examples to see how the details compare.</p>
 <h3 id="schemaorg_types">2a. schema.org types and properties</h3>
 <p>Not all web pages are about movies and people&mdash;in addition to the Movie and Person types described in section 1, schema.org describes a variety of other item types, each of which has its own set of properties that can be used to describe the item.</p>
 
-<p>The broadest item type is <a href="../Thing">Thing</a>, which has four properties: <code>name</code>, <code>description</code>, <code>url</code>, and <code>image</code>. More specific types share properties with broader types. For example, a <a href="../Place">Place</a> is a more specific type of Thing, and a <a href="../LocalBusiness">LocalBusiness</a> is a more specific type of Place. More specific items inherit the properties of their parent. (Actually, a LocalBusiness is a more specific type of Place <i>and</i> a more specific type of Organization, so it inherits properties from both parent types.)</p>
+<p>The broadest item type is <a href="{{ site.baseurl }}/Thing">Thing</a>, which has four properties: <code>name</code>, <code>description</code>, <code>url</code>, and <code>image</code>. More specific types share properties with broader types. For example, a <a href="{{ site.baseurl }}/Place">Place</a> is a more specific type of Thing, and a <a href="{{ site.baseurl }}/LocalBusiness">LocalBusiness</a> is a more specific type of Place. More specific items inherit the properties of their parent. (Actually, a LocalBusiness is a more specific type of Place <i>and</i> a more specific type of Organization, so it inherits properties from both parent types.)</p>
 
 <p>Here's a set of commonly used item types:</p>
 
 <ul>
-  <li>Creative works: <a href="../CreativeWork">CreativeWork</a>, <a href="../Book">Book</a>, <a href="../Movie">Movie</a>, <a href="../MusicRecording">MusicRecording</a>, <a href="../Recipe">Recipe</a>, <a href="../TVSeries">TVSeries</a> ...</li>
-  <li>Embedded non-text objects: <a href="../AudioObject">AudioObject</a>, <a href="../ImageObject">ImageObject</a>, <a href="../VideoObject">VideoObject</a></li>
-  <li><a href="../Event">Event</a></li>
-  <li><a href="../Organization">Organization</a></li>
-  <li><a href="../Person">Person</a></li>
-  <li><a href="../Place">Place</a>, <a href="../LocalBusiness">LocalBusiness</a>, <a href="../Restaurant">Restaurant</a> ...</li>
-  <li><a href="../Product">Product</a>, <a href="../Offer">Offer</a>, <a href="../AggregateOffer">AggregateOffer</a></li>
-  <li><a href="../Review">Review</a>, <a href="../AggregateRating">AggregateRating</a></li>
+  <li>Creative works: <a href="{{ site.baseurl }}/CreativeWork">CreativeWork</a>, <a href="{{ site.baseurl }}/Book">Book</a>, <a href="{{ site.baseurl }}/Movie">Movie</a>, <a href="{{ site.baseurl }}/MusicRecording">MusicRecording</a>, <a href="{{ site.baseurl }}/Recipe">Recipe</a>, <a href="{{ site.baseurl }}/TVSeries">TVSeries</a> ...</li>
+  <li>Embedded non-text objects: <a href="{{ site.baseurl }}/AudioObject">AudioObject</a>, <a href="{{ site.baseurl }}/ImageObject">ImageObject</a>, <a href="{{ site.baseurl }}/VideoObject">VideoObject</a></li>
+  <li><a href="{{ site.baseurl }}/Event">Event</a></li>
+  <li><a href="{{ site.baseurl }}/Organization">Organization</a></li>
+  <li><a href="{{ site.baseurl }}/Person">Person</a></li>
+  <li><a href="{{ site.baseurl }}/Place">Place</a>, <a href="{{ site.baseurl }}/LocalBusiness">LocalBusiness</a>, <a href="{{ site.baseurl }}/Restaurant">Restaurant</a> ...</li>
+  <li><a href="{{ site.baseurl }}/Product">Product</a>, <a href="{{ site.baseurl }}/Offer">Offer</a>, <a href="{{ site.baseurl }}/AggregateOffer">AggregateOffer</a></li>
+  <li><a href="{{ site.baseurl }}/Review">Review</a>, <a href="{{ site.baseurl }}/AggregateRating">AggregateRating</a></li>
 </ul>
 <p>You can also see a <a href="full.html">full list of all item types</a>, listed on a single page.
 
