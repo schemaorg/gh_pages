@@ -115,48 +115,90 @@ header h1 {
     margin-bottom: 0 !important;
 }
 
+.gsc-search-box-tools .gsc-search-box .gsc-input {
+    padding-right: 0 !important;
+}
+
 .gsc-input-box {
     border: 1px solid #d9d9d9 !important;
     background: #fff !important;
-    border-radius: 2px !important;
-    height: 32px !important;
+    border-radius: 4px 0 0 4px !important;
+    height: 36px !important;
+    box-shadow: none !important;
+}
+
+.gsc-input-box-hover {
+    border-color: #b9b9b9 !important;
+    box-shadow: none !important;
 }
 
 .gsc-input-box-focus {
-    border-color: #4285f4 !important;
-    box-shadow: 0 1px 1px rgba(0,0,0,.1) inset !important;
+    border-color: #4d90fe !important;
+    box-shadow: none !important;
 }
 
 .gsc-search-button-v2 {
-    height: 32px !important;
+    height: 36px !important;
     margin-left: 0 !important;
-    padding: 6px 27px !important;
+    padding: 0 13px !important;
     min-width: 54px !important;
-    border: 1px solid #4285f4 !important;
-    background-color: #4285f4 !important;
-    border-radius: 2px !important;
+    border: 1px solid #4d90fe !important;
+    background-color: #4d90fe !important;
+    background-image: none !important;
+    border-radius: 0 4px 4px 0 !important;
+    cursor: pointer !important;
 }
 
 .gsc-search-button-v2:hover {
     background-color: #357ae8 !important;
     border-color: #357ae8 !important;
+    box-shadow: none !important;
 }
 
 .gsc-search-button-v2 svg {
     width: 13px !important;
     height: 13px !important;
+    fill: #fff !important;
+}
+
+table.gsc-search-box {
+    margin-bottom: 0 !important;
 }
 
 table.gsc-search-box td {
     vertical-align: middle !important;
+    padding: 0 !important;
+}
+
+table.gsc-search-box td.gsc-input {
+    padding-right: 0 !important;
 }
 
 .gsib_a {
-    padding: 4px 8px 4px 8px !important;
+    padding: 5px 9px 5px 9px !important;
+    width: 100% !important;
 }
 
 .gsib_b {
     display: none !important;
+}
+
+/* Remove spacing between input and button */
+.gsc-search-box .gsc-input > .gsc-input-box {
+    margin-right: 0 !important;
+}
+
+/* Ensure proper input styling */
+.gsc-input-box input.gsc-input {
+    background: none !important;
+    border: none !important;
+    box-shadow: none !important;
+    margin: 0 !important;
+    outline: none !important;
+    padding: 0 !important;
+    height: 34px !important;
+    line-height: 34px !important;
+    font-size: 14px !important;
 }
 
 /* Mobile Navigation Icon */
