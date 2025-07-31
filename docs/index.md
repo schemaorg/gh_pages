@@ -2,7 +2,6 @@
 layout: null
 permalink: /index.html
 ---
-<!DOCTYPE html>
 <html lang="en">
 <!-- Generated from Home.j2 -->
 <!-- Jekyll Processing Test: baseurl = {{ site.baseurl }} -->
@@ -78,10 +77,7 @@ permalink: /index.html
     <!-- Header start from PageHeader.j2 -->
 <!-- Static Doc Insert PageHead -->
 
-<div class="devnote"><b>Note</b>: You are viewing the development
-  version of <a href="https://schema.org">Schema.org</a>.
-  See <a href="{{ site.baseurl }}/docs/howwework.html">how we work</a> for more details.
-</div>
+
 <div id="container">
   <div id="headerwrap">
     <div id="pagehead1" class="mobnav">
