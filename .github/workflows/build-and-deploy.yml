@@ -75,13 +75,13 @@ jobs:
           if [ ! -f "docs/Gemfile" ]; then
             echo "Creating Gemfile..."
             cat > docs/Gemfile << 'EOF'
-source "https://rubygems.org"
-gem "jekyll", "~> 4.3"
-gem "webrick"
-gem "jekyll-redirect-from"
-gem "jekyll-sitemap"
-gem "jekyll-feed"
-EOF
+          source "https://rubygems.org"
+          gem "jekyll", "~> 4.3"
+          gem "webrick"
+          gem "jekyll-redirect-from"
+          gem "jekyll-sitemap"
+          gem "jekyll-feed"
+          EOF
           fi
       
       - name: Setup Ruby
