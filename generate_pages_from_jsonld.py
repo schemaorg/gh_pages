@@ -181,7 +181,7 @@ class JekyllGenerator:
 <h1>{type_name}</h1>
 
 <div class="type-info">
-    <p><strong>{converted_comment}</strong></p>
+    <p>{converted_comment}</p>
 """
         
         if type_data['subclass_of']:
@@ -242,7 +242,7 @@ class JekyllGenerator:
 <h1>{prop_name}</h1>
 
 <div class="type-info">
-    <p><strong>{converted_comment}</strong></p>
+    <p>{converted_comment}</p>
 </div>
 
 <div class="properties-section">
