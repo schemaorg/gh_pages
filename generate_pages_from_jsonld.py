@@ -178,6 +178,8 @@ class JekyllGenerator:
         content = f"""---
 {yaml.dump(front_matter, default_flow_style=False)}---
 
+<h1>{type_name}</h1>
+
 <div class="type-info">
     <p><strong>{converted_comment}</strong></p>
 """
@@ -236,6 +238,8 @@ class JekyllGenerator:
         
         content = f"""---
 {yaml.dump(front_matter, default_flow_style=False)}---
+
+<h1>{prop_name}</h1>
 
 <div class="type-info">
     <p><strong>{converted_comment}</strong></p>
