@@ -30,17 +30,19 @@
 
 /* Type/Property header */
 h1 {
-    font-size: 24px;
+    font-size: 1.6em;
     color: #900;
     margin-bottom: 10px;
+    font-weight: normal;
 }
 
 /* Subtitle */
 h2 {
-    font-size: 18px;
+    font-size: 1.2em;
     color: #333;
     margin-top: 20px;
     margin-bottom: 10px;
+    font-weight: bold;
 }
 
 /* Property tables */
@@ -52,9 +54,10 @@ h2 {
 
 .definition-table th,
 .definition-table td {
-    padding: 10px;
+    padding: 0.5em;
     text-align: left;
-    border: 1px solid #ddd;
+    border-top: 1px solid #ddd;
+    vertical-align: top;
 }
 
 .definition-table th {
@@ -67,10 +70,22 @@ h2 {
     background-color: #fff;
 }
 
+/* Property names in tables */
+.definition-table a {
+    font-family: 'Courier New', monospace;
+    color: #0000cc;
+    text-decoration: none;
+}
+
+.definition-table a:hover {
+    text-decoration: underline;
+}
+
 /* Property links */
 .localLink {
-    color: #0066cc;
+    color: #0000cc;
     text-decoration: none;
+    font-family: 'Courier New', monospace;
 }
 
 .localLink:hover {
