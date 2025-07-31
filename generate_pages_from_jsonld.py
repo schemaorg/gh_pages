@@ -6,6 +6,7 @@ Schema.org page generator from JSON-LD format
 import json
 import os
 import yaml
+import re
 from collections import defaultdict
 from typing import Dict, List, Set, Tuple, Optional
 
@@ -112,6 +113,32 @@ class JekyllGenerator:
     def __init__(self, schema_parser: SchemaJSONLDParser):
         self.schema_parser = schema_parser
         
+    def convert_markdown_links(self, text: str) -> str:
+        """Convert [[Term]] style markdown links to HTML links"""
+        if not text:
+            return text
+            
+        # Handle language-specific comments (from JSON-LD @value format)
+        if isinstance(text, dict) and '@value' in text:
+            text = text['@value']
+            
+        # Convert [[Term]] to <a href="/Term" class="localLink">Term</a>
+        pattern = r'\[\[([^\]]+)\]\]'
+        
+        def replace_link(match):
+            term = match.group(1)
+            return f'<a href="/{{ site.baseurl }}/{term}" class="localLink">{term}</a>'
+        
+        converted = re.sub(pattern, replace_link, str(text))
+        
+        # Escape any remaining curly braces for Jekyll
+        converted = converted.replace('{', '{{').replace('}', '}}')
+        
+        # But fix the site.baseurl references
+        converted = converted.replace('{{{{ site.baseurl }}}}', '{{ site.baseurl }}')
+        
+        return converted
+        
     def generate_type_page(self, type_name: str) -> str:
         """Generate Jekyll markdown page for a schema type"""
         type_data = self.schema_parser.types[type_name]
@@ -126,6 +153,9 @@ class JekyllGenerator:
             'properties': type_data['properties']
         }
         
+        # Convert markdown in comment
+        converted_comment = self.convert_markdown_links(type_data['comment'])
+        
         # Get inherited properties
         inherited_properties = self.get_inherited_properties(type_name)
         
@@ -138,7 +168,7 @@ class JekyllGenerator:
 {yaml.dump(front_matter, default_flow_style=False)}---
 
 <div class="type-info">
-    <p><strong>{type_data['comment']}</strong></p>
+    <p><strong>{converted_comment}</strong></p>
 """
         
         if type_data['subclass_of']:
@@ -180,6 +210,9 @@ class JekyllGenerator:
         """Generate Jekyll markdown page for a schema property"""
         prop_data = self.schema_parser.properties[prop_name]
         
+        # Convert markdown in comment
+        converted_comment = self.convert_markdown_links(prop_data['comment'])
+        
         # Prepare front matter
         front_matter = {
             'title': prop_name,
@@ -194,7 +227,7 @@ class JekyllGenerator:
 {yaml.dump(front_matter, default_flow_style=False)}---
 
 <div class="type-info">
-    <p><strong>{prop_data['comment']}</strong></p>
+    <p><strong>{converted_comment}</strong></p>
 </div>
 
 <div class="properties-section">
@@ -246,11 +279,12 @@ class JekyllGenerator:
                 prop_data = self.schema_parser.properties[prop_name]
                 range_types = ', '.join([f'<a href="{{{{ site.baseurl }}}}/{rt}">{rt}</a>' 
                                        for rt in prop_data['range_includes']])
+                converted_comment = self.convert_markdown_links(prop_data['comment'])
                 html += f"""
             <tr>
                 <td><span class="property-name"><a href="{{{{ site.baseurl }}}}/{prop_name}">{prop_name}</a></span></td>
                 <td><span class="expected-type">{range_types}</span></td>
-                <td>{prop_data['comment']}</td>
+                <td>{converted_comment}</td>
             </tr>
 """
         
@@ -282,11 +316,12 @@ class JekyllGenerator:
                 prop_data = self.schema_parser.properties[prop_name]
                 domain_types = ', '.join([f'<a href="{{{{ site.baseurl }}}}/{dt}" class="type-link">{dt}</a>' 
                                         for dt in prop_data['domain_includes']])
+                converted_comment = self.convert_markdown_links(prop_data['comment'])
                 html += f"""
             <tr>
                 <td><span class="property-name"><a href="{{{{ site.baseurl }}}}/{prop_name}">{prop_name}</a></span></td>
                 <td>{domain_types}</td>
-                <td>{prop_data['comment']}</td>
+                <td>{converted_comment}</td>
             </tr>
 """
         
