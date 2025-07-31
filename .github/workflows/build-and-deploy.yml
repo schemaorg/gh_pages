@@ -23,10 +23,17 @@ jobs:
         with:
           fetch-depth: 2  # Need history to check what changed
       
-      - name: Check if schema files changed
+      - name: Check if schema generation needed
         id: schema_check
         run: |
-          echo "Checking for schema file changes..."
+          echo "Checking if schema generation is needed..."
+          
+          # Always generate if directories don't exist
+          if [ ! -d "docs/_types" ] || [ ! -d "docs/_properties" ]; then
+            echo "Schema directories missing - will generate"
+            echo "changed=true" >> $GITHUB_OUTPUT
+            exit 0
+          fi
           
           # Check if this is the first commit (no parent)
           if ! git rev-parse HEAD^ >/dev/null 2>&1; then
