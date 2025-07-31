@@ -5,19 +5,32 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="Schema.org Type: {{ page.title }} - {{ page.description | strip_html | truncate: 150 }}">
-    <link rel="shortcut icon" type="image/png" href="/docs/favicon.ico">
-    <link rel="stylesheet" type="text/css" href="/docs/schemaorg.css">
-    <link rel="stylesheet" type="text/css" href="/docs/devnote.css">
-    <link rel="stylesheet" type="text/css" href="/docs/prettify.css">
-    <script src="/docs/prettify.js"></script>
+    <link rel="shortcut icon" type="image/png" href="{{ site.baseurl }}/favicon.ico">
+    <link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/schemaorg.css">
+    <link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/devnote.css">
+    <link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/prettify.css">
+    <script src="{{ site.baseurl }}/prettify.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="/docs/schemaorg.js"></script>
-    <script src="/docs/sdotermpage.js"></script>
-    <link rel="stylesheet" type="text/css" href="/docs/sdotermpage.css">
-    <script src="/docs/pretty-markup/schemarama-parsing.bundle.min.js"></script>
-    <script src="/docs/pretty-markup/layout.js"></script>
-    <link rel="stylesheet" type="text/css" href="/docs/pretty-markup/style.css">
-    <script src="/docs/clipboard/clipboard.min.js"></script>
+    <script src="{{ site.baseurl }}/schemaorg.js"></script>
+    <script src="{{ site.baseurl }}/sdotermpage.js"></script>
+    <link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/sdotermpage.css">
+    <script src="{{ site.baseurl }}/pretty-markup/schemarama-parsing.bundle.min.js"></script>
+    <script src="{{ site.baseurl }}/pretty-markup/layout.js"></script>
+    <link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/pretty-markup/style.css">
+    <script src="{{ site.baseurl }}/clipboard/clipboard.min.js"></script>
+    
+    <!-- Google Custom Search Engine -->
+    <script>
+      (function() {
+        var cx = '013516846811604855281:nj5laplixaa';
+        var gcse = document.createElement('script');
+        gcse.type = 'text/javascript';
+        gcse.async = true;
+        gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(gcse, s);
+      })();
+    </script>
 
 <link rel="canonical" href="https://schema.org/{{ page.title }}">
 </head>
@@ -26,39 +39,35 @@
     <!-- Header start from PageHeader.j2 -->
 <!-- Static Doc Insert PageHead -->
 
-<div class="devnote"><b>Note</b>: You are viewing the development
-  version of <a href="https://schema.org">Schema.org</a>.
-  See <a href="/docs/howwework.html">how we work</a> for more details.
-</div>
 <div id="container">
   <div id="headerwrap">
     <div id="pagehead1" class="mobnav">
       <div class="header-block" id="pagehead-left">
         <div id="sitename2">
-          <a href="/">Schema.org</a>
+          <a href="{{ site.baseurl }}/">Schema.org</a>
         </div>
       </div>
       <div class="header-block header-block-right mobnav" id="pagehead-mid">
         <div id="selectionbar2">
           <ul>
             <li>
-              <a href="/docs/documents.html">Docs</a>
+              <a href="{{ site.baseurl }}/documents.html">Docs</a>
             </li>
             <li>
-              <a href="/docs/schemas.html">Schemas</a>
+              <a href="{{ site.baseurl }}/schemas.html">Schemas</a>
             </li>
             <li>
               <a href="https://validator.schema.org">Validate</a>
             </li>
             <li>
-              <a href="/docs/about.html">About</a>
+              <a href="{{ site.baseurl }}/about.html">About</a>
             </li>
           </ul>
         </div> <!-- selectionbar -->
       </div>
       <div class="header-block header-block-right mobnav" id="pagehead-right">
         <div id="cse-search-form2" class="live-only">
-            <div class="gcse-searchbox-only" data-resultsUrl="/docs/search_results.html"></div>
+            <div class="gcse-searchbox-only" data-resultsUrl="{{ site.baseurl }}/search_results.html"></div>
         </div>
       </div>
       <div class="header-block mobnav" id="navicon2">
@@ -91,7 +100,7 @@
   <!-- Footer start from PageFooter.j2 -->
     
     <div id="footer">
-      <p><a href="/docs/terms.html">Terms and conditions</a></p>
+      <p><a href="{{ site.baseurl }}/terms.html">Terms and conditions</a></p>
       <div id="versioninfo">
         <span class="sep">•</span>
         Schema.org
