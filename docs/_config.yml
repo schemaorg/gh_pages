@@ -1,7 +1,7 @@
 title: Schema.org
 description: Schema.org provides schemas for structured data on the Internet
-baseurl: "/gh_pages"
-url: "https://schemaorg.github.io"
+baseurl: ""
+url: "https://staging-github.schema.org"
 repository: "schemaorg/gh_pages"
 
 # GitHub Pages settings
