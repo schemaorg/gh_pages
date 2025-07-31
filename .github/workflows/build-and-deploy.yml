@@ -120,7 +120,7 @@ jobs:
           fi
           
           # Build Jekyll
-          JEKYLL_ENV=production bundle exec jekyll build --destination _site --baseurl /gh_pages --verbose
+          JEKYLL_ENV=production bundle exec jekyll build --destination _site --verbose
           
           # Verify build
           if [ -d "_site" ]; then
