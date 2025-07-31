@@ -142,6 +142,12 @@ class JekyllGenerator:
         
         converted = re.sub(md_link_pattern, replace_md_link, converted)
         
+        # Convert \n to actual line breaks (HTML <br> tags)
+        converted = converted.replace('\\n', '<br>')
+        
+        # Convert \( and \) to regular parentheses
+        converted = converted.replace('\\(', '(').replace('\\)', ')')
+        
         # Escape any remaining curly braces for Jekyll
         converted = converted.replace('{', '{{').replace('}', '}}')
         
