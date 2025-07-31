@@ -114,7 +114,7 @@ class JekyllGenerator:
         self.schema_parser = schema_parser
         
     def convert_markdown_links(self, text: str) -> str:
-        """Convert [[Term]] style markdown links to HTML links"""
+        """Convert [[Term]] style and standard markdown links to HTML links"""
         if not text:
             return text
             
@@ -125,11 +125,22 @@ class JekyllGenerator:
         # Convert [[Term]] to <a href="/Term" class="localLink">Term</a>
         pattern = r'\[\[([^\]]+)\]\]'
         
-        def replace_link(match):
+        def replace_schema_link(match):
             term = match.group(1)
             return f'<a href="/{{ site.baseurl }}/{term}" class="localLink">{term}</a>'
         
-        converted = re.sub(pattern, replace_link, str(text))
+        converted = re.sub(pattern, replace_schema_link, str(text))
+        
+        # Convert standard markdown links [text](url) to <a href="url">text</a>
+        # This is needed because the content is inside HTML tags where Jekyll won't process markdown
+        md_link_pattern = r'\[([^\]]+)\]\(([^)]+)\)'
+        
+        def replace_md_link(match):
+            link_text = match.group(1)
+            url = match.group(2)
+            return f'<a href="{url}">{link_text}</a>'
+        
+        converted = re.sub(md_link_pattern, replace_md_link, converted)
         
         # Escape any remaining curly braces for Jekyll
         converted = converted.replace('{', '{{').replace('}', '}}')

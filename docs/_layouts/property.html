@@ -1,27 +1,118 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ page.title }} - schema.org Property</title>
-    <link rel="stylesheet" href="{{ site.baseurl }}/schema-org.css">
+    <title>{{ page.title }} - Schema.org Property</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Schema.org Property: {{ page.title }} - {{ page.description | strip_html | truncate: 150 }}">
+    <link rel="shortcut icon" type="image/png" href="/docs/favicon.ico">
+    <link rel="stylesheet" type="text/css" href="/docs/schemaorg.css">
+    <link rel="stylesheet" type="text/css" href="/docs/devnote.css">
+    <link rel="stylesheet" type="text/css" href="/docs/prettify.css">
+    <script src="/docs/prettify.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="/docs/schemaorg.js"></script>
+    <script src="/docs/sdotermpage.js"></script>
+    <link rel="stylesheet" type="text/css" href="/docs/sdotermpage.css">
+    <script src="/docs/pretty-markup/schemarama-parsing.bundle.min.js"></script>
+    <script src="/docs/pretty-markup/layout.js"></script>
+    <link rel="stylesheet" type="text/css" href="/docs/pretty-markup/style.css">
+    <script src="/docs/clipboard/clipboard.min.js"></script>
+
+<link rel="canonical" href="https://schema.org/{{ page.title }}">
 </head>
+
 <body>
-    <header>
-        <div class="container">
-            <h1>schema.org</h1>
+    <!-- Header start from PageHeader.j2 -->
+<!-- Static Doc Insert PageHead -->
+
+<div class="devnote"><b>Note</b>: You are viewing the development
+  version of <a href="https://schema.org">Schema.org</a>.
+  See <a href="/docs/howwework.html">how we work</a> for more details.
+</div>
+<div id="container">
+  <div id="headerwrap">
+    <div id="pagehead1" class="mobnav">
+      <div class="header-block" id="pagehead-left">
+        <div id="sitename2">
+          <a href="/">Schema.org</a>
         </div>
-    </header>
-    
-    <div class="container">
-        <div class="breadcrumb">
-            <a href="{{ site.baseurl }}/">Home</a> &gt; {{ page.title }}
+      </div>
+      <div class="header-block header-block-right mobnav" id="pagehead-mid">
+        <div id="selectionbar2">
+          <ul>
+            <li>
+              <a href="/docs/documents.html">Docs</a>
+            </li>
+            <li>
+              <a href="/docs/schemas.html">Schemas</a>
+            </li>
+            <li>
+              <a href="https://validator.schema.org">Validate</a>
+            </li>
+            <li>
+              <a href="/docs/about.html">About</a>
+            </li>
+          </ul>
+        </div> <!-- selectionbar -->
+      </div>
+      <div class="header-block header-block-right mobnav" id="pagehead-right">
+        <div id="cse-search-form2" class="live-only">
+            <div class="gcse-searchbox-only" data-resultsUrl="/docs/search_results.html"></div>
         </div>
-        
-        <div class="main-content">
-            <h1>{{ page.title }}</h1>
-            {{ content }}
-        </div>
+      </div>
+      <div class="header-block mobnav" id="navicon2">
+        <a href="javascript:void(0);" class="icon" onclick="navFunction()">
+          <svg id="open" width="24px" height="24px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <g clip-path="url(#clip0_3560_173)">
+            <path d="M3 18V16H21V18H3ZM3 13V11H21V13H3ZM3 8V6H21V8H3Z" fill="#444746"></path>
+            </g>
+            <defs>
+            <clipPath id="clip0_3560_173">
+            <rect width="24" height="24" fill="white"></rect>
+            </clipPath>
+            </defs>
+          </svg>
+          <svg id="close" width="24px" height="24px" viewBox="0 -960 960 960" fill="#444746" xmlns="http://www.w3.org/2000/svg">
+            <path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"></path>
+          </svg>
+        </a>
+      </div>
     </div>
+  </div>
+  <div class="header-bottom"></div>
+</div>
+<!-- Header end from PageHeader.j2 -->
+    <div id="mainContent">
+        
+{{ content }}
+
+    </div> <!-- mainContent -->
+  <!-- Footer start from PageFooter.j2 -->
+    
+    <div id="footer">
+      <p><a href="/docs/terms.html">Terms and conditions</a></p>
+      <div id="versioninfo">
+        <span class="sep">•</span>
+        Schema.org
+        <span class="sep">•</span>
+        V29.2
+        <span class="sep">|</span>
+        2025-05-15
+      </div>
+    </div>
+
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-52672119-1', 'auto');
+      ga('send', 'pageview');
+
+    </script>
+<!-- Footer end from PageFooter.j2 -->
+
 </body>
 </html>
