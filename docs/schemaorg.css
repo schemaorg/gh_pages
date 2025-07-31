@@ -140,6 +140,7 @@ header h1 {
     height: 29px !important;
     box-shadow: none !important;
     border-right: none !important;
+    line-height: 29px !important;
 }
 
 .gsc-input-box-hover {
@@ -188,7 +189,7 @@ table.gsc-search-box {
 }
 
 table.gsc-search-box td {
-    vertical-align: middle !important;
+    vertical-align: top !important;
     padding: 0 !important;
 }
 
@@ -201,9 +202,11 @@ table.gsc-search-box td.gsc-search-button {
     width: auto !important;
 }
 
+/* Input wrapper padding adjustment */
 .gsib_a {
-    padding: 4px 6px !important;
+    padding: 0 !important;
     width: 100% !important;
+    vertical-align: top !important;
 }
 
 .gsib_b {
@@ -222,12 +225,14 @@ table.gsc-search-box td.gsc-search-button {
     box-shadow: none !important;
     margin: 0 !important;
     outline: none !important;
-    padding: 0 !important;
+    padding: 1px 6px !important;
     height: 27px !important;
     line-height: 27px !important;
     font-size: 13px !important;
     font-family: arial, sans-serif !important;
     width: 100% !important;
+    display: block !important;
+    box-sizing: border-box !important;
 }
 
 /* Additional table cell styling */
