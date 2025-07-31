@@ -1,0 +1,154 @@
+name: Build and Deploy Site
+
+on:
+  push:
+    branches: [ main, master ]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 2  # Need history to check what changed
+      
+      - name: Check if schema files changed
+        id: schema_check
+        run: |
+          echo "Checking for schema file changes..."
+          
+          # Check if this is the first commit (no parent)
+          if ! git rev-parse HEAD^ >/dev/null 2>&1; then
+            echo "First commit - regenerating all"
+            echo "changed=true" >> $GITHUB_OUTPUT
+            exit 0
+          fi
+          
+          # Check for changes in schema-related files
+          if git diff --name-only HEAD^ HEAD | grep -E "(data/schema\.ttl|data/schema\.json|data/examples/|generate_pages_from_jsonld\.py|convert_ttl_to_jsonld\.py)" > /dev/null; then
+            echo "Schema files changed - will regenerate"
+            echo "changed=true" >> $GITHUB_OUTPUT
+          else
+            echo "No schema files changed - will use existing"
+            echo "changed=false" >> $GITHUB_OUTPUT
+          fi
+      
+      - name: Set up Python (if needed)
+        if: steps.schema_check.outputs.changed == 'true'
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
+      
+      - name: Install Python dependencies (if needed)
+        if: steps.schema_check.outputs.changed == 'true'
+        run: |
+          python -m pip install --upgrade pip
+          pip install requests pyyaml
+      
+      - name: Generate schema pages (if needed)
+        if: steps.schema_check.outputs.changed == 'true'
+        run: |
+          echo "=== Regenerating schema pages ==="
+          # Clean old files
+          rm -rf docs/_types docs/_properties
+          
+          # Run generator
+          python generate_pages_from_jsonld.py
+          
+          # Verify generation
+          echo "Types generated: $(find docs/_types -name '*.md' | wc -l)"
+          echo "Properties generated: $(find docs/_properties -name '*.md' | wc -l)"
+      
+      - name: Create Gemfile if needed
+        run: |
+          if [ ! -f "docs/Gemfile" ]; then
+            echo "Creating Gemfile..."
+            cat > docs/Gemfile << 'EOF'
+source "https://rubygems.org"
+gem "jekyll", "~> 4.3"
+gem "webrick"
+gem "jekyll-redirect-from"
+gem "jekyll-sitemap"
+gem "jekyll-feed"
+EOF
+          fi
+      
+      - name: Setup Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: '3.0'
+          bundler-cache: true
+          working-directory: ./docs
+      
+      - name: Build Jekyll site
+        run: |
+          cd docs
+          echo "=== Building Jekyll site ==="
+          echo "Current directory: $(pwd)"
+          
+          # Check for collections
+          if [ -d "_types" ]; then
+            echo "✓ _types directory exists ($(find _types -name '*.md' | wc -l) files)"
+          else
+            echo "✗ ERROR: _types directory missing!"
+            exit 1
+          fi
+          
+          if [ -d "_properties" ]; then
+            echo "✓ _properties directory exists ($(find _properties -name '*.md' | wc -l) files)"
+          else
+            echo "✗ ERROR: _properties directory missing!"
+            exit 1
+          fi
+          
+          # Build Jekyll
+          JEKYLL_ENV=production bundle exec jekyll build --destination _site --baseurl /gh_pages --verbose
+          
+          # Verify build
+          if [ -d "_site" ]; then
+            echo "✓ Jekyll build successful"
+            echo "Total files in _site: $(find _site -type f | wc -l)"
+            echo "HTML files: $(find _site -name '*.html' | wc -l)"
+            
+            # Check for key files
+            if [ -f "_site/Person.html" ]; then
+              echo "✓ Person.html exists"
+            else
+              echo "⚠ Person.html not found"
+            fi
+          else
+            echo "✗ ERROR: Jekyll build failed - no _site directory"
+            exit 1
+          fi
+        env:
+          JEKYLL_ENV: production
+      
+      - name: Setup Pages
+        uses: actions/configure-pages@v4
+      
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: 'docs/_site'
+  
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
