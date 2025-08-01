@@ -7,6 +7,7 @@ import json
 import os
 import yaml
 import re
+from datetime import datetime
 from collections import defaultdict
 from typing import Dict, List, Set, Tuple, Optional
 
@@ -167,7 +168,8 @@ class JekyllGenerator:
             'type': 'Type',
             'description': type_data['comment'],
             'parent': type_data['subclass_of'] if type_data['subclass_of'] else None,
-            'properties': type_data['properties']
+            'properties': type_data['properties'],
+            'generated_at': datetime.now().strftime('%Y-%m-%d %H:%M:%S')
         }
         
         # Convert markdown in comment
@@ -239,7 +241,8 @@ class JekyllGenerator:
             'type': 'Property',
             'description': prop_data['comment'],
             'domain_includes': prop_data['domain_includes'],
-            'range_includes': prop_data['range_includes']
+            'range_includes': prop_data['range_includes'],
+            'generated_at': datetime.now().strftime('%Y-%m-%d %H:%M:%S')
         }
         
         content = f"""---

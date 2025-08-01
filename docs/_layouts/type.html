@@ -98,6 +98,10 @@
         V29.2
         <span class="sep">|</span>
         2025-05-15
+        {% if page.generated_at %}
+        <span class="sep">•</span>
+        <span style="font-size: 10px; color: #888;">Generated: {{ page.generated_at }}</span>
+        {% endif %}
       </div>
     </div>
 
