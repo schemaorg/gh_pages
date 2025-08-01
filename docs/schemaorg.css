@@ -111,12 +111,46 @@ header h1 {
     margin-left: 20px;
 }
 
+/* Override Google CSE default styles to match schema.org */
 .gsc-control-searchbox-only {
     width: 200px !important;
 }
 
 .gsc-search-box {
     margin-bottom: 0 !important;
+}
+
+/* Input field styling */
+.gsc-input-box {
+    border: 1px solid #ccc !important;
+    background: #fff !important;
+}
+
+.gsc-input {
+    background: none !important;
+    padding: 0 !important;
+}
+
+.gsib_a {
+    padding: 2px 4px !important;
+}
+
+.gsib_b {
+    display: none !important;
+}
+
+/* Search button */
+.gsc-search-button-v2 {
+    padding: 4px 8px !important;
+    min-width: auto !important;
+    margin-left: 2px !important;
+}
+
+/* Remove default Google CSE styling */
+.gsc-control-searchbox-only .gsc-search-box {
+    border: none !important;
+    background: none !important;
+    box-shadow: none !important;
 }
 
 /* Mobile Navigation Icon */
