@@ -111,6 +111,14 @@ header h1 {
     margin-left: 20px;
 }
 
+.gsc-control-searchbox-only {
+    width: 200px !important;
+}
+
+.gsc-search-box {
+    margin-bottom: 0 !important;
+}
+
 /* Mobile Navigation Icon */
 #navicon2 {
     display: none;
